@@ -6,15 +6,15 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ActiveLink } from "@/components/atoms/ActiveLink";
 
 const navbarList: { href: Route<string>; title: string; exact?: boolean }[] = [
-	{ href: "#", title: "Treningi" },
-	{ href: "#", title: "Aktualności" },
-	{ href: "#", title: "Kontakt" },
+	{ href: "#trening", title: "Treningi" },
+	{ href: "#news", title: "Aktualności" },
+	{ href: "#contact", title: "Kontakt" },
 ];
 export const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<nav className="pr-2 text-lg sm:pr-56">
+		<nav className="pr-2 text-lg sm:pr-8 md:pr-24 xl:pr-32">
 			{/*xl screen navbar*/}
 			<ul className="hidden items-center justify-between gap-6 whitespace-nowrap sm:flex">
 				{navbarList.map(({ href, title, exact }, index) => (
