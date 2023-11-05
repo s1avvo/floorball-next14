@@ -10,8 +10,10 @@ export const TreningModuleWithoutImage = ({ text1, text2 }: TreningModuleType) =
 				<p className="text-lg">ul. Staszica 1a</p>
 				<p className="text-lg">w Śremie</p>
 			</div>
-			<div className="h-48 w-full rounded-t-md bg-cyan-200 px-14 py-2">
-				<h2 className="mb-5 text-5xl font-extrabold text-blue-950">Młodzież i dorośli</h2>
+			<div className="h-48 w-full rounded-t-md bg-cyan-200 px-6 py-2 xl:px-14">
+				<h2 className="mb-5 text-5xl font-extrabold text-blue-950">
+					Młodzież <br />i dorośli
+				</h2>
 				<p className="text-lg">{text1}</p>
 				<p className="text-lg">{text2}</p>
 			</div>
