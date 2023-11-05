@@ -1,42 +1,16 @@
-import NextImage from "next/image";
-import { SubmitButton } from "@/components/atoms/SubmitButton";
+import { AboutUs } from "@/components/organisms/AboutUs";
+import { Training } from "@/components/organisms/Training";
+import { News } from "@/components/organisms/News";
+import { Contact } from "@/components/organisms/Contact";
 export default function Home() {
 	return (
-		<article>
-			<div className="left-0 top-0 flex flex-col px-6 pt-40 sm:fixed sm:px-12 md:px-64">
-				<h2 className="mr-1.5 self-end text-5xl font-semibold text-blue-900 sm:mr-2.5 sm:text-6xl md:text-8xl">
-					FLOORBALL
-				</h2>
-				<h1 className="text-[110px]/[110px] font-extrabold text-cyan-500 sm:text-[150px]/[120px] md:text-[240px]/[220px]">
-					ŚREM
-				</h1>
+		<>
+			<AboutUs />
+			<Training />
+			<News />
+			<Contact />
+		</>
 
-				<div className="mt-4 flex max-w-[400px] flex-col gap-8 sm:mt-8">
-					<div className="hidden border-y-2 border-blue-900 px-6 py-4 italic sm:flex">
-						<p>
-							<q>
-								Cena sukcesu to ciężka praca, poświęcenie i determinacja, by niezależnie od tego czy
-								w danej chwili wygrywamy czy przegrywamy dawać z siebie wszystko
-							</q>
-						</p>
-					</div>
-					<SubmitButton label="DOŁĄCZ DO NAS" />
-				</div>
-			</div>
-
-			{/* background image */}
-			<div className="fixed bottom-0 right-0 -z-50">
-				<NextImage
-					placeholder="blur"
-					blurDataURL="/main_image.png"
-					src="/main_image.png"
-					alt="Floorball Śrem Image"
-					width={640}
-					height={640}
-					priority
-				/>
-			</div>
-		</article>
 		// <main className="flex min-h-screen flex-col items-center justify-between p-24">
 		// 	<div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
 		// 		<p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
