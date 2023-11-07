@@ -1,36 +1,47 @@
-import { TreningModule } from "@/components/atoms/TreningModule";
-import { TreningModuleWithoutImage } from "@/components/atoms/TreningModuleWithoutImage";
+import { TreningCard } from "@/components/atoms/TreningCard";
+import { trening } from "@/constants/trening";
 
 export const Training = () => {
 	return (
-		<section className="relative flex h-full min-h-screen w-full flex-col bg-blue-950" id="trening">
-			<div className="flex h-full min-h-screen w-full flex-col justify-between px-10 pt-28 sm:px-20 xl:px-48">
-				<div className="mb-16 ps-40 text-3xl font-semibold text-neutral-100 sm:ps-20 sm:text-5xl xl:ps-56 xl:text-8xl">
-					TRENINGI
+		<section
+			className="relative flex h-full min-h-screen w-full flex-col justify-between gap-3 bg-blue-950 px-4 sm:px-10 xl:px-48"
+			id="trening"
+		>
+			<div className="mt-16 flex-wrap justify-between gap-8 sm:flex">
+				<div className="basis-2/3 text-end">
+					<span className="text-3xl text-neutral-100 sm:text-5xl">zapraszamy na </span>
+					<h2 className="text-6xl font-semibold text-neutral-100 sm:text-9xl">TRENINGI</h2>
 				</div>
-				<div className="flex h-3/4 w-full flex-wrap">
-					<div className="mt-5 h-[450px] min-w-[300px] basis-1/3 self-start px-4 xl:pb-5">
-						<div className="h-full w-full rounded-md bg-amber-400">
-							<TreningModule
-								age={"1 | 2"}
-								src={"/unihokphoto1.webp"}
-								text1={"godz. 17:30 - 18:30"}
-								text2={"godz. 17:30 - 18:30"}
-							/>
-						</div>
+			</div>
+
+			<div className="justify-between gap-4 sm:flex xl:gap-8">
+				<TreningCard
+					imageHeight="h-80"
+					className="mb-4 basis-1/3 rounded-md bg-amber-400"
+					trening={trening[0]}
+				/>
+				<TreningCard
+					imageHeight="h-80"
+					className="basis-1/3 rounded-t-md bg-amber-400"
+					trening={trening[1]}
+				/>
+
+				<div className="basis-1/3 self-end">
+					<div className="mb-4">
+						<h2 className="mb-5 text-6xl font-extrabold text-cyan-200">
+							Hala <br />
+							Sportowa
+						</h2>
+						<p className="text-lg text-cyan-200">Śremie, ul. Staszica 1a</p>
 					</div>
-					<div className="mt-5 h-[450px] min-w-[300px] basis-1/3 self-end px-4">
-						<div className="h-full w-full rounded-b-md rounded-t-md bg-amber-400 xl:rounded-b-none ">
-							<TreningModule
-								age={"3 | 4 | 5"}
-								src={"/unihokphoto1.webp"}
-								text1={"godz. 16:30 - 17:30"}
-								text2={"godz. 16:30 - 17:30"}
-							/>
+					<div className="h-52 basis-full rounded-t-md bg-amber-400 px-4 py-2">
+						<h2 className="mb-4 text-5xl font-extrabold text-neutral-100">
+							Młodzież <br />i dorośli
+						</h2>
+						<div className="my-2 gap-3">
+							<h6 className="text-xs text-blue-950">Niedziela</h6>
 						</div>
-					</div>
-					<div className="mt-5 flex min-w-[300px] basis-1/3 flex-col gap-5 self-end px-4">
-						<TreningModuleWithoutImage text1={"Niedziela"} text2={"godz. 10:00 - 12:00"} />
+						<p className="text-lg font-semibold text-blue-950">10.00 - 12.00</p>
 					</div>
 				</div>
 			</div>
