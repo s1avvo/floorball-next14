@@ -1,11 +1,11 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/organisms/Header";
 import { Footer } from "@/components/organisms/Footer";
 
-const inter = Inter({ subsets: ["latin", "latin-ext"] });
+const montserrat = Montserrat({ subsets: ["latin", "latin-ext"] });
 
 export const metadata: Metadata = {
 	title: "Unihokej | Floorball Śrem",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="pl">
-			<body className={inter.className}>
+			<body className={montserrat.className}>
 				<Header />
 				<main className="flex h-full w-full flex-col">{children}</main>
 				<Footer />

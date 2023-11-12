@@ -1,28 +1,24 @@
 import NextImage from "next/image";
 import Link from "next/link";
 import { Navbar } from "@/components/molecules/Navbar";
+import { ThemeModeButton } from "@/components/atoms/ThemeModeButton";
 
 export const Header = () => {
 	return (
-		<header className="fixed top-0 z-10 flex h-14 w-full items-center justify-between bg-cyan-500">
+		<header className="fixed top-0 z-10 flex h-14 w-full items-center justify-between bg-cyan-400 px-2 sm:px-10 md:px-48">
 			{/* Logo */}
-			<div className="min-h-[155px] w-2/3 self-start overflow-hidden drop-shadow-lg sm:w-1/3">
-				<div className="h-full w-full bg-neutral-100">
-					<Link href="#about-us">
-						<NextImage
-							className="absolute right-[75px] top-0 z-50 aspect-square"
-							src={"/logo.png"}
-							alt="Floorball-logo"
-							width={150}
-							height={150}
-							priority
-						/>
-					</Link>
-				</div>
-				<div className="relative border-l-4 border-r-[100px] border-t-[155px] border-neutral-100 border-r-transparent" />
+			<div className="flex h-36 w-36 items-center justify-center self-start rounded-b-md bg-white drop-shadow-md">
+				<Link href="#about-us">
+					<NextImage src={"/logo.png"} alt="Floorball-logo" width={135} height={135} priority />
+				</Link>
 			</div>
+
 			{/* Navigation */}
-			<Navbar />
+			<div className="flex items-center gap-5">
+				<Navbar />
+				<span className="h-8 border bg-neutral-100" />
+				<ThemeModeButton />
+			</div>
 		</header>
 	);
 };

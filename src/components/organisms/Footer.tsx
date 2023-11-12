@@ -1,8 +1,8 @@
 export const Footer = () => {
 	return (
-		<footer className="space-y-5 bg-amber-400 p-5 px-2 sm:px-8 md:px-16 xl:px-56">
+		<footer className="bg-amber-400 px-2 py-4 text-white sm:px-4 md:px-10 xl:px-48">
 			<h3>Trenerzy:</h3>
-			<div className="flex w-full flex-wrap gap-y-2">
+			<div className="prose-sm flex w-full flex-wrap border-b-2">
 				<div className="basis-1/2 sm:basis-1/4">
 					<p>Arkadiusz Nadolny</p>
 					<p>tel: 000 000 000</p>
@@ -20,8 +20,7 @@ export const Footer = () => {
 					<p>Regulamin</p>
 				</div>
 			</div>
-			<hr />
-			<div className="text-center">
+			<div className="mt-4 text-center">
 				<p>2023</p>
 			</div>
 		</footer>

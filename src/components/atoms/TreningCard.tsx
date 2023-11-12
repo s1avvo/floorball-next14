@@ -14,9 +14,8 @@ export const TreningCard = ({ className, imageHeight, trening }: TreningCardProp
 
 	return (
 		<div className={className}>
-			<div className="basis-full rounded-t-md border-t-8 border-amber-400 hover:opacity-80">
+			<div className="basis-full">
 				<div className={`relative mb-2 w-auto ${imageHeight}`}>
-					1
 					<NextImage
 						fill
 						alt="img"
@@ -26,30 +25,29 @@ export const TreningCard = ({ className, imageHeight, trening }: TreningCardProp
                 		(max-width: 1060px) 50vw,
                			 33vw"
 						style={{
-							objectFit: "cover",
-							borderTopLeftRadius: "0.375rem",
-							borderTopRightRadius: "0.375rem",
+							objectFit: "contain",
 						}}
 					/>
-					<div className="absolute bottom-0 left-0 p-3">
-						<h2 className="z-10 text-6xl font-bold text-white">
-							{title} <span className="text-3xl font-semibold">klasa</span>
-						</h2>
-					</div>
 				</div>
 			</div>
-			<div className="mb-4 grid grid-cols-2 px-4 py-2">
-				<div className="col-span-1">
-					<div className="my-2 gap-3">
-						<h6 className="text-xs text-blue-950">Poniedziałek</h6>
+
+			<div className="border-r-4 border-amber-400">
+				<h2 className="z-10 px-4 py-2 text-6xl font-bold text-neutral-100">
+					{title} <span className="text-2xl font-light">klasa</span>
+				</h2>
+				<div className="my-4 grid grid-cols-2 px-4 py-2">
+					<div className="col-span-1">
+						<div className="my-2 gap-3">
+							<h6 className="text-xs text-neutral-100">Poniedziałek</h6>
+						</div>
+						<p className="text-lg font-semibold text-neutral-100">{content}</p>
 					</div>
-					<p className="text-lg font-semibold text-blue-950">{content}</p>
-				</div>
-				<div className="col-span-1">
-					<div className="my-2 gap-3">
-						<h6 className="text-xs">Środa</h6>
+					<div className="col-span-1">
+						<div className="my-2 gap-3">
+							<h6 className="text-xs text-neutral-100">Środa</h6>
+						</div>
+						<p className="text-lg font-semibold text-neutral-100">{content}</p>
 					</div>
-					<p className="text-lg font-semibold text-blue-950">{content}</p>
 				</div>
 			</div>
 		</div>

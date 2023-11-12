@@ -1,38 +1,34 @@
+import NextImage from "next/image";
 import { NewsCard } from "@/components/atoms/NewsCard";
 import { posts } from "@/constants/posts";
 
 export const News = () => {
 	return (
-		<section className="relative flex h-full min-h-screen w-full flex-col bg-white" id="news">
-			{/*Trening bottom*/}
-			<div className="absolute left-0 top-0 hidden w-full gap-8 px-4 sm:px-10 xl:flex xl:px-48">
-				<div className="basis-1/3" />
-				<div className="h-14 w-full basis-1/3 rounded-b-md bg-amber-400" />
-				<div className="h-8 w-full basis-1/3 rounded-b-md bg-amber-400" />
-			</div>
-
-			<div className="flex h-full min-h-screen w-full flex-col px-10 pt-28 sm:px-20 xl:px-48">
-				{/*<div className="mb-16 ps-40 text-3xl font-semibold text-blue-950 sm:ps-20 sm:text-5xl xl:ps-56 xl:text-8xl">*/}
-				{/*	AKTUALNOŚCI*/}
-				{/*</div>*/}
-				<div className="my-2 grid-cols-2 grid-rows-3 gap-x-4 gap-y-4 sm:grid">
-					<NewsCard imageHeight="h-96" post={posts[0]} className="col-span-1 row-span-3" />
-					<NewsCard
-						imageHeight="h-40"
-						post={posts[1]}
-						className="col-span-1 row-span-1 mt-5 flex justify-between gap-3 sm:mt-0"
-					/>
-					<NewsCard
-						imageHeight="h-40"
-						post={posts[2]}
-						className="col-span-1 row-span-1 mt-5 flex justify-between gap-3 sm:mt-0"
-					/>
-					<NewsCard
-						imageHeight="h-40"
-						post={posts[3]}
-						className="col-span-1 row-span-1 mt-5 flex justify-between gap-3 sm:mt-0"
-					/>
+		<section
+			className="relative flex h-full min-h-screen w-full flex-col justify-center bg-[#000728] px-2 xl:px-48"
+			id="news"
+		>
+			<div className="grid-cols-3 space-y-5 pt-8 sm:grid sm:space-y-0 md:pt-0">
+				<div className="col-span-1 self-end px-4">
+					<div className={"relative hidden h-80 w-auto sm:block"}>
+						<NextImage
+							fill
+							alt="img"
+							src={"/assets/stick.svg"}
+							sizes="(max-width: 480px) 100vw,
+                			(max-width: 768px) 75vw,
+                			(max-width: 1060px) 50vw,
+               				 33vw"
+							style={{
+								objectFit: "contain",
+								objectPosition: "top right",
+							}}
+						/>
+					</div>
+					<h2 className="text-end text-6xl font-extrabold text-neutral-100 xl:text-8xl">NEWS</h2>{" "}
 				</div>
+				<NewsCard post={posts[0]} className="col-span-1 border-l-4 border-amber-400 px-4" />
+				<NewsCard post={posts[1]} className="col-span-1 border-l-4 border-amber-400 px-4" />
 			</div>
 		</section>
 	);

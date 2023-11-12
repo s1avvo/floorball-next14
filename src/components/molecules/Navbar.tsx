@@ -14,7 +14,7 @@ export const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<nav className="pr-2 text-lg sm:pr-8 md:pr-24 xl:pr-32">
+		<nav>
 			{/*xl screen navbar*/}
 			<ul className="hidden items-center justify-between gap-6 whitespace-nowrap sm:flex">
 				{navbarList.map(({ href, title, exact }, index) => (
@@ -47,14 +47,14 @@ export const Navbar = () => {
 
 			<div
 				className={clsx(
-					"absolute left-0 top-0 z-50 flex h-screen w-4/5 items-start justify-start bg-cyan-500 shadow-lg duration-500 ease-in md:hidden",
+					"absolute left-0 top-0 z-50 flex h-screen w-4/6 items-end justify-start bg-cyan-500 shadow-lg duration-500 ease-in md:hidden",
 					`${
 						!isOpen &&
 						"absolute left-[-100%] top-0 z-50 flex h-screen w-full items-start justify-start bg-cyan-500 shadow-lg duration-500 ease-out md:hidden"
 					}`,
 				)}
 			>
-				<ul className="mt-5 w-full flex-col sm:hidden">
+				<ul className="my-5 w-full flex-col sm:hidden">
 					{navbarList.map(({ href, title, exact }, index) => (
 						<li key={index} className="p-4 text-xl" onClick={() => setIsOpen(!isOpen)}>
 							<ActiveLink href={href} exact={exact}>

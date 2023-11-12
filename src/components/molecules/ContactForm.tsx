@@ -14,17 +14,21 @@ export const ContactForm = () => {
 
 	return (
 		<form ref={ref} /*action={sendMessage}*/>
-			<div className="grid gap-2 md:grid-cols-2">
-				<ContactInput label={"Imię"} type={"text"} name={"name"} />
-				<ContactInput label={"Nazwisko"} type={"text"} name={"surname"} />
-				<ContactInput label={"Email"} type={"email"} name={"email"} />
+			<div className="grid gap-x-8 gap-y-2 md:grid-cols-2">
+				<ContactInput
+					label={"Imię i nazwisko"}
+					type={"text"}
+					name={"name"}
+					gridColumn={"col-span-2"}
+				/>
+				<ContactInput label={"Email"} type={"email"} name={"email"} gridColumn={"col-span-2"} />
 				<ContactInput label={"Temat"} type={"text"} name={"subject"} gridColumn={"col-span-2"} />
 				<div className="col-span-2 grid">
-					<label htmlFor="message" className="mb-1 ms-2 block text-sm font-medium text-neutral-100">
+					<label htmlFor="message" className="prose-sm ms-2 block font-light text-white">
 						Wiadomość
 					</label>
 					<textarea
-						className=" rounded-md border border-neutral-400 p-2"
+						className="rounded-md border border-blue-950 p-2 text-blue-950 focus:border-cyan-500 focus:outline-none"
 						name="message"
 						id="message-id"
 						placeholder="Napisz wiadomość.."
@@ -33,7 +37,7 @@ export const ContactForm = () => {
 					/>
 				</div>
 				<div className="col-span-2 mt-4 grid">
-					<SubmitButton label={"WYŚLIJ"} />
+					<SubmitButton label={"WYŚLIJ WIADOMOŚĆ"} />
 				</div>
 			</div>
 		</form>

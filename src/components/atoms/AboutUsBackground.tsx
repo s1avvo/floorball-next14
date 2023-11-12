@@ -4,18 +4,19 @@ export const AboutUsBackground = () => {
 	return (
 		<NextImage
 			placeholder="blur"
-			blurDataURL="/main_image.png"
-			src="/main_image.png"
+			blurDataURL="/assets/bg_dark.png"
+			src="/assets/bg_dark.png"
 			alt="Floorball Śrem Image"
 			fill
 			priority
 			style={{
 				width: "100%",
+				maxHeight: "100vh",
 				height: "100%",
 				objectFit: "contain",
 				overflow: "hidden",
 				objectPosition: "right bottom",
-				zIndex: -99,
+				zIndex: -1,
 			}}
 		/>
 	);
