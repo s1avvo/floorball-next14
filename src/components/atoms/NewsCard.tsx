@@ -47,9 +47,11 @@ export const NewsCard = ({ className, post }: Props) => {
 			<div className="basis-full">
 				{/*<Link href={`${process.env.NEXT_PUBLIC_URL}/post/${id}`}>*/}
 				<Link href={"#"}>
-					<h4 className="line-clamp-4 h-52 text-5xl font-extrabold text-amber-400">{title}</h4>
+					<h4 className="prose-h2 line-clamp-4 text-5xl/[54px] font-extrabold text-amber-400">
+						{title}
+					</h4>
 				</Link>
-				<div className="mb-4 gap-3">
+				<div className="my-5 gap-3">
 					<h6 className="text-xs text-white">{formattedDate}</h6>
 				</div>
 				<p className="prose prose-sm text-white">{content}</p>

@@ -14,7 +14,7 @@ export const AboutUs = () => {
 			{/* text */}
 			<article>
 				<div className="justify-between gap-4 px-2 sm:flex sm:px-20 md:px-48">
-					<div className="h-screen w-full basis-2/3 pt-32 text-end sm:pt-16">
+					<div className="h-screen w-full basis-2/3 pt-32 text-end sm:pt-24">
 						<div className="me-2 basis-full text-3xl font-light text-neutral-100 sm:text-4xl md:me-2 xl:me-4 xl:text-8xl">
 							FLOORBALL
 						</div>
@@ -22,7 +22,7 @@ export const AboutUs = () => {
 							ŚREM
 						</div>
 						<div className="flex max-w-[500px] flex-col xl:space-y-6">
-							<div className="mt-8 hidden border-y-2 border-neutral-100 px-6 py-4 text-start italic xl:flex">
+							<div className="mt-4 hidden border-y-2 border-neutral-100 px-6 py-4 text-start italic xl:flex">
 								<p>
 									<q className="prose-sm font-light text-neutral-100">
 										Cena sukcesu to ciężka praca, poświęcenie i determinacja, by niezależnie od
@@ -37,7 +37,7 @@ export const AboutUs = () => {
 			</article>
 
 			{/*Partners*/}
-			<div className="absolute bottom-1 left-0 flex h-20 transform items-center gap-x-2  sm:left-1/2 sm:-translate-x-1/2 sm:gap-x-10">
+			<div className="absolute bottom-2 left-0 hidden h-20 transform items-center gap-x-2 sm:flex sm:translate-x-24 md:bottom-8 md:translate-x-56 md:gap-x-10">
 				<NextImage
 					src={"/assets/partnerzy-01_dark.png"}
 					alt="Wielkopolskie Centrum Fizjoterapii"

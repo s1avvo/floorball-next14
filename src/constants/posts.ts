@@ -3,7 +3,7 @@ export const posts = [
 		id: "1",
 		createdAt: "2023-09-02",
 		updatedAt: "2023-09-02",
-		title: "Darmowe Treningi Unihokeja",
+		title: "Darmowe Treningi Unihokeja we wrześniu",
 		content:
 			"Jest nam niezmiernie miło poinformować, że od września nasze treningi będą dla wszystkich dzieci absolutnie ZA DARMO. To wszystko dzięki wsparciu z programu Mikro Granty organizowanym przez Ministerstwo Sportu i Turystyki.",
 	},

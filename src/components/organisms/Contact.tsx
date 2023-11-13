@@ -4,10 +4,10 @@ import { ContactForm } from "@/components/molecules/ContactForm";
 export const Contact = () => {
 	return (
 		<section
-			className="relative flex h-full min-h-screen w-full flex-col justify-center bg-[#000728] px-4 sm:px-10 xl:px-48"
+			className="relative flex h-full w-full flex-col justify-center bg-[#000728] px-4 pb-8 pt-16 sm:px-10 xl:px-48"
 			id="contact"
 		>
-			<div className="justify-between space-y-5 py-8 sm:flex sm:space-y-0 md:pt-0">
+			<div className="justify-between space-y-5 sm:flex sm:space-y-0">
 				<div className="basis-2/3 border-r-4 border-amber-400 px-2 sm:px-4">
 					<h4 className="mb-8 text-end text-6xl font-extrabold text-white">O NAS</h4>
 					<div className="relative h-36 w-auto md:h-72">
