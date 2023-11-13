@@ -1,6 +1,7 @@
 import { TreningCard } from "@/components/atoms/TreningCard";
 import { trening } from "@/constants/trening";
 import { Ball } from "@/components/atoms/Ball";
+import { TreningGallerySwiper } from "@/components/atoms/TreningGallerySwiper";
 
 export const Training = () => {
 	return (
@@ -8,7 +9,7 @@ export const Training = () => {
 			className="relative flex h-full min-h-screen w-full flex-col justify-center gap-4 bg-[#000728] px-4 pt-8 sm:px-10 xl:px-48"
 			id="trening"
 		>
-			<div className="justify-between gap-4 sm:flex xl:gap-8">
+			<div className="justify-between gap-4 sm:flex xl:gap-6">
 				<TreningCard imageHeight="h-48" className="basis-1/3 space-y-4" trening={trening[0]} />
 				<TreningCard imageHeight="h-48" className="basis-1/3 space-y-4" trening={trening[1]} />
 
@@ -23,7 +24,9 @@ export const Training = () => {
 					</div>
 				</div>
 			</div>
-			<div className="h-56 bg-neutral-700"></div>
+			<div className="h-56">
+				<TreningGallerySwiper />
+			</div>
 		</section>
 	);
 };
