@@ -1,23 +1,21 @@
 "use server";
-export const sendMessageAction = async (formData: FormData) => {
-	const messageForm = {
-		name: String(formData.get("name")),
-		email: String(formData.get("email")),
-		subject: String(formData.get("subject")),
-		message: String(formData.get("message")),
-	};
+import { Resend } from "resend";
+import { EmailTemplate } from "@/components/atoms/EmailTemplate";
 
-	await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/send`, {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify(messageForm),
-		// body: JSON.stringify({
-		// 	from: messageForm.email,
-		// 	to: "s.nadolny83@gmail.com",
-		// 	subject: `Floorballsrem.com wiadomość od ${messageForm.name} temat: ${messageForm.subject}`,
-		// 	text: messageForm.message,
-		// }),
+export const sendMessageAction = async (formData: FormData) => {
+	const resend = new Resend(process.env.RESEND_API_KEY);
+
+	const name = String(formData.get("name"));
+	const email = String(formData.get("email"));
+	const subject = String(formData.get("subject"));
+	const message = String(formData.get("message"));
+
+	const { data } = await resend.emails.send({
+		from: "Floorballsrem.com <myscript@myscripts.pl>",
+		to: ["s.nadolny83@gmail.com", `${email}`],
+		subject: `Floorballsrem.com - ${subject})`,
+		react: EmailTemplate({ name, message }),
 	});
+
+	return data;
 };
