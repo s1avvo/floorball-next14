@@ -2,18 +2,18 @@
 import { useRef } from "react";
 import { ContactInput } from "@/components/atoms/ContactInput";
 import { SubmitButton } from "@/components/atoms/SubmitButton";
-// import { sendMessageAction } from "@/app/actions";
+import { sendMessageAction } from "@/app/actions";
 
 export const ContactForm = () => {
 	const ref = useRef<HTMLFormElement>(null);
 
-	// async function sendMessage(formData: FormData) {
-	// await sendMessageAction(formData);
-	// 	ref.current?.reset();
-	// }
+	async function sendMessage(formData: FormData) {
+		await sendMessageAction(formData);
+		ref.current?.reset();
+	}
 
 	return (
-		<form ref={ref} /*action={sendMessage}*/>
+		<form ref={ref} action={sendMessage}>
 			<div className="grid gap-x-8 gap-y-2 md:grid-cols-2">
 				<ContactInput
 					label={"Imię i nazwisko"}
