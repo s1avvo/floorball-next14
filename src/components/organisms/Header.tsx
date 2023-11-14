@@ -9,7 +9,13 @@ export const Header = () => {
 			{/* Logo */}
 			<div className="flex h-36 w-36 items-center justify-center self-start rounded-b-md bg-white drop-shadow-md">
 				<Link href="#about-us">
-					<NextImage src={"/logo.png"} alt="Floorball-logo" width={135} height={135} priority />
+					<NextImage
+						src={"/assets/logo.png"}
+						alt="Floorball-logo"
+						width={135}
+						height={135}
+						priority
+					/>
 				</Link>
 			</div>
 
