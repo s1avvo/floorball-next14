@@ -24,11 +24,11 @@ export const ContactForm = () => {
 				<ContactInput label={"Email"} type={"email"} name={"email"} gridColumn={"col-span-2"} />
 				<ContactInput label={"Temat"} type={"text"} name={"subject"} gridColumn={"col-span-2"} />
 				<div className="col-span-2 grid">
-					<label htmlFor="message" className="prose-sm ms-2 block font-light text-white">
+					<label htmlFor="message" className="prose-sm ms-2 block font-light">
 						Wiadomość
 					</label>
 					<textarea
-						className="rounded-md border border-blue-950 p-2 text-blue-950 focus:border-cyan-500 focus:outline-none"
+						className="rounded-md border border-blue-950 bg-white p-2 text-blue-900 focus:border-cyan-500 focus:outline-none"
 						name="message"
 						id="message-id"
 						placeholder="Napisz wiadomość.."

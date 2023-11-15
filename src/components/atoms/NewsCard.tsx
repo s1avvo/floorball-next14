@@ -52,9 +52,9 @@ export const NewsCard = ({ className, post }: Props) => {
 					</h4>
 				</Link>
 				<div className="my-5 gap-3">
-					<h6 className="text-xs text-white">{formattedDate}</h6>
+					<h6 className="text-xs">{formattedDate}</h6>
 				</div>
-				<p className="prose prose-sm text-white">{content}</p>
+				<p className="prose prose-sm text-blue-900 dark:text-white">{content}</p>
 			</div>
 		</div>
 	);

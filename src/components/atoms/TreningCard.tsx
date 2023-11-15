@@ -1,4 +1,4 @@
-import NextImage from "next/image";
+import { ThemeImage } from "@/components/atoms/ThemeImage";
 
 type TreningCardProps = {
 	className: string;
@@ -6,7 +6,10 @@ type TreningCardProps = {
 	trening: {
 		title: string;
 		content: string;
-		image: string;
+		image: {
+			dark: string;
+			light: string;
+		};
 	};
 };
 export const TreningCard = ({ className, imageHeight, trening }: TreningCardProps) => {
@@ -16,10 +19,11 @@ export const TreningCard = ({ className, imageHeight, trening }: TreningCardProp
 		<div className={className}>
 			<div className="basis-full">
 				<div className={`relative mb-2 w-auto ${imageHeight}`}>
-					<NextImage
+					<ThemeImage
 						fill
 						alt="img"
-						src={image}
+						srcLight={image.light}
+						srcDark={image.dark}
 						sizes="(max-width: 480px) 100vw,
                 		(max-width: 768px) 75vw,
                 		(max-width: 1060px) 50vw,
@@ -32,21 +36,21 @@ export const TreningCard = ({ className, imageHeight, trening }: TreningCardProp
 			</div>
 
 			<div className="border-r-4 border-amber-400">
-				<h2 className="z-10 px-4 py-2 text-6xl font-bold text-neutral-100">
+				<h2 className="z-10 px-4 py-2 text-6xl font-bold">
 					{title} <span className="text-2xl font-light">klasa</span>
 				</h2>
 				<div className="my-4 grid grid-cols-2 px-4 py-2">
 					<div className="col-span-1">
 						<div className="my-2 gap-3">
-							<h6 className="text-xs text-neutral-100">Poniedziałek</h6>
+							<h6 className="text-xs">Poniedziałek</h6>
 						</div>
-						<p className="text-lg font-semibold text-neutral-100">{content}</p>
+						<p className="text-lg font-semibold">{content}</p>
 					</div>
 					<div className="col-span-1">
 						<div className="my-2 gap-3">
-							<h6 className="text-xs text-neutral-100">Środa</h6>
+							<h6 className="text-xs">Środa</h6>
 						</div>
-						<p className="text-lg font-semibold text-neutral-100">{content}</p>
+						<p className="text-lg font-semibold">{content}</p>
 					</div>
 				</div>
 			</div>

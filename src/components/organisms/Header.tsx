@@ -1,7 +1,7 @@
 import NextImage from "next/image";
 import Link from "next/link";
 import { Navbar } from "@/components/molecules/Navbar";
-import { ThemeModeButton } from "@/components/atoms/ThemeModeButton";
+import { ThemeMode } from "@/components/molecules/ThemeMode";
 
 export const Header = () => {
 	return (
@@ -23,7 +23,7 @@ export const Header = () => {
 			<div className="flex items-center gap-5">
 				<Navbar />
 				<span className="h-8 border bg-neutral-100" />
-				<ThemeModeButton />
+				<ThemeMode />
 			</div>
 		</header>
 	);

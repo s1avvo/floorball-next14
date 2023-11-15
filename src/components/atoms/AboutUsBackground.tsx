@@ -1,11 +1,12 @@
-import NextImage from "next/image";
+import { ThemeImage } from "@/components/atoms/ThemeImage";
 
 export const AboutUsBackground = () => {
 	return (
-		<NextImage
+		<ThemeImage
 			placeholder="blur"
 			blurDataURL="/assets/bg_dark.png"
-			src="/assets/bg_dark.png"
+			srcLight="/assets/bg_light.png"
+			srcDark="/assets/bg_dark.png"
 			alt="Floorball Śrem Image"
 			fill
 			priority
@@ -16,7 +17,7 @@ export const AboutUsBackground = () => {
 				objectFit: "contain",
 				overflow: "hidden",
 				objectPosition: "right bottom",
-				zIndex: -1,
+				zIndex: -99,
 			}}
 		/>
 	);
