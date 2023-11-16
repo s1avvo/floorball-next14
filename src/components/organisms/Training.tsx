@@ -1,12 +1,14 @@
+import { Suspense } from "react";
 import { TreningCard } from "@/components/atoms/TreningCard";
 import { trening } from "@/constants/trening";
 import { Ball } from "@/components/atoms/Ball";
 import { TreningGallerySwiper } from "@/components/atoms/TreningGallerySwiper";
+import { Loading } from "@/components/atoms/Loading";
 
 export const Training = () => {
 	return (
 		<section
-			className="relative flex h-full min-h-screen w-full flex-col justify-center gap-4 px-2 pt-8 sm:px-10 xl:px-48"
+			className="relative flex h-full min-h-screen w-full flex-col justify-center gap-4 px-2 sm:px-10 xl:px-48"
 			id="trening"
 		>
 			<div className="justify-between gap-4 sm:flex xl:gap-6">
@@ -22,7 +24,9 @@ export const Training = () => {
 				</div>
 			</div>
 			<div className="h-56">
-				<TreningGallerySwiper />
+				<Suspense fallback={<Loading />}>
+					<TreningGallerySwiper />
+				</Suspense>
 			</div>
 		</section>
 	);

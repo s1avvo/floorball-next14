@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang="pl" suppressHydrationWarning>
 			<body
-				className={`${montserrat.className} bg-white text-blue-900 dark:bg-[#000728] dark:text-white`}
+				className={`${montserrat.className} bg-white text-blue-950 dark:bg-dark dark:text-white`}
 			>
 				<Providers>
 					<Header />

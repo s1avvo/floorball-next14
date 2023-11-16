@@ -1,17 +1,17 @@
 import { AboutUsBackground } from "@/components/atoms/AboutUsBackground";
 import { AboutUsPartners } from "@/components/atoms/AboutUsPartners";
-import { SubmitButton } from "@/components/atoms/SubmitButton";
+import { AboutUsLinkButton } from "@/components/atoms/AboutUsLinkButton";
 
 export const AboutUs = () => {
 	return (
-		<section className="relative -z-50 flex h-full min-h-screen w-full flex-col" id="about-us">
+		<section className="relative flex h-full min-h-screen w-full flex-col" id="about-us">
 			{/* background image */}
 			<AboutUsBackground />
 
 			{/* text */}
 			<article>
 				<div className="justify-between gap-4 px-2 sm:flex sm:px-20 md:px-48">
-					<div className="h-screen w-full basis-2/3 pt-32 text-start sm:pt-24">
+					<div className="h-screen w-full basis-2/3 pt-24">
 						<div className="ms-36 basis-full text-3xl sm:text-4xl md:ms-48 md:text-5xl xl:ms-44 xl:text-8xl">
 							FLOORBALL
 						</div>
@@ -27,9 +27,7 @@ export const AboutUs = () => {
 									</q>
 								</p>
 							</div>
-							<SubmitButton label="DOŁĄCZ DO NAS" />
-
-							{/*Partners*/}
+							<AboutUsLinkButton label="DOŁĄCZ DO NAS" />
 							<AboutUsPartners />
 						</div>
 					</div>

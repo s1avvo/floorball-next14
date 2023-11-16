@@ -23,7 +23,13 @@ export const TreningGallerySwiper = () => {
 						spaceBetween: 20,
 					},
 					860: {
+						lazyPreloadPrevNext: 3,
 						slidesPerView: 3,
+						spaceBetween: 20,
+					},
+					1600: {
+						lazyPreloadPrevNext: 1,
+						slidesPerView: 4,
 						spaceBetween: 20,
 					},
 				}}
@@ -41,7 +47,7 @@ export const TreningGallerySwiper = () => {
 								src={item.image}
 								alt={item.alt}
 								fill
-								sizes={"max-height: 224px"}
+								sizes={"max-height: 250px"}
 								style={{
 									overflow: "hidden",
 									objectPosition: "center",

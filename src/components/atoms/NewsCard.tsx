@@ -54,7 +54,9 @@ export const NewsCard = ({ className, post }: Props) => {
 				<div className="my-5 gap-3">
 					<h6 className="text-xs">{formattedDate}</h6>
 				</div>
-				<p className="prose prose-sm text-blue-900 dark:text-white">{content}</p>
+				<div className="prose prose-sm text-blue-900 dark:text-white">
+					<div dangerouslySetInnerHTML={{ __html: content }} />
+				</div>
 			</div>
 		</div>
 	);

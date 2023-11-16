@@ -6,24 +6,14 @@ import { Stick } from "@/components/atoms/Stick";
 export const News = () => {
 	return (
 		<section
-			className="relative flex h-full min-h-screen w-full flex-col justify-center px-2 pt-14 xl:px-48"
+			className="relative flex h-full min-h-screen w-full flex-col justify-center px-2 xl:px-48"
 			id="news"
 		>
-			<div className="grid-cols-3 space-y-5 sm:grid sm:space-y-0">
-				<div className="col-span-1 px-4">
-					<div className={"relative hidden h-96 w-auto sm:block"}>
-						<Stick
-							fill={"#FFF"}
-							width={110}
-							height={380}
-							className="absolute right-0 top-0 hidden dark:block"
-						/>
-						<Stick
-							fill={"#01c7eb"}
-							width={110}
-							height={380}
-							className="absolute right-0 top-0 block dark:hidden"
-						/>
+			<div className="h-[75vh] grid-cols-3 space-y-5 sm:grid sm:space-y-0">
+				<div className="col-span-1 flex flex-col items-end justify-between px-4">
+					<div className="relative hidden w-auto sm:block">
+						<Stick fill={"#FFF"} width={130} height={450} className="hidden dark:block" />
+						<Stick fill={"#172554"} width={130} height={450} className="block dark:hidden" />
 						{/*<NextImage*/}
 						{/*	fill*/}
 						{/*	alt="img"*/}
