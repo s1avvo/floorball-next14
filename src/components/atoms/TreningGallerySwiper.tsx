@@ -9,7 +9,7 @@ import NextImage from "next/image";
 import { FreeMode, Pagination } from "swiper/modules";
 import { GalleryData } from "@/constants/gallery";
 
-export const TreningGallerySwiper = () => {
+export const TreningGallerySwiper = async () => {
 	return (
 		<div>
 			<Swiper
@@ -46,14 +46,19 @@ export const TreningGallerySwiper = () => {
 							<NextImage
 								src={item.image}
 								alt={item.alt}
-								fill
-								sizes={"max-height: 250px"}
+								height={250}
+								width={400}
+								sizes="(max-width: 480px) 100vw,
+                				(max-width: 768px) 75vw,
+                				(max-width: 1060px) 50vw,
+                				33vw"
 								style={{
 									overflow: "hidden",
 									objectPosition: "center",
 									objectFit: "cover",
 								}}
-								priority
+								placeholder={"empty"}
+								loading={"lazy"}
 							/>
 						</div>
 					</SwiperSlide>

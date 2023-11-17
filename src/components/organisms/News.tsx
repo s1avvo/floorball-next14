@@ -9,9 +9,9 @@ export const News = () => {
 			className="relative flex h-full min-h-screen w-full flex-col justify-center px-2 xl:px-48"
 			id="news"
 		>
-			<div className="h-[75vh] grid-cols-3 space-y-5 sm:grid sm:space-y-0">
-				<div className="col-span-1 flex flex-col items-end justify-between px-4">
-					<div className="relative hidden w-auto sm:block">
+			<div className="min-h-[75vh] grid-cols-3 space-y-5 sm:grid sm:space-y-0">
+				<div className="col-span-1 flex flex-col items-end justify-between px-4 pt-12 sm:pt-0">
+					<div className="hidden w-auto sm:block">
 						<Stick fill={"#FFF"} width={130} height={450} className="hidden dark:block" />
 						<Stick fill={"#172554"} width={130} height={450} className="block dark:hidden" />
 						{/*<NextImage*/}

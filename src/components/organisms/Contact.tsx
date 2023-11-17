@@ -10,7 +10,7 @@ export const Contact = () => {
 			<div className="justify-between space-y-5 sm:flex sm:space-y-0">
 				<div className="basis-2/3 border-r-4 border-amber-400 px-2 sm:px-4">
 					<h4 className="mb-8 text-end text-6xl font-extrabold">O NAS</h4>
-					<div className="relative h-36 w-auto md:h-72">
+					<div className="relative h-36 md:h-72">
 						<NextImage
 							fill
 							alt="img"
@@ -22,6 +22,7 @@ export const Contact = () => {
 							style={{
 								objectFit: "cover",
 								borderRadius: "0.375rem",
+								objectPosition: "top right",
 							}}
 						/>
 					</div>
