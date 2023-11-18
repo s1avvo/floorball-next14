@@ -1,13 +1,12 @@
 import { type Route } from "next";
 import { ActiveLink } from "@/components/atoms/ActiveLink";
 
-type PaginationNewsProps = {
-	currentPage: number;
+type PaginationNewsItemProps = {
 	pages: number;
 	href: Route<string>;
 };
 
-export const PaginationNewsItem = ({ currentPage, pages, href }: PaginationNewsProps) => {
+export const PaginationNewsItem = ({ pages, href }: PaginationNewsItemProps) => {
 	return (
 		<>
 			{Array.from({ length: pages }, (_, i) => i + 1).map((page) => {

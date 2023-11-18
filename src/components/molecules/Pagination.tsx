@@ -30,7 +30,7 @@ export const Pagination = async ({ productsCount, currentPage, limit, href }: Pa
 							</Link>
 						</li>
 					)}
-					<PaginationNewsItem currentPage={currentPage} pages={pages} href={href} />
+					<PaginationNewsItem pages={pages} href={href} />
 					{currentPage < pages && (
 						<li key="next">
 							<Link
