@@ -1,6 +1,7 @@
+import Link from "next/link";
 import { AboutUsBackground } from "@/components/atoms/AboutUsBackground";
 import { AboutUsPartners } from "@/components/atoms/AboutUsPartners";
-import { AboutUsLinkButton } from "@/components/atoms/AboutUsLinkButton";
+import { Button } from "@/components/atoms/Button";
 
 export const AboutUs = () => {
 	return (
@@ -27,7 +28,9 @@ export const AboutUs = () => {
 									</q>
 								</p>
 							</div>
-							<AboutUsLinkButton label="DOŁĄCZ DO NAS" />
+							<Link href={"#contact_form"}>
+								<Button label="DOŁĄCZ DO NAS" />
+							</Link>
 							<AboutUsPartners />
 						</div>
 					</div>

@@ -6,9 +6,9 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ActiveLink } from "@/components/atoms/ActiveLink";
 
 const navbarList: { href: Route<string>; title: string; exact?: boolean }[] = [
-	{ href: "#trening", title: "Treningi" },
-	{ href: "#news", title: "Aktualności" },
-	{ href: "#contact", title: "Kontakt" },
+	{ href: "#trening", title: "Treningi", exact: true },
+	{ href: "#news", title: "Aktualności", exact: true },
+	{ href: "#contact", title: "Kontakt", exact: true },
 ];
 export const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);

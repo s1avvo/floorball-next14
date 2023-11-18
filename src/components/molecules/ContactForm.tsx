@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { ContactInput } from "@/components/atoms/ContactInput";
-import { SubmitButton } from "@/components/atoms/SubmitButton";
+import { ContactButton } from "@/components/atoms/ContactButton";
 import { sendMessageAction } from "@/app/actions";
 
 export const ContactForm = () => {
@@ -37,7 +37,7 @@ export const ContactForm = () => {
 					/>
 				</div>
 				<div className="col-span-2 mt-4 grid">
-					<SubmitButton label={"WYŚLIJ WIADOMOŚĆ"} />
+					<ContactButton label={"WYŚLIJ WIADOMOŚĆ"} />
 				</div>
 			</div>
 		</form>

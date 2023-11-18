@@ -2,10 +2,10 @@
 import { useFormStatus } from "react-dom";
 import { Ball } from "@/components/atoms/Ball";
 
-type SubmitButtonProps = {
+type ContactButtonProps = {
 	label: string;
 };
-export const SubmitButton = ({ label }: SubmitButtonProps) => {
+export const ContactButton = ({ label }: ContactButtonProps) => {
 	const formStatus = useFormStatus();
 	return (
 		<button

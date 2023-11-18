@@ -1,15 +1,14 @@
 "use client";
+import NextImage from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 
-import NextImage from "next/image";
 import { FreeMode, Pagination } from "swiper/modules";
 import { GalleryData } from "@/constants/gallery";
 
-export const TreningGallerySwiper = async () => {
+export const TreningGallerySwiper = () => {
 	return (
 		<div>
 			<Swiper
