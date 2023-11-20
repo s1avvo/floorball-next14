@@ -24,7 +24,7 @@ export default function News({ params }: NewsProps) {
 	}
 
 	const news = posts
-		.map((post) => ({ ...post, updatedAt: new Date(post.createdAt) }))
+		.map((post) => ({ ...post, updatedAt: new Date(post.updatedAt) }))
 		.sort((a, b) => b.updatedAt.getTime() - a.updatedAt.getTime())
 		.slice(offset, offset + LIMIT);
 
@@ -42,7 +42,7 @@ export default function News({ params }: NewsProps) {
 					return (
 						<NewsCard
 							key={post.id}
-							post={post}
+							post={{ ...post, updatedAt: post.updatedAt.toLocaleDateString() }}
 							className="col-span-1 border-l-4 border-amber-400 px-4"
 						/>
 					);

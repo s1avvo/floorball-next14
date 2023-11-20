@@ -40,7 +40,7 @@ export const News = () => {
 					return (
 						<NewsCard
 							key={post.id}
-							post={post}
+							post={{ ...post, updatedAt: post.updatedAt.toLocaleDateString() }}
 							className="col-span-1 border-l-4 border-amber-400 px-4"
 						/>
 					);

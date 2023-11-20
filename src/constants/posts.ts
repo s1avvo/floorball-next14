@@ -1,4 +1,16 @@
-export const posts = [
+import { type Route } from "next";
+
+export type Post = {
+	id: string;
+	createdAt: string;
+	updatedAt: string;
+	title: string;
+	paragraph01: string;
+	paragraph02?: string;
+	link?: Route<string>;
+};
+
+export const posts: Post[] = [
 	{
 		id: "1",
 		createdAt: "2023-09-02",

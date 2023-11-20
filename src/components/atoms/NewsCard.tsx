@@ -1,16 +1,6 @@
 import Link from "next/link";
-import { type Route } from "next";
 import NextImage from "next/image";
-
-type Post = {
-	id: string;
-	createdAt: string;
-	updatedAt: Date;
-	title: string;
-	paragraph01: string;
-	paragraph02?: string;
-	link?: Route<string>;
-};
+import { type Post } from "@/constants/posts";
 
 type Props = {
 	className: string;
@@ -18,7 +8,7 @@ type Props = {
 };
 
 export const NewsCard = ({ className, post }: Props) => {
-	const { title, updatedAt, paragraph01, paragraph02, link } = post || {};
+	const { title, updatedAt, paragraph01, paragraph02, link } = post;
 
 	return (
 		<div className={className}>
@@ -29,7 +19,7 @@ export const NewsCard = ({ className, post }: Props) => {
 					</h4>
 				</Link>
 				<div className="my-5 gap-3">
-					<h6 className="text-xs">Dodane: {(updatedAt && updatedAt.toLocaleDateString()) || ""}</h6>
+					<h6 className="text-xs">Dodane: {updatedAt}</h6>
 				</div>
 				<div className="prose prose-sm text-blue-900 dark:text-white">
 					<p>{paragraph01}</p>

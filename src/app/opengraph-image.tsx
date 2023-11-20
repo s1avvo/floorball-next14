@@ -23,7 +23,7 @@ export default async function OpengraphImage() {
 			>
 				<img
 					height="100%"
-					src={"http://localhost:3000/assets/bg_dark.png"}
+					src={"https://floorball-next14-git-develop-s1avo.vercel.app/assets/bg_dark.png"}
 					alt="bg"
 					style={{ position: "absolute", zIndex: -10, right: 0 }}
 				/>
@@ -42,7 +42,7 @@ export default async function OpengraphImage() {
 						<img
 							width="125"
 							height="120"
-							src={"http://localhost:3000/assets/logo_og.png"}
+							src={"https://floorball-next14-git-develop-s1avo.vercel.app/assets/logo_og.png"}
 							alt="logo"
 						/>
 						<span
