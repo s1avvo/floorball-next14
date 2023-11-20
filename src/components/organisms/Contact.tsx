@@ -24,7 +24,7 @@ export const Contact = () => {
 									<NextImage
 										fill
 										alt="img"
-										src={"/assets/unihokej-12.webp"}
+										src={"/assets/unihokej-contact.jpg"}
 										sizes="(max-width: 480px) 100vw,
 								(max-width: 768px) 75vw,
 								(max-width: 1060px) 50vw,
@@ -62,8 +62,8 @@ export const Contact = () => {
 					</span>
 					<div className="justify-between sm:flex">
 						<FooterPersonCard src={"/assets/trener1.jpg"} name={"Arkadiusz Nadolny"} />
-						<FooterPersonCard src={"/assets/trener1.jpg"} name={"Arkadiusz Nadolny"} />
-						<FooterPersonCard src={"/assets/trener1.jpg"} name={"Arkadiusz Nadolny"} />
+						<FooterPersonCard src={"/assets/trener1.jpg"} name={"Michał Formela"} />
+						<FooterPersonCard src={"/assets/trener1.jpg"} name={"Mateusz Kaczmarek"} />
 					</div>
 				</div>
 			</section>
