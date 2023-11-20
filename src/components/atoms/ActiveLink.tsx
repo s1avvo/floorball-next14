@@ -16,8 +16,8 @@ interface ActiveLinkProps<T extends string> {
 export const ActiveLink = <T extends string>({
 	href,
 	children,
-	className = `text-neutral-100 hover:border-b-2 border-neutral-100 p-3`,
-	activeClassName = "font-semibold border-b-2 border-neutral-100",
+	className = `text-neutral-100 hover:bg-cyan-300 rounded-full py-1 px-3`,
+	activeClassName = "rounded-full bg-dark",
 	exact,
 }: ActiveLinkProps<T>) => {
 	const [hash, setHash] = useState("");
@@ -27,7 +27,7 @@ export const ActiveLink = <T extends string>({
 
 	let isActive;
 	if (currentPath === "/") {
-		isActive = hash === path;
+		isActive = `/${hash}` === path;
 	} else {
 		isActive = exact ? currentPath === path : currentPath.startsWith(`${path}/`);
 	}
