@@ -11,6 +11,10 @@ const montserrat = Montserrat({ subsets: ["latin", "latin-ext"] });
 export const metadata: Metadata = {
 	title: "Unihokej | Floorball Śrem",
 	description: "Śremski Klub Unihokeja - Floorball Śrem",
+	openGraph: {
+		title: "Floorball Śrem",
+		description: "Śremski Klub Unihokeja",
+	},
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
