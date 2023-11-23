@@ -17,13 +17,12 @@ export default async function OpengraphImage() {
 					letterSpacing: "-.02em",
 					fontWeight: 700,
 					background: "#000728",
-					borderRadius: "100px 00px",
 					color: "white",
 				}}
 			>
 				<img
 					height="100%"
-					src={"https://floorball-next14-git-develop-s1avo.vercel.app/assets/bg_dark.png"}
+					src={"https://floorball-next14.vercel.app/assets/bg_dark.png"}
 					alt="bg"
 					style={{ position: "absolute", zIndex: -10, right: 0 }}
 				/>
@@ -38,35 +37,22 @@ export default async function OpengraphImage() {
 						width: "100%",
 					}}
 				>
-					<div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+					<div style={{ display: "flex", alignItems: "center", gap: 20 }}>
 						<img
-							width="125"
-							height="120"
-							src={"https://floorball-next14-git-develop-s1avo.vercel.app/assets/logo_og.png"}
+							width="175"
+							height="170"
+							src={"https://floorball-next14.vercel.app/assets/logo_og.png"}
 							alt="logo"
 						/>
-						<span
+						<p
 							style={{
 								marginLeft: 8,
 								fontSize: 32,
 							}}
 						>
-							Unihokej | Floorball Śrem
-						</span>
+							Śremski Klub Unihokeja
+						</p>
 					</div>
-
-					<span
-						style={{
-							marginRight: 100,
-							fontSize: 32,
-							backgroundColor: "#fbbf24",
-							color: "white",
-							padding: "20px 50px",
-							borderRadius: "20px",
-						}}
-					>
-						Dołącz do nas!
-					</span>
 				</div>
 
 				<div
@@ -74,10 +60,10 @@ export default async function OpengraphImage() {
 						display: "flex",
 						flexWrap: "wrap",
 						justifyContent: "center",
-						padding: "50px 100px",
+						padding: "40px 100px",
 						margin: "0 42px",
 						fontSize: 65,
-						width: "70%",
+						width: "65%",
 						textAlign: "center",
 						backgroundColor: "rgba(0,7,40,0.7)",
 						color: "white",
@@ -89,17 +75,19 @@ export default async function OpengraphImage() {
 				>
 					www.floorballsrem.com
 				</div>
-				<p
+				<span
 					style={{
-						bottom: 42,
 						position: "absolute",
-						display: "flex",
-						alignItems: "center",
+						bottom: 42,
 						fontSize: 32,
+						backgroundColor: "#fbbf24",
+						color: "white",
+						padding: "10px 40px",
+						borderRadius: "50px",
 					}}
 				>
-					Śremski Klub Unihokeja - Floorball Śrem
-				</p>
+					Dołącz do nas!
+				</span>
 			</div>
 		),
 		{

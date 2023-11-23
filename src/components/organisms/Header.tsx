@@ -5,7 +5,7 @@ import { ThemeMode } from "@/components/molecules/ThemeMode";
 
 export const Header = () => {
 	return (
-		<header className="fixed top-0 z-10 flex h-12 w-full items-center justify-between bg-cyan-400 px-2 sm:px-10 md:px-48">
+		<header className="fixed top-0 z-10 flex h-12 w-full items-center justify-between bg-cyan-400 px-2 md:px-48">
 			{/* Logo */}
 			<div className="flex h-36 w-36 items-center justify-center self-start rounded-b-md bg-white drop-shadow-md">
 				<Link href="/">

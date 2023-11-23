@@ -12,16 +12,12 @@ export const NewsCard = ({ className, post }: Props) => {
 
 	return (
 		<div className={className}>
-			<div className="basis-full">
-				<Link href={"#"}>
-					<h4 className="prose-h2 line-clamp-4 text-[42px]/[48px] font-extrabold text-amber-400">
-						{title}
-					</h4>
-				</Link>
-				<div className="my-5 gap-3">
-					<h6 className="text-xs">Dodane: {updatedAt}</h6>
-				</div>
-				<div className="prose prose-sm text-blue-900 dark:text-white">
+			<article className="basis-full">
+				<h2 className="prose-h2 line-clamp-4 text-[42px]/[48px] font-extrabold text-amber-400">
+					{title}
+				</h2>
+				<p className="my-5 text-xs">Dodane: {updatedAt}</p>
+				<div className="prose-sm text-blue-900 dark:text-white">
 					<p>{paragraph01}</p>
 					{paragraph02 && <p>{paragraph02}</p>}
 					{link && (
@@ -37,7 +33,7 @@ export const NewsCard = ({ className, post }: Props) => {
 						</div>
 					)}
 				</div>
-			</div>
+			</article>
 		</div>
 	);
 };

@@ -11,12 +11,12 @@ export const AboutUs = () => {
 
 			{/* text */}
 			<article>
-				<div className="justify-between gap-4 px-2 sm:flex sm:px-20 md:px-48">
-					<div className="h-screen w-full basis-2/3 pt-24">
+				<div className="justify-between gap-4 px-2 sm:flex xl:px-48">
+					<div className="h-screen w-full basis-1/2 pt-24 md:basis-2/3">
 						<div className="ms-36 basis-full text-3xl sm:text-4xl md:ms-48 md:text-5xl xl:ms-44 xl:text-8xl">
 							FLOORBALL
 						</div>
-						<div className="basis-full text-[7rem]/[120px] font-extrabold text-amber-400 sm:text-9xl md:text-10xl xl:text-12xl">
+						<div className="basis-full text-[7rem]/[120px] font-extrabold text-amber-400 sm:text-9xl xl:text-12xl">
 							ŚREM
 						</div>
 						<div className="relative flex max-w-[500px] flex-col xl:space-y-6">

@@ -4,7 +4,7 @@ type FooterPersonCardProps = {
 	src: string;
 	name: string;
 };
-export const FooterPersonCard = ({ src, name }: FooterPersonCardProps) => {
+export const ContactPersonCard = ({ src, name }: FooterPersonCardProps) => {
 	return (
 		<div className="mt-4 basis-1/3">
 			<div className="float-none flex items-center justify-center gap-3">
@@ -17,9 +17,9 @@ export const FooterPersonCard = ({ src, name }: FooterPersonCardProps) => {
 						objectFit: "cover",
 						objectPosition: "center",
 					}}
-					className="aspect-square rounded-full border-4 border-blue-950"
+					className="aspect-square rounded-full border-4 border-secondary"
 				/>
-				<div className="prose-sm flex flex-col">
+				<div className="prose-sm flex flex-col text-blue-950 dark:text-white">
 					<h3>{name}</h3>
 				</div>
 			</div>

@@ -6,7 +6,7 @@ type ContactInputProps = {
 	name: string;
 	gridColumn?: string;
 };
-export const ContactInput = ({ label, type, name, gridColumn }: ContactInputProps) => {
+export const ContactFormInput = ({ label, type, name, gridColumn }: ContactInputProps) => {
 	return (
 		<div className={gridColumn}>
 			<label htmlFor={`${name}-id`} className="prose-sm ms-2 block">

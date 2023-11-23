@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
-import { ContactInput } from "@/components/atoms/ContactInput";
-import { ContactButton } from "@/components/atoms/ContactButton";
+import { ContactFormInput } from "@/components/atoms/ContactFormInput";
+import { ContactFormButton } from "@/components/atoms/ContactFormButton";
 import { sendMessageAction } from "@/app/actions";
 
 export const ContactForm = () => {
@@ -15,14 +15,19 @@ export const ContactForm = () => {
 	return (
 		<form ref={ref} action={sendMessage}>
 			<div className="grid gap-x-8 gap-y-2 md:grid-cols-2">
-				<ContactInput
+				<ContactFormInput
 					label={"Imię i nazwisko"}
 					type={"text"}
 					name={"name"}
 					gridColumn={"col-span-2"}
 				/>
-				<ContactInput label={"Email"} type={"email"} name={"email"} gridColumn={"col-span-2"} />
-				<ContactInput label={"Temat"} type={"text"} name={"subject"} gridColumn={"col-span-2"} />
+				<ContactFormInput label={"Email"} type={"email"} name={"email"} gridColumn={"col-span-2"} />
+				<ContactFormInput
+					label={"Temat"}
+					type={"text"}
+					name={"subject"}
+					gridColumn={"col-span-2"}
+				/>
 				<div className="col-span-2 grid">
 					<label htmlFor="message" className="prose-sm ms-2 block font-light">
 						Wiadomość
@@ -37,7 +42,7 @@ export const ContactForm = () => {
 					/>
 				</div>
 				<div className="col-span-2 mt-4 grid">
-					<ContactButton label={"WYŚLIJ WIADOMOŚĆ"} />
+					<ContactFormButton label={"WYŚLIJ WIADOMOŚĆ"} />
 				</div>
 			</div>
 		</form>
