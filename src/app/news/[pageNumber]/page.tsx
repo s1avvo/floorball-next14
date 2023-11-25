@@ -7,14 +7,23 @@ import { Pagination } from "@/components/molecules/Pagination";
 import { posts } from "@/constants/posts";
 import { Button } from "@/components/atoms/Button";
 
+const LIMIT = 2;
+
 type NewsProps = {
 	params: {
 		pageNumber: string;
 	};
 };
 
+export const generateStaticParams = async () => {
+	const pages = Math.ceil(posts.length / LIMIT);
+
+	return Array.from({ length: pages }, (_, index) => ({
+		pageNumber: `${index + 1}`,
+	}));
+};
+
 export default function News({ params }: NewsProps) {
-	const LIMIT = 2;
 	const { pageNumber = "1" } = params;
 	const currentPage = Number(pageNumber);
 	const offset = (currentPage - 1) * LIMIT;
