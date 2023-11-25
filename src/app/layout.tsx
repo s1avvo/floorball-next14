@@ -9,11 +9,13 @@ import { Providers } from "@/theme/providers";
 const montserrat = Montserrat({ subsets: ["latin", "latin-ext"] });
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://floorballsrem.com"),
 	title: "Unihokej | Floorball Śrem",
 	description: "Śremski Klub Unihokeja - Floorball Śrem",
 	openGraph: {
 		title: "Floorball Śrem",
 		description: "Śremski Klub Unihokeja",
+		url: "https://floorballsrem.com",
 	},
 };
 
