@@ -11,10 +11,10 @@ export const sendMessageAction = async (formData: FormData) => {
 	const message = String(formData.get("message"));
 
 	const { data } = await resend.emails.send({
-		from: "Floorballsrem.com <myscript@myscripts.pl>",
-		to: ["s.nadolny83@gmail.com", `${email}`],
+		from: "Floorballsrem.com <no-reply@floorballsrem.com>",
+		to: ["arkadiusz.nadolny@gmail.com"],
 		subject: `Floorballsrem.com - ${subject})`,
-		react: EmailTemplate({ name, message }),
+		react: EmailTemplate({ name, email, message }),
 	});
 
 	return data;
