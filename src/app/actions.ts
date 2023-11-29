@@ -18,7 +18,7 @@ export const sendMessageAction = async (formData: FormData) => {
 
 	const { data } = await resend.emails.send({
 		from: "Floorballsrem.com <no-reply@floorballsrem.com>",
-		to: ["s.nadolny@hotmail.com"],
+		to: ["arkadiusz.nadolny@gmail.com"],
 		subject: subject,
 		html: html,
 	});
