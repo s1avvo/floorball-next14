@@ -1,6 +1,8 @@
 "use server";
+import type React from "react";
+import { renderAsync } from "@react-email/render";
 import { Resend } from "resend";
-import { EmailTemplate } from "@/components/atoms/EmailTemplate";
+import { FloorballEmailTemplate } from "@/components/atoms/EmailTemplate";
 
 export const sendMessageAction = async (formData: FormData) => {
 	const resend = new Resend(process.env.RESEND_API_KEY);
@@ -10,11 +12,15 @@ export const sendMessageAction = async (formData: FormData) => {
 	const subject = String(formData.get("subject"));
 	const message = String(formData.get("message"));
 
+	const html = await renderAsync(
+		FloorballEmailTemplate({ name, email, subject, message }) as React.ReactElement,
+	);
+
 	const { data } = await resend.emails.send({
-		from: "Floorballsrem.com <myscript@myscripts.pl>",
-		to: ["s.nadolny83@gmail.com", `${email}`],
-		subject: `Floorballsrem.com - ${subject})`,
-		react: EmailTemplate({ name, message }),
+		from: "Floorballsrem.com <no-reply@floorballsrem.com>",
+		to: ["arkadiusz.nadolny@gmail.com"],
+		subject: subject,
+		html: html,
 	});
 
 	return data;
