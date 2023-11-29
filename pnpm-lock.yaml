@@ -20,6 +20,9 @@ dependencies:
   '@react-email/components':
     specifier: ^0.0.11
     version: 0.0.11(@types/react@18.2.34)(react@18.2.0)
+  '@react-email/render':
+    specifier: ^0.0.9
+    version: 0.0.9
   '@types/mdx':
     specifier: ^2.0.9
     version: 2.0.9
