@@ -25,3 +25,20 @@ export const sendMessageAction = async (formData: FormData) => {
 
 	return data;
 };
+export const createNewsAction = async (formData: FormData) => {
+	const title = String(formData.get("title"));
+	const firstParagraph = String(formData.get("first_paragraph"));
+	const secondParagraph = String(formData.get("second_paragraph")) || "";
+	const link = String(formData.get("link")) || "";
+
+	await fetch(`${process.env.NEXT_PUBLIC_URL}/api/news`, {
+		method: "POST",
+		headers: { "Content-Type": "application/json" },
+		body: JSON.stringify({
+			title: title,
+			first_paragraph: firstParagraph,
+			second_paragraph: secondParagraph,
+			link: link,
+		}),
+	});
+};
