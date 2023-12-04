@@ -22,7 +22,7 @@ export default function Admin() {
 						type="text"
 						name="title"
 						id="title"
-						maxLength={5}
+						maxLength={40}
 						required
 					/>
 					<label htmlFor="first_paragraph">Paragraf - pierwszy</label>
