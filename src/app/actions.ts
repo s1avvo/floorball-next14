@@ -31,7 +31,7 @@ export const createNewsAction = async (formData: FormData) => {
 	const secondParagraph = String(formData.get("second_paragraph")) || "";
 	const link = String(formData.get("link")) || "";
 
-	await fetch(`${process.env.NEXT_PUBLIC_URL}/api/news`, {
+	const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/webhook`, {
 		method: "POST",
 		headers: { "Content-Type": "application/json" },
 		body: JSON.stringify({
@@ -41,4 +41,7 @@ export const createNewsAction = async (formData: FormData) => {
 			link: link,
 		}),
 	});
+
+	const data = await response.json();
+	return data;
 };

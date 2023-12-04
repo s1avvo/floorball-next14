@@ -1,4 +1,4 @@
-import prisma from "./client";
+import prisma from "@/app/api/client";
 
 export type News = {
 	id: string;
