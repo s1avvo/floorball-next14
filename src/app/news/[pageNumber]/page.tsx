@@ -58,14 +58,14 @@ export default async function News({ params }: NewsProps) {
 			</div>
 			<div className="mb-4 grid h-24 grid-cols-1 items-end justify-items-end">
 				<div className="flex w-full flex-row items-end justify-end gap-10">
-					<Link href={"/#webhook"}>
+					<Link href={"/#news"}>
 						<Button label="Powrót" />
 					</Link>
 					<Pagination
 						limit={LIMIT}
 						currentPage={currentPage}
 						productsCount={count}
-						href={"/webhook" as Route}
+						href={"/news" as Route}
 					/>
 				</div>
 			</div>

@@ -2,7 +2,9 @@
 import type React from "react";
 import { renderAsync } from "@react-email/render";
 import { Resend } from "resend";
+import { revalidatePath } from "next/cache";
 import { FloorballEmailTemplate } from "@/components/atoms/EmailTemplate";
+import prisma from "@/app/api/client";
 
 export const sendMessageAction = async (formData: FormData) => {
 	const resend = new Resend(process.env.RESEND_API_KEY);
@@ -27,11 +29,12 @@ export const sendMessageAction = async (formData: FormData) => {
 };
 export const createNewsAction = async (formData: FormData) => {
 	const title = String(formData.get("title"));
-	const firstParagraph = String(formData.get("first_paragraph"));
-	const secondParagraph = String(formData.get("second_paragraph")) || "";
+	const first_paragraph = String(formData.get("first_paragraph"));
+	const second_paragraph = String(formData.get("second_paragraph")) || "";
 	const link = String(formData.get("link")) || "";
 
-	const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/webhook`, {
+	/* webhook
+	const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/news`, {
 		method: "POST",
 		headers: { "Content-Type": "application/json" },
 		body: JSON.stringify({
@@ -41,7 +44,16 @@ export const createNewsAction = async (formData: FormData) => {
 			link: link,
 		}),
 	});
+	*/
 
-	const data = await response.json();
-	return data;
+	const { id } = await prisma.post.create({
+		data: { title, first_paragraph, second_paragraph, link },
+	});
+
+	if (!id) {
+		throw TypeError("Something went wrong during create the news!");
+	}
+
+	revalidatePath("/");
+	return id;
 };
