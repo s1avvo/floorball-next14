@@ -49,7 +49,7 @@ export const CreateNewsForm = () => {
 				name="link"
 				id="link"
 			/>
-			<SubmitFormButton label={"DODAJ POST	"} />
+			<SubmitFormButton label={"DODAJ POST"} />
 		</form>
 	);
 };

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import NextImage from "next/image";
 import { type Route } from "next";
-import { type News } from "@/app/api/getNews";
+import { type News } from "@/types/news";
 
 type Props = {
 	className: string;
@@ -22,14 +22,23 @@ export const NewsCard = ({ className, post }: Props) => {
 					<p>{first_paragraph}</p>
 					{second_paragraph && <p>{second_paragraph}</p>}
 					{link && (
-						<div className="flex flex-row justify-end">
+						<div className="flex justify-end">
 							<Link
 								href={link as Route}
 								className="text-blue-950 dark:text-white"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<NextImage src={"/assets/facebook.svg"} alt={"facebook"} width={32} height={32} />
+								<div className="flex items-center gap-3">
+									<span>Więcej szczegółów na</span>
+									<NextImage
+										src={"/assets/facebook.svg"}
+										alt={"facebook"}
+										width={32}
+										height={32}
+										className="rounded-full border border-dark bg-dark"
+									/>
+								</div>
 							</Link>
 						</div>
 					)}

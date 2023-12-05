@@ -32,7 +32,7 @@ export const News = async () => {
 			</div>
 			<div className="me-4 grid h-20 grid-cols-1 items-end justify-items-end">
 				<Link href={"/news/2"}>
-					<Button label="Czytaj więcej" />
+					<Button label="Więcej" />
 				</Link>
 			</div>
 		</section>
