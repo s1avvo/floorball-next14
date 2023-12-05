@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { type Route } from "next";
 import { DocumentIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/solid";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { SocialIcons } from "@/components/atoms/SocialIcons";
 
 export const Footer = () => {
@@ -21,7 +22,7 @@ export const Footer = () => {
 					</ul>
 				</div>
 
-				<div className="flex flex-col gap-3 text-start sm:text-end">
+				<div className="flex flex-col gap-3 text-start sm:items-end sm:text-end">
 					<p>Do pobrania:</p>
 					<span>
 						<Link
@@ -35,6 +36,15 @@ export const Footer = () => {
 							członkowska
 						</Link>
 					</span>
+					<SignedIn>
+						<div className="flex items-center justify-center gap-3">
+							<UserButton afterSignOutUrl={"/"} />
+							<Link href={"/admin"}>Dodaj news</Link>
+						</div>
+					</SignedIn>
+					<SignedOut>
+						<SignInButton>Administrator</SignInButton>
+					</SignedOut>
 				</div>
 			</div>
 			<p className="mt-8 text-sm text-white">&copy; 2023 Floorball Śrem </p>

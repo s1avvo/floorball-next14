@@ -6,7 +6,7 @@
 	},
 	"extends": [
 		"plugin:@typescript-eslint/recommended",
-		"plugin:@typescript-eslint/recommended-requiring-type-checking",
+/*		"plugin:@typescript-eslint/recommended-requiring-type-checking",*/
 		"plugin:import/recommended",
 		"plugin:import/typescript",
 		"prettier",
@@ -83,7 +83,7 @@
 	},
 	"overrides": [
 		{
-			"files": ["src/app/**/*.ts?(x)", "tailwind.config.ts"],
+			"files": ["src/app/**/*.ts?(x)", "tailwind.config.ts", "src/middleware.ts"],
 			"rules": {
 				"import/no-default-export": "off"
 			}

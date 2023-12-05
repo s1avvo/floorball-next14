@@ -5,7 +5,7 @@ import { Ball } from "@/components/atoms/Ball";
 type ContactButtonProps = {
 	label: string;
 };
-export const ContactFormButton = ({ label }: ContactButtonProps) => {
+export const SubmitFormButton = ({ label }: ContactButtonProps) => {
 	const formStatus = useFormStatus();
 	return (
 		<button

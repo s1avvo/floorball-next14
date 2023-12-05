@@ -1,14 +1,11 @@
 import Link from "next/link";
-import { posts } from "@/constants/posts";
 import { NewsCard } from "@/components/atoms/NewsCard";
 import { Stick } from "@/components/atoms/Stick";
 import { Button } from "@/components/atoms/Button";
+import { getNewsLastTwo } from "@/app/api/getNews";
 
-export const News = () => {
-	const news = posts
-		.map((post) => ({ ...post, updatedAt: new Date(post.createdAt) }))
-		.sort((a, b) => b.updatedAt.getTime() - a.updatedAt.getTime())
-		.slice(0, 2);
+export const News = async () => {
+	const news = await getNewsLastTwo();
 
 	return (
 		<section
@@ -27,7 +24,7 @@ export const News = () => {
 					return (
 						<NewsCard
 							key={post.id}
-							post={{ ...post, updatedAt: post.updatedAt.toLocaleDateString() }}
+							post={post}
 							className="col-span-1 border-l-4 border-amber-400 px-4"
 						/>
 					);
@@ -35,7 +32,7 @@ export const News = () => {
 			</div>
 			<div className="me-4 grid h-20 grid-cols-1 items-end justify-items-end">
 				<Link href={"/news/2"}>
-					<Button label="Czytaj więcej" />
+					<Button label="Więcej" />
 				</Link>
 			</div>
 		</section>

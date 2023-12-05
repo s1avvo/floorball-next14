@@ -4,8 +4,8 @@ import Link from "next/link";
 import { Stick } from "@/components/atoms/Stick";
 import { NewsCard } from "@/components/atoms/NewsCard";
 import { Pagination } from "@/components/molecules/Pagination";
-import { posts } from "@/constants/posts";
 import { Button } from "@/components/atoms/Button";
+import { getNews, getNewsCount } from "@/app/api/getNews";
 
 const LIMIT = 2;
 
@@ -16,26 +16,25 @@ type NewsProps = {
 };
 
 export const generateStaticParams = async () => {
-	const pages = Math.ceil(posts.length / LIMIT);
+	const count = await getNewsCount();
+	const pages = Math.ceil(count / LIMIT);
 
 	return Array.from({ length: pages }, (_, index) => ({
 		pageNumber: `${index + 1}`,
 	}));
 };
 
-export default function News({ params }: NewsProps) {
+export default async function News({ params }: NewsProps) {
 	const { pageNumber = "1" } = params;
 	const currentPage = Number(pageNumber);
 	const offset = (currentPage - 1) * LIMIT;
 
-	if (!posts || posts.length === 0) {
+	const news = await getNews(LIMIT, offset);
+	if (!news || news.length === 0) {
 		return notFound();
 	}
 
-	const news = posts
-		.map((post) => ({ ...post, updatedAt: new Date(post.updatedAt) }))
-		.sort((a, b) => b.updatedAt.getTime() - a.updatedAt.getTime())
-		.slice(offset, offset + LIMIT);
+	const count = await getNewsCount();
 
 	return (
 		<section className="relative mt-8 flex h-full min-h-screen w-full flex-col justify-center px-2 xl:px-48">
@@ -51,7 +50,7 @@ export default function News({ params }: NewsProps) {
 					return (
 						<NewsCard
 							key={post.id}
-							post={{ ...post, updatedAt: post.updatedAt.toLocaleDateString() }}
+							post={post}
 							className="col-span-1 border-l-4 border-amber-400 px-4"
 						/>
 					);
@@ -65,7 +64,7 @@ export default function News({ params }: NewsProps) {
 					<Pagination
 						limit={LIMIT}
 						currentPage={currentPage}
-						productsCount={posts.length}
+						productsCount={count}
 						href={"/news" as Route}
 					/>
 				</div>
