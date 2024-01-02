@@ -18,3 +18,17 @@ export const getNewsCount = async () => {
 	const count = await prisma.post.count();
 	return count;
 };
+
+export const getNewsById = async (id: string) => {
+	const article = await prisma.post.findUnique({
+		where: {
+			id: id
+		}
+	});
+	return article;
+};
+
+export const getNewsAll= async () => {
+	const article = await prisma.post.findMany();
+	return article;
+};

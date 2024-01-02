@@ -14,9 +14,11 @@ export const NewsCard = ({ className, post }: Props) => {
 	return (
 		<div className={className}>
 			<article className="basis-full">
-				<h2 className="prose-h2 line-clamp-4 text-[42px]/[48px] font-extrabold text-amber-400">
-					{title}
-				</h2>
+				<Link href={`/article/${post.id}`}>
+					<h2 className="prose-h2 line-clamp-4 text-[42px]/[48px] font-extrabold text-amber-400">
+						{title}
+					</h2>
+				</Link>
 				<p className="my-5 text-xs">Dodane: {updatedAt.toLocaleDateString()}</p>
 				<div className="prose-sm text-blue-900 dark:text-white">
 					<p>{first_paragraph}</p>

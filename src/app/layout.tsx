@@ -10,13 +10,23 @@ import { Providers } from "@/theme/providers";
 const montserrat = Montserrat({ subsets: ["latin", "latin-ext"] });
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://floorballsrem.com"),
-	title: "Unihokej | Floorball Śrem",
-	description: "Śremski Klub Unihokeja - Floorball Śrem",
+	title: {
+		default: "Unihokej | Floorball Śrem",
+		template: "Unihokej | Floorball Śrem - %s",
+	},
+	description:
+		"Śremski Klub Unihokeja powstał w 2020 roku, a założony został przez pasjonatów unihokeja, którzy spotkali się po blisko 20 latach i postanowili, że wznowią treningi.",
 	openGraph: {
-		title: "Floorball Śrem",
-		description: "Śremski Klub Unihokeja",
+		title: "Unihokej | Floorball Śrem",
+		description:
+			"Śremski Klub Unihokeja - nowy nabór 2024. Zapraszamy dziciaki z 1 oraz 2 klasy Szkoły Podstawowej na treningi Unihokeja",
 		url: "https://floorballsrem.com",
+		siteName: "floorballsrem.com",
+		locale: "pl",
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
 	},
 };
 
