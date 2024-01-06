@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "Unihokej | Floorball Śrem",
 		description:
-			"Śremski Klub Unihokeja - nowy nabór 2024. Zapraszamy dziciaki z 1 oraz 2 klasy Szkoły Podstawowej na treningi Unihokeja",
+			"Śremski Klub Unihokeja - klub pasjonatów unihokeja. Zapraszamy dziciaki z 1 oraz 2 klasy Szkoły Podstawowej na treningi Unihokeja",
 		url: "https://floorballsrem.com",
 		siteName: "floorballsrem.com",
 		locale: "pl",

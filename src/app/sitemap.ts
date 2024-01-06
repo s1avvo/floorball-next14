@@ -1,12 +1,13 @@
 import { type MetadataRoute } from 'next';
 import { getNewsAll } from "@/app/api/getNews";
+import { type NewsType } from '@/types/news';
 
  
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     const news = await getNewsAll();
 
-    const newsEntries: MetadataRoute.Sitemap = news.map(article => ({
+    const newsEntries: MetadataRoute.Sitemap = news.map((article: NewsType) => ({
         url: `https://floorballsrem.com/article/${article.id}`,
         lastModified: new Date(article.updatedAt)
     }))

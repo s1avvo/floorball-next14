@@ -3,6 +3,7 @@ import { NewsCard } from "@/components/atoms/NewsCard";
 import { Stick } from "@/components/atoms/Stick";
 import { Button } from "@/components/atoms/Button";
 import { getNewsLastTwo } from "@/app/api/getNews";
+import { type NewsType } from "@/types/news";
 
 export const News = async () => {
 	const news = await getNewsLastTwo();
@@ -20,7 +21,7 @@ export const News = async () => {
 					</div>
 					<h2 className="text-end text-6xl font-extrabold xl:text-8xl">NEWS</h2>{" "}
 				</div>
-				{news.map((post) => {
+				{news.map((post: NewsType) => {
 					return (
 						<NewsCard
 							key={post.id}

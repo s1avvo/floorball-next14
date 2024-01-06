@@ -6,6 +6,7 @@ import { NewsCard } from "@/components/atoms/NewsCard";
 import { Pagination } from "@/components/molecules/Pagination";
 import { Button } from "@/components/atoms/Button";
 import { getNews, getNewsCount } from "@/app/api/getNews";
+import { type NewsType } from "@/types/news";
 
 const LIMIT = 2;
 
@@ -46,7 +47,7 @@ export default async function News({ params }: NewsProps) {
 					</div>
 					<h2 className="text-end text-6xl font-extrabold xl:text-8xl">NEWS</h2>{" "}
 				</div>
-				{news.map((post) => {
+				{news.map((post: NewsType) => {
 					return (
 						<NewsCard
 							key={post.id}

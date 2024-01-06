@@ -1,4 +1,4 @@
-export type News = {
+export type NewsType = {
 	id: string;
 	createdAt: Date;
 	updatedAt: Date;
