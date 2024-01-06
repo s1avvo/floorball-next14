@@ -3,26 +3,33 @@ import { type Metadata } from "next";
 import { Stick } from "@/components/atoms/Stick";
 import { NewsCard } from "@/components/atoms/NewsCard";
 import { getNewsAll, getNewsById } from "@/app/api/getNews";
+import { type NewsType } from "@/types/news";
 
 export const generateStaticParams = async () => {
 	const news = await getNewsAll();
-
-	news.map((article) => console.log(article.id));
-
-	return news.map((article) => article.id);
+	return news.map((article: NewsType) => ({ id: article.id }));
 };
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
 	const article = await getNewsById(params.id);
 
+	if (!article) {
+		return {
+			title: "Unihokej | Floorball Śrem | News",
+			description:
+				"Śremski Klub Unihokeja - klub pasjonatów unihokeja. Zapraszamy wszsytkich chętnych na treningi Unihokeja",
+		};
+	}
+
 	return {
 		title: article?.title,
 		description: article?.first_paragraph,
-		// openGraph: {
-		// 	images: {
-		// 		url: article.img
-		// 	}
-		// }
+		openGraph: {
+			images: {
+				url: `https://floorballsrem.com/api/og?id=${article.id}`,
+				alt: "Unihokej | Floorball Śrem | News",
+			},
+		},
 	};
 }
 

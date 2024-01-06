@@ -1,11 +1,11 @@
 import Link from "next/link";
 import NextImage from "next/image";
 import { type Route } from "next";
-import { type News } from "@/types/news";
+import { type NewsType } from "@/types/news";
 
 type Props = {
 	className: string;
-	post: News;
+	post: NewsType;
 };
 
 export const NewsCard = ({ className, post }: Props) => {
