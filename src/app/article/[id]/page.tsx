@@ -7,8 +7,7 @@ import { type NewsType } from "@/types/news";
 
 export const generateStaticParams = async () => {
 	const news = await getNewsAll();
-
-	return news.map((article: NewsType) => article.id);
+	return news.map((article: NewsType) => ({ id: article.id }));
 };
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
