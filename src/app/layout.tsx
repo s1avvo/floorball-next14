@@ -10,6 +10,7 @@ import { Providers } from "@/theme/providers";
 const montserrat = Montserrat({ subsets: ["latin", "latin-ext"] });
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://floorballsrem.com"),
 	title: {
 		default: "Unihokej | Floorball Śrem",
 		template: "Unihokej | Floorball Śrem - %s",
