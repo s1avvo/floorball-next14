@@ -2,7 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
+
 import { Header } from "@/components/organisms/Header";
 import { Footer } from "@/components/organisms/Footer";
 import { Providers } from "@/theme/providers";
@@ -32,26 +32,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<ClerkProvider
-			appearance={{
-				elements: {
-					footer: {
-						display: "none",
-					},
-				},
-			}}
-		>
-			<html lang="pl" suppressHydrationWarning>
-				<body
-					className={`${montserrat.className} bg-white text-blue-950 dark:bg-dark dark:text-white`}
-				>
-					<Providers>
-						<Header />
-						<main className="flex h-full w-full flex-col">{children}</main>
-						<Footer />
-					</Providers>
-				</body>
-			</html>
-		</ClerkProvider>
+		<html lang="pl">
+			<body
+				className={`${montserrat.className} bg-white text-blue-950 dark:bg-dark dark:text-white`}
+			>
+				<Providers>
+					<Header />
+					<main className="flex h-full w-full flex-col">{children}</main>
+					<Footer />
+				</Providers>
+			</body>
+		</html>
 	);
 }
