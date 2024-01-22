@@ -17,6 +17,9 @@ export const metadata: Metadata = {
 	},
 	description:
 		"Śremski Klub Unihokeja powstał w 2020 roku, a założony został przez pasjonatów unihokeja, którzy spotkali się po blisko 20 latach i postanowili, że wznowią treningi.",
+	alternates: {
+		canonical: "/",
+	},
 	openGraph: {
 		title: "Unihokej | Floorball Śrem",
 		description:
