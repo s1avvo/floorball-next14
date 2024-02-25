@@ -37,9 +37,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="pl">
-			<body
-				className={`${montserrat.className} bg-white text-blue-950 dark:bg-dark dark:text-white`}
-			>
+			<body className={`${montserrat.className} bg-white text-blue-950 dark:bg-dark dark:text-white`}>
 				<Providers>
 					<Header />
 					<main className="flex h-full w-full flex-col">{children}</main>

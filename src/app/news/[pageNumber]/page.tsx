@@ -5,8 +5,7 @@ import { Stick } from "@/components/atoms/Stick";
 import { NewsCard } from "@/components/atoms/NewsCard";
 import { Pagination } from "@/components/molecules/Pagination";
 import { Button } from "@/components/atoms/Button";
-import { getNews, getNewsCount } from "@/app/api/getNews";
-import { type NewsType } from "@/types/news";
+import { getNewsCount, getNewsWithPagination } from "@/app/api/getNews";
 
 const LIMIT = 2;
 
@@ -30,7 +29,7 @@ export default async function News({ params }: NewsProps) {
 	const currentPage = Number(pageNumber);
 	const offset = (currentPage - 1) * LIMIT;
 
-	const news = await getNews(LIMIT, offset);
+	const news = await getNewsWithPagination(LIMIT, offset);
 	if (!news || news.length === 0) {
 		return notFound();
 	}
@@ -47,14 +46,8 @@ export default async function News({ params }: NewsProps) {
 					</div>
 					<h2 className="text-end text-6xl font-extrabold xl:text-8xl">NEWS</h2>{" "}
 				</div>
-				{news.map((post: NewsType) => {
-					return (
-						<NewsCard
-							key={post.id}
-							post={post}
-							className="col-span-1 border-l-4 border-amber-400 px-4"
-						/>
-					);
+				{news.map((post) => {
+					return <NewsCard key={post.slug} post={post} className="col-span-1 border-l-4 border-amber-400 px-4" />;
 				})}
 			</div>
 			<div className="mb-4 grid h-24 grid-cols-1 items-end justify-items-end">
@@ -62,12 +55,7 @@ export default async function News({ params }: NewsProps) {
 					<Link href={"/#news"}>
 						<Button label="Powrót" />
 					</Link>
-					<Pagination
-						limit={LIMIT}
-						currentPage={currentPage}
-						productsCount={count}
-						href={"/news" as Route}
-					/>
+					<Pagination limit={LIMIT} currentPage={currentPage} productsCount={count} href={"/news" as Route} />
 				</div>
 			</div>
 		</section>

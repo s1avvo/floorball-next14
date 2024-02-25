@@ -1,0 +1,5 @@
+query ArticleGetBySlug($slug: String) {
+	article(filter: { slug: { eq: $slug } }) {
+		...ArticleItem
+	}
+}

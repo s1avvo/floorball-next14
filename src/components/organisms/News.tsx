@@ -2,11 +2,14 @@ import Link from "next/link";
 import { NewsCard } from "@/components/atoms/NewsCard";
 import { Stick } from "@/components/atoms/Stick";
 import { Button } from "@/components/atoms/Button";
-import { getNewsLastTwo } from "@/app/api/getNews";
-import { type NewsType } from "@/types/news";
+import { getNewsFirst } from "@/app/api/getNews";
 
 export const News = async () => {
-	const news = await getNewsLastTwo();
+	const news = await getNewsFirst(2);
+
+	if (!news || news.length === 0) {
+		return;
+	}
 
 	return (
 		<section
@@ -21,11 +24,11 @@ export const News = async () => {
 					</div>
 					<h2 className="text-end text-6xl font-extrabold xl:text-8xl">NEWS</h2>{" "}
 				</div>
-				{news.map((post: NewsType) => {
+				{news.map((article) => {
 					return (
 						<NewsCard
-							key={post.id}
-							post={post}
+							key={article.slug}
+							post={article}
 							className="col-span-1 border-l-4 border-amber-400 px-4"
 						/>
 					);

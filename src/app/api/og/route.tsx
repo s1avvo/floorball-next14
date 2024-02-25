@@ -1,20 +1,20 @@
 import { type NextRequest } from "next/server";
 import { ImageResponse } from "next/og";
-import { getNewsById } from "@/app/api/getNews";
+import { getNewsBySlug } from "@/app/api/getNews";
 
 export async function GET(request: NextRequest) {
-	const id = request.nextUrl.searchParams.get("id");
+	const slug = request.nextUrl.searchParams.get("slug");
 
-	console.log(id);
+	console.log(slug);
 
-	if (!id) {
+	if (!slug) {
 		return new ImageResponse(<>Floorball Śrem</>, {
 			width: 1200,
 			height: 630,
 		});
 	}
 
-	const article = await getNewsById(id);
+	const article = await getNewsBySlug(slug);
 
 	console.log(article);
 
@@ -35,7 +35,7 @@ export async function GET(request: NextRequest) {
 					flexDirection: "column",
 					alignItems: "center",
 					justifyContent: "center",
-					backgroundImage: `url(https://floorballsrem.com/assets/og-news.png)`,
+					backgroundImage: `url(${process.env.NEXT_PUBLIC_URL}/assets/og-news.png)`,
 				}}
 			>
 				<div
