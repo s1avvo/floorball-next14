@@ -2,16 +2,15 @@ import { notFound } from "next/navigation";
 import { type Metadata } from "next";
 import { Stick } from "@/components/atoms/Stick";
 import { NewsCard } from "@/components/atoms/NewsCard";
-import { getNewsAll, getNewsById } from "@/app/api/getNews";
-import { type NewsType } from "@/types/news";
+import { getNewsBySlug, getNewsSlug } from "@/app/api/getNews";
 
 export const generateStaticParams = async () => {
-	const news = await getNewsAll();
-	return news.map((article: NewsType) => ({ id: article.id }));
+	const news = await getNewsSlug();
+	return news.map((article: { slug: string }) => ({ slug: article.slug }));
 };
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-	const article = await getNewsById(params.id);
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+	const article = await getNewsBySlug(params.slug);
 
 	if (!article) {
 		return {
@@ -23,18 +22,18 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 
 	return {
 		title: article?.title,
-		description: article?.first_paragraph,
+		description: article?.text,
 		openGraph: {
 			images: {
-				url: `https://floorballsrem.com/api/og?id=${article.id}`,
+				url: `${process.env.NEXT_PUBLIC_URL}/api/og?slug=${article.slug}`,
 				alt: "Unihokej | Floorball Śrem | News",
 			},
 		},
 	};
 }
 
-export default async function Article({ params }: { params: { id: string } }) {
-	const article = await getNewsById(params.id);
+export default async function Article({ params }: { params: { slug: string } }) {
+	const article = await getNewsBySlug(params.slug);
 
 	if (!article) {
 		return notFound();

@@ -17,6 +17,9 @@ export const metadata: Metadata = {
 	},
 	description:
 		"Śremski Klub Unihokeja powstał w 2020 roku, a założony został przez pasjonatów unihokeja, którzy spotkali się po blisko 20 latach i postanowili, że wznowią treningi.",
+	alternates: {
+		canonical: "/",
+	},
 	openGraph: {
 		title: "Unihokej | Floorball Śrem",
 		description:
@@ -34,9 +37,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="pl">
-			<body
-				className={`${montserrat.className} bg-white text-blue-950 dark:bg-dark dark:text-white`}
-			>
+			<body className={`${montserrat.className} bg-white text-blue-950 dark:bg-dark dark:text-white`}>
 				<Providers>
 					<Header />
 					<main className="flex h-full w-full flex-col">{children}</main>

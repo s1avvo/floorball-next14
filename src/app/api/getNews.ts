@@ -1,34 +1,69 @@
-import prisma from "@/app/api/client";
+import { draftMode } from "next/headers";
+import { executeGraphql } from "./graphqlApi";
+import {
+	ArticleCountDocument,
+	ArticleGetBySlugDocument,
+	ArticleGetFirstDocument,
+	ArticleGetListDocument,
+	ArticleGetListWithPaginationDocument,
+	ArticleGetSlugListDocument,
+} from "@/gql/graphql";
 
-export const getNews = async (limit: number, offset: number) => {
-	const posts = await prisma.post.findMany({
-		take: limit,
-		skip: offset,
-		orderBy: { updatedAt: "desc" },
+export const getNewsWithPagination = async (first: number, skip: number) => {
+	const graphqlResponse = await executeGraphql({
+		query: ArticleGetListWithPaginationDocument,
+		variables: { first, skip },
+		cache: "no-cache",
 	});
-	return posts;
+
+	return graphqlResponse.allArticles;
 };
 
-export const getNewsLastTwo = async () => {
-	const posts = await prisma.post.findMany({ take: 2, orderBy: { updatedAt: "desc" } });
-	return posts;
+export const getNewsFirst = async (quantity: number) => {
+	const graphqlResponse = await executeGraphql({
+		query: ArticleGetFirstDocument,
+		variables: { quantity },
+		cache: "no-cache",
+	});
+
+	return graphqlResponse.allArticles;
 };
 
 export const getNewsCount = async () => {
-	const count = await prisma.post.count();
-	return count;
+	const graphqlResponse = await executeGraphql({ query: ArticleCountDocument, cache: "no-cache" });
+
+	return graphqlResponse._allArticlesMeta.count;
 };
 
-export const getNewsById = async (id: string) => {
-	const article = await prisma.post.findUnique({
-		where: {
-			id: id
-		}
+export const getNewsBySlug = async (slug: string) => {
+	const { isEnabled } = draftMode();
+
+	const graphqlResponse = await executeGraphql({
+		query: ArticleGetBySlugDocument,
+		variables: { slug },
+		headers: {
+			...(isEnabled ? { "X-Include-Drafts": "true" } : {}),
+		},
+		cache: "no-cache",
 	});
-	return article;
+
+	return graphqlResponse.article;
 };
 
-export const getNewsAll= async () => {
-	const article = await prisma.post.findMany();
-	return article;
+export const getNewsAll = async () => {
+	const graphqlResponse = await executeGraphql({
+		query: ArticleGetListDocument,
+		cache: "no-cache",
+	});
+
+	return graphqlResponse.allArticles;
+};
+
+export const getNewsSlug = async () => {
+	const graphqlResponse = await executeGraphql({
+		query: ArticleGetSlugListDocument,
+		cache: "no-cache",
+	});
+
+	return graphqlResponse.allArticles;
 };

@@ -1,0 +1,8 @@
+query ArticleCount {
+	allArticles {
+		slug
+	}
+	_allArticlesMeta {
+		count
+	}
+}

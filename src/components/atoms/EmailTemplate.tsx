@@ -21,12 +21,7 @@ type FloorballEmailTemplateProps = {
 	message: string;
 };
 
-export const FloorballEmailTemplate = ({
-	name,
-	email,
-	subject,
-	message,
-}: FloorballEmailTemplateProps) => (
+export const FloorballEmailTemplate = ({ name, email, subject, message }: FloorballEmailTemplateProps) => (
 	<Html>
 		<Head />
 		<Preview>Masz wiadomość ze strony.</Preview>
@@ -37,7 +32,7 @@ export const FloorballEmailTemplate = ({
 						<Heading style={headerContentTitle}>Wiadomość z floorball.com</Heading>
 					</Column>
 					<Column style={headerImageContainer}>
-						<Img width={150} src={"https://floorballsrem.com/assets/logo_og.png"} />
+						<Img width={150} src={`${process.env.NEXT_PUBLIC_URL}/assets/logo_og.png`} />
 					</Column>
 				</Row>
 
