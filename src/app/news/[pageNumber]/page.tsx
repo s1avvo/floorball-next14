@@ -17,7 +17,7 @@ type NewsProps = {
 
 export const generateStaticParams = async () => {
 	const count = await getNewsCount();
-	const pages = Math.ceil(Number(count) / LIMIT);
+	const pages = Math.ceil(count / LIMIT);
 
 	return Array.from({ length: pages }, (_, index) => ({
 		pageNumber: `${index + 1}`,
@@ -47,13 +47,7 @@ export default async function News({ params }: NewsProps) {
 					<h2 className="text-end text-6xl font-extrabold xl:text-8xl">NEWS</h2>{" "}
 				</div>
 				{news.map((post) => {
-					return (
-						<NewsCard
-							key={post.slug}
-							post={post}
-							className="col-span-1 border-l-4 border-amber-400 px-4"
-						/>
-					);
+					return <NewsCard key={post.slug} post={post} className="col-span-1 border-l-4 border-amber-400 px-4" />;
 				})}
 			</div>
 			<div className="mb-4 grid h-24 grid-cols-1 items-end justify-items-end">
@@ -61,12 +55,7 @@ export default async function News({ params }: NewsProps) {
 					<Link href={"/#news"}>
 						<Button label="Powrót" />
 					</Link>
-					<Pagination
-						limit={LIMIT}
-						currentPage={currentPage}
-						productsCount={Number(count)}
-						href={"/news" as Route}
-					/>
+					<Pagination limit={LIMIT} currentPage={currentPage} productsCount={count} href={"/news" as Route} />
 				</div>
 			</div>
 		</section>

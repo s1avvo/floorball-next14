@@ -11,17 +11,15 @@ type Props = {
 
 export const NewsCard = ({ className, post }: Props) => {
 	const { title, createdat, text, link, slug } = post;
-	const data = new Date(createdat as string).toLocaleDateString();
+	const date = new Date(createdat).toLocaleDateString("en-GB");
 
 	return (
 		<div className={className}>
 			<article className="basis-full">
 				<Link href={`/article/${slug}`}>
-					<h2 className="prose-h2 line-clamp-4 text-[42px]/[48px] font-extrabold text-amber-400">
-						{title}
-					</h2>
+					<h2 className="prose-h2 line-clamp-4 text-[42px]/[48px] font-extrabold text-amber-400">{title}</h2>
 				</Link>
-				<p className="my-5 text-xs">Dodane: {data}</p>
+				<p className="my-5 text-xs">Dodane: {date}</p>
 				<div className="prose-sm text-blue-900 dark:text-white">
 					{<MDXRemote source={text} />}
 					{link && (
