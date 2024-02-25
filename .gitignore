@@ -37,3 +37,6 @@ next-env.d.ts
 
 .env
 .idea
+src/gql/gql.ts
+src/gql/graphql.ts
+src/gql/index.ts
