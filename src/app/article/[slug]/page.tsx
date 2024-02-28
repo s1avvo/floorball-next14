@@ -21,12 +21,17 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 	}
 
 	return {
+		metadataBase: new URL("https://floorballsrem.com"),
 		title: article?.title,
-		description: article?.text,
+		description:
+			"Śledź naszą stronę internetwą, aby być na bieżąco z najnowszymi informacjami, relacjami z wydarzeń klubowych oraz ciekawostkami ze świata unihokeja.",
+		alternates: {
+			canonical: `/article/${article.slug}`,
+		},
 		openGraph: {
 			images: {
 				url: `${process.env.NEXT_PUBLIC_URL}/api/og?slug=${article.slug}`,
-				alt: "Unihokej | Floorball Śrem | News",
+				alt: `Floorball Śrem News | ${article.title}`,
 			},
 		},
 	};
