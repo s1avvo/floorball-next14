@@ -23,6 +23,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 	return {
 		metadataBase: new URL("https://floorballsrem.com"),
 		title: article?.title,
+		description:
+			"Śledź naszą stronę internetwą, aby być na bieżąco z najnowszymi informacjami, relacjami z wydarzeń klubowych oraz ciekawostkami ze świata unihokeja.",
 		alternates: {
 			canonical: `/article/${article.slug}`,
 		},
