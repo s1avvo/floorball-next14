@@ -1,23 +1,25 @@
-import NextImage from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { Navbar } from "@/components/molecules/Navbar";
-import { ThemeMode } from "@/components/molecules/ThemeMode";
 
 export const Header = () => {
 	return (
-		<header className="fixed top-0 z-10 flex h-12 w-full items-center justify-between bg-cyan-400 px-4 xl:px-48">
+		<header className="mx-auto flex h-[110px] max-w-md items-center justify-between p-4 sm:max-w-2xl md:max-w-4xl lg:max-w-7xl">
 			{/* Logo */}
-			<div className="flex h-36 w-36 items-center justify-center self-start rounded-b-md bg-white drop-shadow-md">
-				<Link href="/">
-					<NextImage src={"/assets/logo.png"} alt="Floorball-logo" width={135} height={135} priority />
-				</Link>
-			</div>
+			<Link href="/">
+				<Image
+					src={"https://www.datocms-assets.com/120233/1709573393-floorball_srem.webp"}
+					alt="Floorball-logo"
+					width={314}
+					height={60}
+					quality={100}
+					priority
+				/>
+			</Link>
 
 			{/* Navigation */}
-			<div className="flex items-center gap-5">
+			<div className="lg:self-end">
 				<Navbar />
-				<span className="h-8 border bg-neutral-100" />
-				<ThemeMode />
 			</div>
 		</header>
 	);

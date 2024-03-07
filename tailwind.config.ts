@@ -6,18 +6,93 @@ const config: Config = {
 		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
-	darkMode: "class",
 	theme: {
+		colors: {
+			background: "rgb(var(--color-background) / <alpha-value>)",
+			primary: "rgb(var(--color-primary) / <alpha-value>)",
+			secondary: "rgb(var(--color-secondary) / <alpha-value>)",
+			accent: "rgb(var(--color-accent) / <alpha-value>)",
+			heading: "rgb(var(--color-heading) / <alpha-value>)",
+			paragraph: "rgb(var(--color-paragraph) / <alpha-value>)",
+			black: "rgb(var(--color-black) / <alpha-value>)",
+		},
+		lineHeight: {
+			none: "1",
+			tight: "1.25",
+			snug: "1.375",
+			normal: "1.8",
+			relaxed: "1.925",
+			loose: "2",
+		},
+		fontSize: {
+			sm: [
+				"0.75rem",
+				{
+					lineHeight: "1.25rem",
+					letterSpacing: "0.015em",
+					fontWeight: "300",
+				},
+			],
+			base: [
+				"1rem",
+				{
+					lineHeight: "1.8rem",
+					letterSpacing: "0.01em",
+					fontWeight: "300",
+				},
+			],
+			lg: [
+				"1.33rem",
+				{
+					lineHeight: "1.8rem",
+					letterSpacing: "0em",
+					fontWeight: "400",
+				},
+			],
+			xl: [
+				"1.77rem",
+				{
+					lineHeight: "2.08rem",
+					letterSpacing: "0em",
+					fontWeight: "400",
+				},
+			],
+			"2xl": [
+				"2.33rem",
+				{
+					lineHeight: "2.78rem",
+					letterSpacing: "0em",
+					fontWeight: "400",
+				},
+			],
+			"3xl": [
+				"3.01rem",
+				{
+					lineHeight: "3.64rem",
+					letterSpacing: "-0.015em",
+					fontWeight: "400",
+				},
+			],
+			"4xl": [
+				"4.15rem",
+				{
+					lineHeight: "4.88rem",
+					letterSpacing: "0.015em",
+					fontWeight: "500",
+				},
+			],
+			"5xl": [
+				"5.33rem",
+				{
+					lineHeight: "6rem",
+					letterSpacing: "0.015em",
+					fontWeight: "600",
+				},
+			],
+		},
 		extend: {
-			colors: {
-				dark: "#000728",
-				primary: "#fbbf24",
-				secondary: "#01c7eb",
-			},
-			fontSize: {
-				"10xl": ["10.6rem", { lineHeight: ".9" }],
-				"11xl": ["14rem", { lineHeight: ".9" }],
-				"12xl": ["16.5rem", { lineHeight: ".9" }],
+			screens: {
+				xs: "390px",
 			},
 		},
 	},

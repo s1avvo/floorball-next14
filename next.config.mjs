@@ -1,8 +1,24 @@
+import createMDX from '@next/mdx'
+ 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental: {
-        typedRoutes: true
-    }
-};
+	pageExtensions: ["ts", "tsx", "mdx"],
 
-export default nextConfig;
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.datocms-assets.com',
+        pathname: '**',
+      },
+    ],
+  },
+  
+  experimental: {
+    mdxRs: true,
+    typedRoutes: true,
+  }
+}
+ 
+const withMDX = createMDX()
+export default withMDX(nextConfig)

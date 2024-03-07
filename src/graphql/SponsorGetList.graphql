@@ -1,0 +1,5 @@
+query SponsorGetList {
+	allSponsors(orderBy: _createdAt_ASC) {
+		...SponsorItem
+	}
+}

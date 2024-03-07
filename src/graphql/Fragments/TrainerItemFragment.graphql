@@ -1,0 +1,12 @@
+fragment TrainerItem on TrainerRecord {
+	id
+	name
+	profileImage {
+		url
+		alt
+	}
+	skill {
+		...SkillItem
+	}
+	facebook
+}

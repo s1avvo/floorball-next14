@@ -1,50 +1,56 @@
+"use client";
+import { useState } from "react";
 import Link from "next/link";
-import NextImage from "next/image";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { type Route } from "next";
+import { Facebook } from "@ui/Facebook";
+import { NewsHtml } from "@ui/NewsHtml";
 import { type ArticleItemFragment } from "@/gql/graphql";
 
-type Props = {
-	className: string;
-	post: ArticleItemFragment;
-};
+export const NewsCard = ({ news }: { news: ArticleItemFragment }) => {
+	const [isClamp, setIsClamp] = useState(true);
 
-export const NewsCard = ({ className, post }: Props) => {
-	const { title, createdat, text, link, slug } = post;
+	const { title, createdat, text, link, slug } = news;
 	const date = new Date(createdat).toLocaleDateString("en-GB");
 
 	return (
-		<div className={className}>
-			<article className="basis-full">
-				<Link href={`/article/${slug}`}>
-					<h2 className="prose-h2 line-clamp-4 text-[42px]/[48px] font-extrabold text-amber-400">{title}</h2>
-				</Link>
-				<p className="my-5 text-xs">Dodane: {date}</p>
-				<div className="prose-sm text-blue-900 dark:text-white">
-					{<MDXRemote source={text} />}
-					{link && (
-						<div className="flex justify-end">
-							<Link
-								href={link as Route}
-								className="text-blue-950 dark:text-white"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<div className="flex items-center gap-3">
-									<span>Więcej szczegółów na</span>
-									<NextImage
-										src={"/assets/facebook.svg"}
-										alt={"facebook"}
-										width={32}
-										height={32}
-										className="rounded-full border border-dark bg-dark"
-									/>
-								</div>
-							</Link>
-						</div>
+		<article className="relative rounded-lg bg-heading px-4 pb-4 pt-10 shadow-md">
+			<span className="text-sm text-accent">Dodane: {date}</span>
+			<Link href={`/aktualnosci/${slug}`}>
+				<h4 className="mb-8 mt-2 text-3xl text-secondary">{title}</h4>
+			</Link>
+			<div className={`${isClamp ? "line-clamp-6" : "line-clamp-none"} prose mb-8 text-base text-black`}>
+				<NewsHtml html={text} />
+			</div>
+			<div className="flex justify-end">
+				<button className="text-base text-accent" onClick={() => setIsClamp(!isClamp)}>
+					{isClamp ? (
+						<span className="inline-flex items-center gap-2">
+							<span>rozwiń</span>
+							<ChevronDown className="rounded-full bg-accent text-heading" />
+						</span>
+					) : (
+						<span className="inline-flex items-center gap-2">
+							<span>zwiń</span>
+							<ChevronUp className="rounded-full bg-accent text-heading" />
+						</span>
 					)}
+				</button>
+			</div>
+
+			{link && (
+				<div className="absolute right-2 top-2">
+					<Link
+						href={link as Route}
+						className="text-blue-950 dark:text-white"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Facebook - Floorball Śrem"
+					>
+						<Facebook fillColor={"#FF8906"} />
+					</Link>
 				</div>
-			</article>
-		</div>
+			)}
+		</article>
 	);
 };

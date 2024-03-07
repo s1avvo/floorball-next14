@@ -1,13 +1,19 @@
 import React from "react";
-import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Roboto } from "next/font/google";
+import { Header } from "@ui/Header";
 import "./globals.css";
-
-import { Header } from "@/components/organisms/Header";
 import { Footer } from "@/components/organisms/Footer";
-import { Providers } from "@/theme/providers";
 
-const montserrat = Montserrat({ subsets: ["latin", "latin-ext"] });
+const roboto = Roboto({
+	subsets: ["latin", "latin-ext"],
+	weight: ["100", "300", "500", "900"],
+	variable: "--font-roboto",
+});
+
+export const viewport: Viewport = {
+	colorScheme: "dark light",
+};
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://floorballsrem.com"),
@@ -31,18 +37,17 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
+		site: "https://floorballsrem.com",
 	},
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="pl">
-			<body className={`${montserrat.className} bg-white text-blue-950 dark:bg-dark dark:text-white`}>
-				<Providers>
-					<Header />
-					<main className="flex h-full w-full flex-col">{children}</main>
-					<Footer />
-				</Providers>
+			<body className={`${roboto.className} bg-background`}>
+				<Header />
+				<main className="mx-auto mb-8 max-w-md space-y-8 sm:max-w-2xl md:max-w-4xl lg:max-w-7xl">{children}</main>
+				<Footer />
 			</body>
 		</html>
 	);

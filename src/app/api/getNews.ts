@@ -13,7 +13,6 @@ export const getNewsWithPagination = async (first: number, skip: number) => {
 	const graphqlResponse = await executeGraphql({
 		query: ArticleGetListWithPaginationDocument,
 		variables: { first, skip },
-		cache: "no-cache",
 	});
 
 	return graphqlResponse.allArticles;

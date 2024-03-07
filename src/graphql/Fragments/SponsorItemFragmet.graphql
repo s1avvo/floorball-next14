@@ -1,0 +1,10 @@
+fragment SponsorItem on SponsorRecord {
+	id
+	link
+	logo {
+		url
+		alt
+		height
+		width
+	}
+}

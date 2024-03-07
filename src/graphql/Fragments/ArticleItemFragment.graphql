@@ -1,4 +1,5 @@
 fragment ArticleItem on ArticleRecord {
+	id
 	slug
 	title
 	text(markdown: true)
