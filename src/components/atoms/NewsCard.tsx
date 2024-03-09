@@ -5,6 +5,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { type Route } from "next";
 import { Facebook } from "@ui/Facebook";
 import { NewsHtml } from "@ui/NewsHtml";
+import { LucideIconWithText } from "@ui/LucideIconWithText";
 import { type ArticleItemFragment } from "@/gql/graphql";
 
 export const NewsCard = ({ news }: { news: ArticleItemFragment }) => {
@@ -25,15 +26,13 @@ export const NewsCard = ({ news }: { news: ArticleItemFragment }) => {
 			<div className="flex justify-end">
 				<button className="text-base text-accent" onClick={() => setIsClamp(!isClamp)}>
 					{isClamp ? (
-						<span className="inline-flex items-center gap-2">
-							<span>rozwiń</span>
-							<ChevronDown className="rounded-full bg-accent text-heading" />
-						</span>
+						<LucideIconWithText Icon={ChevronDown} style={"rounded-full bg-accent text-heading"} size={24} isReversed>
+							rozwiń
+						</LucideIconWithText>
 					) : (
-						<span className="inline-flex items-center gap-2">
-							<span>zwiń</span>
-							<ChevronUp className="rounded-full bg-accent text-heading" />
-						</span>
+						<LucideIconWithText Icon={ChevronUp} style={"rounded-full bg-accent text-heading"} size={24} isReversed>
+							zwiń
+						</LucideIconWithText>
 					)}
 				</button>
 			</div>

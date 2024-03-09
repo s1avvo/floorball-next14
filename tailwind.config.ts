@@ -46,7 +46,7 @@ const config: Config = {
 				{
 					lineHeight: "1.8rem",
 					letterSpacing: "0em",
-					fontWeight: "400",
+					fontWeight: "300",
 				},
 			],
 			xl: [
