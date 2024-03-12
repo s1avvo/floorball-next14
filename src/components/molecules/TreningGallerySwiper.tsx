@@ -41,11 +41,11 @@ export const TreningGallerySwiper = () => {
 			>
 				{GalleryData.map((item, index) => (
 					<SwiperSlide key={index}>
-						<div className="relative mb-10 flex h-56 w-auto cursor-pointer flex-col overflow-hidden rounded-md shadow-lg">
+						<div className="relative mb-10 flex h-52 w-auto cursor-pointer flex-col overflow-hidden rounded-md shadow-lg sm:h-64">
 							<NextImage
 								src={item.image}
 								alt={item.alt}
-								height={250}
+								height={256}
 								width={400}
 								sizes="(max-width: 480px) 100vw,
                 				(max-width: 768px) 75vw,

@@ -1,0 +1,5 @@
+query TreningGetList {
+	allTrainings(orderBy: _createdAt_ASC) {
+		...TreningItem
+	}
+}
