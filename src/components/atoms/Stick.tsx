@@ -7,7 +7,7 @@ export const Stick = ({
 	fill: string;
 	width: number;
 	height: number;
-	className: string;
+	className?: string;
 }) => {
 	return (
 		<svg

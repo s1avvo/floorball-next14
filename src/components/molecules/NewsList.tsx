@@ -12,24 +12,25 @@ export const NewsList = ({ initialNews, countNews }: { initialNews: ArticleItemF
 	const [news, setNews] = useState<ArticleItemFragment[]>(initialNews);
 	const isMoreNews = countNews > offset;
 
-	const loadMoreUsers = async () => {
+	const loadMoreNews = async () => {
 		const moreNews = await getNewsAction(NUMBER_OF_NEWS_TO_FETCH, offset);
 		setNews((prev) => [...prev, ...moreNews]);
 		setOffset((prev) => prev + NUMBER_OF_NEWS_TO_FETCH);
 	};
 
 	return (
-		<div>
-			<div className="flex flex-col gap-3">
-				{news.map((news) => (
-					<NewsCard key={news.id} news={news} />
-				))}
-			</div>
+		<>
+			{news.map((news) => (
+				<NewsCard key={news.id} news={news} />
+			))}
+
 			{isMoreNews && (
-				<CustomButton size="regular" onClick={loadMoreUsers}>
-					Więcej...
-				</CustomButton>
+				<div className="mx-auto">
+					<CustomButton size="regular" onClick={loadMoreNews}>
+						Więcej...
+					</CustomButton>
+				</div>
 			)}
-		</div>
+		</>
 	);
 };

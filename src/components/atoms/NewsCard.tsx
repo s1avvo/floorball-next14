@@ -38,7 +38,7 @@ export const NewsCard = ({ news }: { news: ArticleItemFragment }) => {
 			</div>
 
 			{link && (
-				<div className="absolute right-2 top-2">
+				<div className="absolute right-4 top-4">
 					<Link
 						href={link as Route}
 						className="text-blue-950 dark:text-white"
