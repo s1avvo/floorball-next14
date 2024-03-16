@@ -25,7 +25,7 @@ export const NewsList = ({ initialNews, countNews }: { initialNews: ArticleItemF
 			))}
 
 			{isMoreNews && (
-				<div className="mx-auto">
+				<div className="col-span-1 mx-auto md:col-span-2">
 					<CustomButton size="regular" onClick={loadMoreNews}>
 						Więcej...
 					</CustomButton>

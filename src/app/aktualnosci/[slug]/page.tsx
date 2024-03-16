@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import { type Metadata, type Route } from "next";
 import { NewsHtml } from "@ui/NewsHtml";
 import { Facebook } from "@ui/Facebook";
-import { getNewsBySlug, getNewsSlug } from "@/app/api/getNews";
+import { RecentNewsCard } from "@/components/atoms/RecentNewsCard";
+import { getNewsBySlug, getNewsSlug, getNewsFirst } from "@/app/api/getNews";
 
 export const generateStaticParams = async () => {
 	const news = await getNewsSlug();
@@ -41,6 +42,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export default async function Article({ params }: { params: { slug: string } }) {
 	const article = await getNewsBySlug(params.slug);
+	const news = await getNewsFirst(4);
+
+	if (!news || news.length === 0) {
+		return;
+	}
 
 	if (!article) {
 		return notFound();
@@ -50,8 +56,8 @@ export default async function Article({ params }: { params: { slug: string } }) 
 	const date = new Date(createdat).toLocaleDateString("en-GB");
 
 	return (
-		<div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-			<div className="relative min-h-96 w-full">
+		<section className="space-y-8 md:col-span-2">
+			<div className="relative h-96 w-full">
 				<Image
 					fill
 					src={"https://www.datocms-assets.com/120233/1710275222-trening_header.webp"}
@@ -70,12 +76,12 @@ export default async function Article({ params }: { params: { slug: string } }) 
 				/>
 				<small className="absolute bottom-2 right-2 text-sm">Photo by Astrid Schaffner on Unsplash</small>
 			</div>
-			<article className="relative rounded-lg bg-primary px-8 pb-8 pt-10">
+			<article className="relative">
 				<span className="text-sm text-accent">Dodane: {date}</span>
 				<Link href={`/aktualnosci/${slug}`}>
-					<h1 className="mb-8 mt-2 text-4xl text-heading sm:text-5xl">{title}</h1>
+					<h1 className="mb-8 mt-2 text-4xl text-secondary sm:text-5xl">{title}</h1>
 				</Link>
-				<div className="prose mb-8 text-base text-paragraph prose-a:text-paragraph prose-strong:text-accent">
+				<div className="prose mb-8 text-base text-black">
 					<NewsHtml html={text} />
 				</div>
 
@@ -93,6 +99,16 @@ export default async function Article({ params }: { params: { slug: string } }) 
 					</div>
 				)}
 			</article>
-		</div>
+
+			<aside>
+				<hr className="my-8 w-full border-2 border-accent" />
+				<h3 className="mb-8 text-2xl text-secondary">Ostatnie wiadomości</h3>
+				<div className="relative z-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+					{news.map((item) => (
+						<RecentNewsCard key={item.id} news={item} />
+					))}
+				</div>
+			</aside>
+		</section>
 	);
 }

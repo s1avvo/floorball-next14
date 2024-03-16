@@ -53,7 +53,7 @@ const config: Config = {
 				"1.77rem",
 				{
 					lineHeight: "2.08rem",
-					letterSpacing: "0em",
+					letterSpacing: "-0.025em",
 					fontWeight: "400",
 				},
 			],
@@ -61,7 +61,7 @@ const config: Config = {
 				"2.33rem",
 				{
 					lineHeight: "2.78rem",
-					letterSpacing: "0em",
+					letterSpacing: "-0.015em",
 					fontWeight: "400",
 				},
 			],
