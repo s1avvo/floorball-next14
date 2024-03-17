@@ -17,11 +17,12 @@ import {
 type FloorballEmailTemplateProps = {
 	name: string;
 	email: string;
+	phone?: string;
 	subject: string;
 	message: string;
 };
 
-export const FloorballEmailTemplate = ({ name, email, subject, message }: FloorballEmailTemplateProps) => (
+export const FloorballEmailTemplate = ({ name, email, phone, subject, message }: FloorballEmailTemplateProps) => (
 	<Html>
 		<Head />
 		<Preview>Masz wiadomość ze strony.</Preview>
@@ -43,10 +44,19 @@ export const FloorballEmailTemplate = ({ name, email, subject, message }: Floorb
 					<Text style={paragraph}>Temat: {subject}</Text>
 					<Text style={paragraph}>Treść: {message}</Text>
 
+					{phone && (
+						<>
+							<Hr style={divider} />
+
+							<Heading as="h2" style={title}>
+								Telefon: {phone}
+							</Heading>
+						</>
+					)}
 					<Hr style={divider} />
 
 					<Heading as="h2" style={title}>
-						Odpowiedz na wiadomość
+						Odpowiedz na wiadomość:
 					</Heading>
 
 					<Section style={buttonContainer}>

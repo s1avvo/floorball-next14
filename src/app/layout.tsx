@@ -1,9 +1,10 @@
 import React from "react";
 import type { Metadata, Viewport } from "next";
+import { Toaster } from "sonner";
 import { Roboto } from "next/font/google";
 import { Header } from "@ui/Header";
 import "./globals.css";
-import { Footer } from "@/components/organisms/Footer";
+import { Footer } from "@ui/Footer";
 
 const roboto = Roboto({
 	subsets: ["latin", "latin-ext"],
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<Header />
 				<main className="mx-auto mb-8 max-w-md space-y-8 sm:max-w-2xl md:max-w-4xl lg:max-w-7xl">{children}</main>
 				<Footer />
+				<Toaster position="bottom-left" expand closeButton />
 			</body>
 		</html>
 	);

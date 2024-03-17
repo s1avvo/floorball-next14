@@ -1,6 +1,7 @@
 fragment TrainerItem on TrainerRecord {
 	id
 	name
+	phoneNumber
 	profileImage {
 		url
 		alt
