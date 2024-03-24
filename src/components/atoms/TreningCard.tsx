@@ -8,12 +8,12 @@ export const TreningCard = ({ trening }: { trening: TreningItemFragment }) => {
 		<div className="relative flex w-[330px] flex-col rounded-lg bg-primary px-4 pb-6 pt-48 sm:px-6">
 			<div
 				className={clsx(
-					"absolute  -top-[10px] flex h-[175px] w-[200px] justify-center rounded-md bg-secondary",
+					"absolute -top-[10px] flex h-[175px] w-[200px] justify-center rounded-md bg-secondary",
 					trening.iconSide === "left" && "-left-[10px]",
 					trening.iconSide === "right" && "-right-[10px]",
 				)}
 			>
-				<Image key={trening.icon.id} priority src={trening.icon.url} alt={trening.icon.alt} fill className="p-4" />
+				<Image key={trening.icon.id} src={trening.icon.url} alt={trening.icon.alt} fill className="aspect-square p-8" />
 			</div>
 			<h3 className="mb-4 text-3xl text-heading">{trening.group}</h3>
 			<div className="flex flex-wrap justify-between gap-4">

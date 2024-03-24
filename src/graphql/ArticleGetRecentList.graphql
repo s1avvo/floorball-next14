@@ -1,0 +1,5 @@
+query ArticleGetRecentList($quantity: IntType) {
+	allArticles(first: $quantity, orderBy: createdat_DESC) {
+		...ArticleRecentItem
+	}
+}

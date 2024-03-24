@@ -2,35 +2,39 @@ import Link from "next/link";
 import { CustomButton } from "@ui/CustomButton";
 import { Ball } from "@ui/Ball";
 import { TrainerSwiper } from "@ui/TrainerSwiper";
-import { getTrainersList } from "@/app/api/getTrainer";
+
+import { getTrainersList } from "@api/getTrainer";
 
 export const HomeTrainer = async () => {
 	const trainers = await getTrainersList();
 
 	return (
 		<section className="relative flex-row-reverse sm:flex">
-			<div className="w-full md:w-1/2 lg:w-1/3">
-				<div className="relative mb-4 flex flex-col justify-between rounded-lg bg-secondary p-8">
-					{/* <div className="absolute inset-y-0 left-0 -z-10 w-screen rounded-s-lg bg-secondary" /> */}
+			<div className="md:w-1/2 lg:w-1/3">
+				<div className="mb-4 flex h-full flex-col justify-between rounded-lg bg-secondary p-8">
 					<article>
 						<h2 className="mb-12 text-4xl text-heading">Nasi trenerzy</h2>
-						<p className="mb-4 text-base text-heading">
+						<p className="prose mb-4 text-base text-heading">
 							Mamy grupę doświadczonych trenerów, którzy nie tylko posiadają wiedzę techniczną i taktyczną, ale także
 							pasję do rozwoju młodych talentów. Dzięki ich zaangażowaniu i profesjonalizmowi, nasi zawodnicy rozwijają
 							swoje umiejętności unihokejowe oraz uczą się wartości teamworku, determinacji i zasad fair play.
 						</p>
+						<p className="prose mb-4 text-base text-heading">
+							Chcesz dowiedzieć się więcej o naszych metodach treningowych? Zawsze możesz porozmawiać z trenerami, aby
+							uzyskać więcej informacji!
+						</p>
 						<div className="mb-4 flex gap-2">
-							<Link href={"/onas"}>
-								<CustomButton size="small">#Onas</CustomButton>
-							</Link>
 							<Link href={"/treningi"}>
 								<CustomButton size="small">#Treningi</CustomButton>
+							</Link>
+							<Link href={"/kontakt"}>
+								<CustomButton size="small">#Kontakt</CustomButton>
 							</Link>
 						</div>
 					</article>
 
 					<span className="self-end">
-						<Ball fill="#FF8906" height={100} width={100} />
+						<Ball fill="#FF8906" height={75} width={75} />
 					</span>
 				</div>
 			</div>

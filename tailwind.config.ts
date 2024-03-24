@@ -14,7 +14,8 @@ const config: Config = {
 			accent: "rgb(var(--color-accent) / <alpha-value>)",
 			heading: "rgb(var(--color-heading) / <alpha-value>)",
 			paragraph: "rgb(var(--color-paragraph) / <alpha-value>)",
-			black: "rgb(var(--color-black) / <alpha-value>)",
+			cardparagraph: "rgb(var(--color-card-paragraph) / <alpha-value>)",
+			cardbackground: "rgb(var(--color-card-background) / <alpha-value>)",
 		},
 		lineHeight: {
 			none: "1",
@@ -70,22 +71,30 @@ const config: Config = {
 				{
 					lineHeight: "3.64rem",
 					letterSpacing: "-0.015em",
-					fontWeight: "400",
+					fontWeight: "600",
 				},
 			],
 			"4xl": [
-				"4.15rem",
+				"3.92rem",
 				{
-					lineHeight: "4.88rem",
-					letterSpacing: "0.015em",
-					fontWeight: "500",
+					lineHeight: "4.65rem",
+					letterSpacing: "-0.015em",
+					fontWeight: "600",
 				},
 			],
 			"5xl": [
-				"5.33rem",
+				"5.43rem",
 				{
 					lineHeight: "6rem",
-					letterSpacing: "0.015em",
+					letterSpacing: "0em",
+					fontWeight: "600",
+				},
+			],
+			"6xl": [
+				"6rem",
+				{
+					lineHeight: "6.28rem",
+					letterSpacing: "0.025em",
 					fontWeight: "600",
 				},
 			],

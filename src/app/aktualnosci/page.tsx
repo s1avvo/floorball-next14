@@ -9,8 +9,8 @@ export default async function NewsMain() {
 	const count = await getNewsCount();
 
 	return (
-		<section className="grid grid-cols-1 gap-4 md:col-span-2 md:grid-cols-2">
-			<Suspense fallback={<div>Loading...</div>}>
+		<section className="grid grid-cols-1 gap-4 px-4 sm:px-0 md:col-span-2 md:grid-cols-2">
+			<Suspense fallback={<div className="mx-auto">Loading...</div>}>
 				<NewsList initialNews={initialNews} countNews={count} />
 			</Suspense>
 		</section>

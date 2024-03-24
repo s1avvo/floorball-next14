@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { Ball } from "@ui/Ball";
-import { type ArticleItemFragment } from "@/gql/graphql";
+import { type ArticleRecentItemFragment } from "@/gql/graphql";
 
-export const RecentNewsCard = ({ news }: { news: ArticleItemFragment }) => {
+export const RecentNewsCard = ({ news }: { news: ArticleRecentItemFragment }) => {
 	const { title, createdat, slug } = news;
 	const date = new Date(createdat).toLocaleDateString("en-GB");
 
 	return (
-		<div className="relative flex flex-col justify-between rounded-lg bg-secondary px-2 pb-2 pt-2 shadow-md">
+		<div className="relative flex flex-col justify-between rounded-lg bg-primary p-2">
 			<div>
 				<span className="text-sm text-accent">Dodane: {date}</span>
 				<Link href={`/aktualnosci/${slug}`}>

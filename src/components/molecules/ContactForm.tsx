@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { ContactFormInput } from "@ui/ContactFormInput";
 import { ContactFormPhoneInput } from "@ui/ContactFormPhoneInput";
 import { ContactFormButton } from "@ui/ContactFormButton";
+
 import { sendMessageAction } from "@/app/kontakt/actions";
 
 export const ContactForm = () => {
@@ -77,11 +78,11 @@ export const ContactForm = () => {
 					gridColumn={"col-span-2"}
 				/>
 				<div className="col-span-2 grid">
-					<label htmlFor="message-id" className="text-base text-black">
+					<label htmlFor="message-id" className="text-cardparagraph text-base">
 						Wiadomość
 					</label>
 					<textarea
-						className="rounded-md border border-paragraph bg-[#f7f7f7]  p-2 font-light text-secondary focus:border-accent focus:outline-none dark:bg-[#26282e] dark:text-heading"
+						className="rounded-md border border-paragraph bg-[#f7f7f7]  p-2 font-light text-secondary focus:border-accent focus:outline-none dark:bg-[#191332]"
 						name="message"
 						id="message-id"
 						placeholder="Napisz wiadomość"

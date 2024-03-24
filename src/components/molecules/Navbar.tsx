@@ -2,7 +2,8 @@
 import { useState } from "react";
 import { clsx } from "clsx";
 import { MoreVertical, X } from "lucide-react";
-import { ActiveLink } from "@/components/atoms/ActiveLink";
+import { ActiveLink } from "@ui/ActiveLink";
+
 import { navbarList } from "@/constants/navigation";
 
 export const Navbar = () => {
@@ -24,7 +25,7 @@ export const Navbar = () => {
 			{/*sm screen navbar*/}
 			<div className="flex lg:hidden">
 				{!isOpen ? (
-					<MoreVertical width={28} height={28} onClick={() => setIsOpen(!isOpen)} className="text-paragraph" />
+					<MoreVertical width={38} height={38} onClick={() => setIsOpen(!isOpen)} className="text-paragraph" />
 				) : (
 					<X width={28} height={28} onClick={() => setIsOpen(!isOpen)} className="text-paragraph" />
 				)}

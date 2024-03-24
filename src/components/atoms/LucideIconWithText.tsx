@@ -17,7 +17,7 @@ export const LucideIconWithText = ({
 }) => {
 	return (
 		<div className={clsx("inline-flex items-center gap-2", `${isReversed && "flex-row-reverse"}`)}>
-			{<Icon className={clsx("flex-shrink-0 text-accent", `${style}`)} size={size} absoluteStrokeWidth={true} />}
+			{<Icon className={clsx("flex-shrink-0 text-accent", `${style}`)} size={size} strokeWidth={2} />}
 			<span>{children}</span>
 		</div>
 	);

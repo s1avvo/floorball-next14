@@ -4,7 +4,7 @@ export const ContactTrainerCard = ({ name, phone }: { name: string; phone: strin
 
 	return (
 		<>
-			<h6 className="mb-4 text-lg text-black">
+			<h6 className="text-cardparagraph mb-4 text-lg">
 				{firstName} <br /> {surName}
 			</h6>
 			<div className="inline-flex items-center gap-2">

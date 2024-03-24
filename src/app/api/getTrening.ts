@@ -1,7 +1,7 @@
 import { executeGraphql } from "./graphqlApi";
 import { TreningGetListDocument } from "@/gql/graphql";
 
-export const getTreningList = async () => {
+export const getTreningSessionsList = async () => {
 	const graphqlResponse = await executeGraphql({
 		query: TreningGetListDocument,
 	});

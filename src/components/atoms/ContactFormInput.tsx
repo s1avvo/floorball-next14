@@ -11,11 +11,11 @@ interface ContactInputProps extends React.InputHTMLAttributes<HTMLInputElement> 
 export const ContactFormInput = ({ type, name, label, placeholder, gridColumn, ...rest }: ContactInputProps) => {
 	return (
 		<div className={gridColumn}>
-			<label htmlFor={`${name}-id`} className="text-base text-black">
+			<label htmlFor={`${name}-id`} className="text-cardparagraph text-base">
 				{label}
 			</label>
 			<input
-				className="h-10 w-full rounded-md border border-paragraph bg-[#f7f7f7] p-2 font-light text-secondary focus:border-accent focus:outline-none dark:bg-[#26282e] dark:text-heading"
+				className="h-10 w-full rounded-md border border-paragraph bg-[#f7f7f7] p-2 font-light text-secondary focus:border-accent focus:outline-none dark:bg-[#191332]"
 				type={type}
 				name={name}
 				placeholder={placeholder}

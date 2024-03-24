@@ -1,8 +1,8 @@
-import Image from "next/image";
+import { Image as DatoImage } from "react-datocms";
 import Link from "next/link";
 import { type Route } from "next";
-import { Facebook } from "@ui/Facebook";
 import { type TrainerItemFragment } from "@/gql/graphql";
+import { Facebook } from "@ui/Facebook";
 
 export const TrainerProfile = ({ trainer }: { trainer: TrainerItemFragment }) => {
 	return (
@@ -20,28 +20,23 @@ export const TrainerProfile = ({ trainer }: { trainer: TrainerItemFragment }) =>
 							<Facebook fillColor={"#FF8906"} />
 						</Link>
 					</div>
-					<Image
-						src={trainer.profileImage.url}
-						alt={trainer.profileImage.alt}
-						height={293}
-						width={335}
-						quality={90}
-						style={{
-							height: "100%",
-							aspectRatio: "auto",
-							objectFit: "cover",
-							overflow: "hidden",
-							objectPosition: "center",
-						}}
-						loading="lazy"
-					/>
-					<div className="swiper-lazy-preloader" />
+					<div className="relative h-[293px] w-[335px] overflow-hidden">
+						<DatoImage
+							data={trainer.profileImage.responsiveImage!}
+							layout="fill"
+							objectFit="cover"
+							objectPosition={"50% 50%"}
+							style={{
+								height: "100%",
+							}}
+						/>
+					</div>
 				</div>
 
-				<h6 className="text-xl text-black">{trainer.name}</h6>
+				<h6 className="text-cardparagraph text-xl">{trainer.name}</h6>
 				<ul className="text-sm text-accent">
 					{trainer.skill.map((item) => (
-						<li key={item.id}>{item.name}#</li>
+						<li key={item.id}>#{item.name}</li>
 					))}
 				</ul>
 			</div>

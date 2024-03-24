@@ -1,0 +1,8 @@
+fragment ArticleFirstItem on ArticleRecord {
+	id
+	slug
+	title
+	text(markdown: true)
+	createdat
+	link
+}

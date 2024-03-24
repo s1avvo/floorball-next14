@@ -1,33 +1,35 @@
 "use client";
-import NextImage from "next/image";
+import { Image as DatoImage } from "react-datocms";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 
 import { FreeMode, Pagination } from "swiper/modules";
-import { GalleryData } from "@/constants/gallery";
+import { type ResponsiveImageFragment } from "@/gql/graphql";
 
-export const TreningGallerySwiper = () => {
+export const TreningGallerySwiper = ({
+	images,
+}: {
+	images: { id: string; responsiveImage?: ResponsiveImageFragment | undefined | null }[];
+}) => {
 	return (
 		<div>
 			<Swiper
 				breakpoints={{
-					340: {
+					320: {
 						slidesPerView: 1,
 						spaceBetween: 20,
 					},
-					700: {
+					640: {
 						slidesPerView: 2,
 						spaceBetween: 20,
 					},
-					860: {
-						lazyPreloadPrevNext: 3,
+					1024: {
 						slidesPerView: 3,
 						spaceBetween: 20,
 					},
 					1600: {
-						lazyPreloadPrevNext: 1,
 						slidesPerView: 4,
 						spaceBetween: 20,
 					},
@@ -39,25 +41,15 @@ export const TreningGallerySwiper = () => {
 				}}
 				modules={[FreeMode, Pagination]}
 			>
-				{GalleryData.map((item, index) => (
-					<SwiperSlide key={index}>
-						<div className="relative mb-10 flex h-52 w-auto cursor-pointer flex-col overflow-hidden rounded-md shadow-lg sm:h-64">
-							<NextImage
-								src={item.image}
-								alt={item.alt}
-								height={256}
-								width={400}
-								sizes="(max-width: 480px) 100vw,
-                				(max-width: 768px) 75vw,
-                				(max-width: 1060px) 50vw,
-                				33vw"
-								style={{
-									overflow: "hidden",
-									objectPosition: "center",
-									objectFit: "cover",
-								}}
-								placeholder={"empty"}
-								loading={"lazy"}
+				{images.map((item) => (
+					<SwiperSlide key={item.id}>
+						<div className="relative mb-10 flex h-56 cursor-pointer flex-col overflow-hidden rounded-xl shadow-lg sm:h-64">
+							<DatoImage
+								data={item.responsiveImage!}
+								layout="fill"
+								objectFit="cover"
+								objectPosition="50% 50%"
+								style={{ height: "100%" }}
 							/>
 						</div>
 					</SwiperSlide>

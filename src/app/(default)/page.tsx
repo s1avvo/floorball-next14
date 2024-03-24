@@ -1,12 +1,14 @@
-import Image from "next/image";
+import { Image as DatoImage } from "react-datocms";
 import { HomeHero } from "@ui/HomeHero";
 import { HomeNews } from "@ui/HomeNews";
 import { HomeTrainer } from "@ui/HomeTrainer";
 import { Sponsor } from "@ui/Sponsor";
 
-import Background from "@assets/background.webp";
+import { getPageImagesList } from "@api/getPageImage";
 
-export default function Home() {
+export default async function Home() {
+	const homeImages = await getPageImagesList("Home");
+
 	return (
 		<>
 			{/* <script
@@ -16,21 +18,15 @@ export default function Home() {
 			/> */}
 
 			<div className="relative rounded-xl bg-primary p-4 sm:p-8">
-				<div className="absolute right-0 top-0 z-0 h-[1000px] w-full opacity-25 sm:opacity-100">
-					<Image
-						src={Background}
-						alt="Floorball Śrem"
-						fill
-						sizes="100%"
-						placeholder="blur"
-						quality={90}
+				<div className="absolute right-0 top-0 z-0 h-[1100px] w-full overflow-hidden rounded-xl opacity-25 sm:opacity-100">
+					<DatoImage
+						data={homeImages[0].headerImage.responsiveImage!}
+						layout="responsive"
+						objectFit="contain"
+						objectPosition="top right"
 						priority
 						style={{
 							height: "100%",
-							aspectRatio: "1/1",
-							objectFit: "contain",
-							overflow: "hidden",
-							objectPosition: "top right",
 						}}
 					/>
 				</div>

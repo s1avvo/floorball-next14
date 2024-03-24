@@ -1,11 +1,11 @@
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
+import { Image as DatoImage } from "react-datocms";
 import { type Metadata, type Route } from "next";
 import { NewsHtml } from "@ui/NewsHtml";
 import { Facebook } from "@ui/Facebook";
 import { RecentNewsCard } from "@/components/atoms/RecentNewsCard";
-import { getNewsBySlug, getNewsSlug, getNewsFirst } from "@/app/api/getNews";
+import { getNewsBySlug, getNewsSlug, getNewsRecent } from "@/app/api/getNews";
 
 export const generateStaticParams = async () => {
 	const news = await getNewsSlug();
@@ -42,11 +42,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export default async function Article({ params }: { params: { slug: string } }) {
 	const article = await getNewsBySlug(params.slug);
-	const news = await getNewsFirst(4);
-
-	if (!news || news.length === 0) {
-		return;
-	}
+	const recentNews = await getNewsRecent(4);
 
 	if (!article) {
 		return notFound();
@@ -57,36 +53,39 @@ export default async function Article({ params }: { params: { slug: string } }) 
 
 	return (
 		<section className="space-y-8 md:col-span-2">
-			<div className="relative h-96 w-full">
-				<Image
-					fill
-					src={"https://www.datocms-assets.com/120233/1710275222-trening_header.webp"}
-					alt="Floorball Śrem Trening"
-					quality={90}
+			<div className="relative h-96 w-full overflow-hidden rounded-xl shadow-lg">
+				<DatoImage
+					data={article.image.responsiveImage!}
+					layout="responsive"
+					objectFit="cover"
+					objectPosition={"50% 50%"}
 					priority
-					sizes="(min-width: 1380px) 632px, (min-width: 1040px) calc(37.5vw + 122px), (min-width: 980px) 896px, (min-width: 780px) calc(64.44vw + 277px), (min-width: 640px) calc(26.67vw + 469px), (min-width: 480px) 448px, calc(92.5vw + 23px)"
 					style={{
 						height: "100%",
-						aspectRatio: "1/1",
-						objectFit: "cover",
-						overflow: "hidden",
-						objectPosition: "center",
-						borderRadius: "10px",
 					}}
 				/>
-				<small className="absolute bottom-2 right-2 text-sm">Photo by Astrid Schaffner on Unsplash</small>
+				<small className="text-cardparagraph bg-cardbackground/10 absolute bottom-2 right-2 px-2 text-sm backdrop-blur-sm">
+					Photo by{" "}
+					<a href="https://unsplash.com/@familyschaffner?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+						Astrid Schaffner
+					</a>{" "}
+					on{" "}
+					<a href="https://unsplash.com/photos/a-pair-of-shoes-on-a-carpet-bi_amI3F4co?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+						Unsplash
+					</a>
+				</small>
 			</div>
-			<article className="relative">
+			<article className="relative px-4 sm:px-0">
 				<span className="text-sm text-accent">Dodane: {date}</span>
 				<Link href={`/aktualnosci/${slug}`}>
-					<h1 className="mb-8 mt-2 text-4xl text-secondary sm:text-5xl">{title}</h1>
+					<h1 className="mb-8 mt-8 break-words text-3xl text-secondary sm:text-5xl">{title}</h1>
 				</Link>
-				<div className="prose mb-8 text-base text-black">
+				<div className="text-cardparagraph prose-xl mb-8 text-base">
 					<NewsHtml html={text} />
 				</div>
 
 				{link && (
-					<div className="absolute right-4 top-4">
+					<div className="absolute right-4 top-0">
 						<Link
 							href={link as Route}
 							className="text-blue-950 dark:text-white"
@@ -100,15 +99,17 @@ export default async function Article({ params }: { params: { slug: string } }) 
 				)}
 			</article>
 
-			<aside>
-				<hr className="my-8 w-full border-2 border-accent" />
-				<h3 className="mb-8 text-2xl text-secondary">Ostatnie wiadomości</h3>
-				<div className="relative z-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-					{news.map((item) => (
-						<RecentNewsCard key={item.id} news={item} />
-					))}
-				</div>
-			</aside>
+			{recentNews.length > 0 && (
+				<aside className="px-4 sm:px-0">
+					<hr className="mb-8 w-full border-2 border-accent" />
+					<h3 className="mb-8 text-center text-2xl text-secondary">Ostatnie wiadomości</h3>
+					<div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+						{recentNews.map((item) => (
+							<RecentNewsCard key={item.id} news={item} />
+						))}
+					</div>
+				</aside>
+			)}
 		</section>
 	);
 }

@@ -3,8 +3,9 @@ fragment TrainerItem on TrainerRecord {
 	name
 	phoneNumber
 	profileImage {
-		url
-		alt
+		responsiveImage {
+			...ResponsiveImage
+		}
 	}
 	skill {
 		...SkillItem

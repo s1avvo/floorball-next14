@@ -6,6 +6,7 @@ import {
 	ArticleGetFirstDocument,
 	ArticleGetListDocument,
 	ArticleGetListWithPaginationDocument,
+	ArticleGetRecentListDocument,
 	ArticleGetSlugListDocument,
 } from "@/gql/graphql";
 
@@ -21,6 +22,16 @@ export const getNewsWithPagination = async (first: number, skip: number) => {
 export const getNewsFirst = async (quantity: number) => {
 	const graphqlResponse = await executeGraphql({
 		query: ArticleGetFirstDocument,
+		variables: { quantity },
+		cache: "no-cache",
+	});
+
+	return graphqlResponse.allArticles;
+};
+
+export const getNewsRecent = async (quantity: number) => {
+	const graphqlResponse = await executeGraphql({
+		query: ArticleGetRecentListDocument,
 		variables: { quantity },
 		cache: "no-cache",
 	});
