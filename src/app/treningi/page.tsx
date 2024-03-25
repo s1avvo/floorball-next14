@@ -12,6 +12,8 @@ export default async function TreningMain() {
 	return (
 		<div className="relative">
 			<div className="absolute left-0 top-0 h-24 w-full rounded-xl bg-gradient-to-b from-paragraph/15 via-paragraph/5 to-paragraph/0" />
+			<div className="absolute left-0 top-0 h-24 w-full rounded-xl bg-gradient-to-l from-background to-background/0" />
+
 			<section className="space-y-12">
 				<div className="flex-row-reverse gap-4 md:flex">
 					<div className="relative h-64 w-full self-end overflow-hidden rounded-none shadow-lg sm:rounded-xl md:h-96 md:w-1/2">

@@ -83,7 +83,7 @@ const config: Config = {
 				},
 			],
 			"5xl": [
-				"5.43rem",
+				"5.15rem",
 				{
 					lineHeight: "6rem",
 					letterSpacing: "0em",

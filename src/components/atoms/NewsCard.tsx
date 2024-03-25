@@ -17,6 +17,7 @@ export const NewsCard = ({ news }: { news: ArticleFirstItemFragment }) => {
 	return (
 		<article className="shadow-text/30 relative rounded-lg bg-cardbackground px-4 pb-4 pt-10 shadow-md">
 			<div className="absolute left-0 top-0 h-24 w-full rounded-md bg-gradient-to-b from-paragraph/15 via-paragraph/5 to-paragraph/0" />
+
 			<span className="text-sm text-accent">Dodane: {date}</span>
 			<Link href={`/aktualnosci/${slug}`}>
 				<h4 className={`${isClamp ? "line-clamp-3" : "line-clamp-none"} mb-8 mt-2 text-3xl text-secondary`}>{title}</h4>

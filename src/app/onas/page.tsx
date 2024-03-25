@@ -10,6 +10,8 @@ export default async function AboutUsMain() {
 	return (
 		<div className="relative">
 			<div className="absolute left-0 top-0 h-24 w-full rounded-xl bg-gradient-to-b from-paragraph/15 via-paragraph/5 to-paragraph/0" />
+			<div className="absolute left-0 top-0 h-24 w-full rounded-xl bg-gradient-to-l from-background to-background/0" />
+
 			<section>
 				<div className="gap-4 lg:flex">
 					<article className="p-8 sm:p-12 lg:w-1/2">
