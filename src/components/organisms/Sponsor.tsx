@@ -9,9 +9,11 @@ export const Sponsor = async () => {
 				Sponsorzy:
 				<span className="h-1 w-full bg-secondary" />
 			</h6>
-			<ul className="flex items-center justify-center gap-8 px-2 sm:gap-12">
+			<ul className="flex items-center justify-center gap-8 px-4 pt-2 sm:gap-12">
 				{sponsors.map((item) => (
-					<SponsorItem key={item.id} sponsorImage={item} />
+					<li key={item.id}>
+						<SponsorItem sponsorImage={item} />
+					</li>
 				))}
 			</ul>
 		</div>

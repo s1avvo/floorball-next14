@@ -43,7 +43,7 @@ export const TreningGallerySwiper = ({
 			>
 				{images.map((item) => (
 					<SwiperSlide key={item.id}>
-						<div className="relative mb-10 flex h-56 cursor-pointer flex-col overflow-hidden rounded-xl shadow-lg sm:h-64">
+						<div className="relative mb-10 flex h-56 cursor-pointer flex-col overflow-hidden rounded-md shadow-lg sm:h-64">
 							<DatoImage
 								data={item.responsiveImage!}
 								layout="fill"

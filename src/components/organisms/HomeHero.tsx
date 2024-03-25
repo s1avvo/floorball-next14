@@ -3,7 +3,7 @@ import { CustomButton } from "@ui/CustomButton";
 
 export const HomeHero = () => {
 	return (
-		<section className="relative z-10 mb-24 max-w-lg">
+		<section className="relative z-10 max-w-lg p-8 sm:p-12">
 			<h1 className="mb-8 text-4xl text-heading drop-shadow-lg sm:text-6xl">
 				Śremski
 				<br />

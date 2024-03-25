@@ -17,7 +17,7 @@ export default async function Home() {
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(homeStructuredData) }}
 			/> */}
 
-			<div className="relative rounded-xl bg-primary p-4 sm:p-8">
+			<div className="relative rounded-none bg-primary sm:rounded-xl">
 				<div className="absolute right-0 top-0 z-0 h-[1100px] w-full overflow-hidden rounded-xl opacity-25 sm:opacity-100">
 					<DatoImage
 						data={homeImages[0].headerImage.responsiveImage!}

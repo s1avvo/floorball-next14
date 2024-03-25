@@ -9,7 +9,7 @@ export const TrainerProfile = ({ trainer }: { trainer: TrainerItemFragment }) =>
 		<div className="mx-auto flex items-center justify-center">
 			<div className="relative">
 				<div className="mb-2 w-full overflow-hidden rounded-br-xl rounded-tl-xl rounded-tr-[100px]">
-					<div className="absolute right-0 top-0">
+					<div className="absolute right-0 top-0 z-10">
 						<Link
 							href={trainer.facebook as Route}
 							className="text-blue-950 dark:text-white"
@@ -33,7 +33,7 @@ export const TrainerProfile = ({ trainer }: { trainer: TrainerItemFragment }) =>
 					</div>
 				</div>
 
-				<h6 className="text-cardparagraph text-xl">{trainer.name}</h6>
+				<h6 className="text-xl text-cardparagraph">{trainer.name}</h6>
 				<ul className="text-sm text-accent">
 					{trainer.skill.map((item) => (
 						<li key={item.id}>#{item.name}</li>

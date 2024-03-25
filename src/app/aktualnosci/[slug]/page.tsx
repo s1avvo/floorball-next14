@@ -64,7 +64,7 @@ export default async function Article({ params }: { params: { slug: string } }) 
 						height: "100%",
 					}}
 				/>
-				<small className="text-cardparagraph bg-cardbackground/10 absolute bottom-2 right-2 px-2 text-sm backdrop-blur-sm">
+				<small className="absolute bottom-2 right-2 bg-cardbackground/10 px-2 text-sm text-cardparagraph backdrop-blur-sm">
 					Photo by{" "}
 					<a href="https://unsplash.com/@familyschaffner?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
 						Astrid Schaffner
@@ -75,12 +75,13 @@ export default async function Article({ params }: { params: { slug: string } }) 
 					</a>
 				</small>
 			</div>
+
 			<article className="relative px-4 sm:px-0">
 				<span className="text-sm text-accent">Dodane: {date}</span>
 				<Link href={`/aktualnosci/${slug}`}>
 					<h1 className="mb-8 mt-8 break-words text-3xl text-secondary sm:text-5xl">{title}</h1>
 				</Link>
-				<div className="text-cardparagraph prose-xl mb-8 text-base">
+				<div className="prose-xl mb-8 text-base text-cardparagraph">
 					<NewsHtml html={text} />
 				</div>
 
