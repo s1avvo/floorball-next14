@@ -1,13 +1,13 @@
 import { Image as DatoImage } from "react-datocms";
-import { TreningCard } from "@ui/TreningCard";
-import { TreningGallerySwiper } from "@ui/TreningGallerySwiper";
+import { TrainingCard } from "@/components/atoms/TrainingCard";
+import { TrainingGallerySwiper } from "@/components/molecules/TrainingGallerySwiper";
 
-import { getTreningSessionsList } from "@api/getTrening";
+import { getTrainingSessionsList } from "@/app/api/getTraining";
 import { getPageImagesList } from "@api/getPageImage";
 
 export default async function TreningMain() {
-	const treningSessions = await getTreningSessionsList();
-	const treningImages = await getPageImagesList("Treningi");
+	const traningSessions = await getTrainingSessionsList();
+	const traningImages = await getPageImagesList("Treningi");
 
 	return (
 		<div className="relative">
@@ -18,7 +18,7 @@ export default async function TreningMain() {
 				<div className="flex-row-reverse gap-4 md:flex">
 					<div className="relative h-64 w-full self-end overflow-hidden rounded-none shadow-lg sm:rounded-xl md:h-96 md:w-1/2">
 						<DatoImage
-							data={treningImages[0].headerImage.responsiveImage!}
+							data={traningImages[0].headerImage.responsiveImage!}
 							layout="responsive"
 							objectFit="cover"
 							priority
@@ -50,13 +50,13 @@ export default async function TreningMain() {
 				</div>
 
 				<div className="mt-8 grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2 lg:grid-cols-3">
-					{treningSessions.map((item) => (
-						<TreningCard key={item.id} trening={item} />
+					{traningSessions.map((item) => (
+						<TrainingCard key={item.id} training={item} />
 					))}
 				</div>
 			</section>
 
-			{treningImages[0].gallery.length > 0 && (
+			{traningImages[0].gallery.length > 0 && (
 				<aside>
 					<div className="mx-auto mt-12 max-w-lg p-4">
 						<h4 className="mb-8 text-center text-2xl text-secondary">Zdjęcia z treningu</h4>
@@ -65,7 +65,7 @@ export default async function TreningMain() {
 							niezwykłego świata unihokeja!
 						</p>
 					</div>
-					<TreningGallerySwiper images={treningImages[0].gallery} />
+					<TrainingGallerySwiper images={traningImages[0].gallery} />
 				</aside>
 			)}
 		</div>

@@ -7,7 +7,7 @@ export const RecentNewsCard = ({ news }: { news: ArticleRecentItemFragment }) =>
 	const date = new Date(createdat).toLocaleDateString("en-GB");
 
 	return (
-		<div className="relative flex flex-col justify-between rounded-lg bg-primary p-2">
+		<div className="relative flex w-full flex-col justify-between rounded-lg bg-primary p-2">
 			<div>
 				<span className="text-sm text-accent">Dodane: {date}</span>
 				<Link href={`/aktualnosci/${slug}`}>

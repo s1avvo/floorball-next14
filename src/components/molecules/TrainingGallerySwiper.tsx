@@ -8,7 +8,7 @@ import "swiper/css/free-mode";
 import { FreeMode, Pagination } from "swiper/modules";
 import { type ResponsiveImageFragment } from "@/gql/graphql";
 
-export const TreningGallerySwiper = ({
+export const TrainingGallerySwiper = ({
 	images,
 }: {
 	images: { id: string; responsiveImage?: ResponsiveImageFragment | undefined | null }[];

@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { Stick } from "@ui/Stick";
-import { BackButton } from "@/components/atoms/BackButton";
+import { BackButton } from "@ui/BackButton";
+import { CustomButton } from "@ui/CustomButton";
 
 export default function NewsLayout({ children }: { children: React.ReactNode }) {
 	return (
@@ -13,7 +15,12 @@ export default function NewsLayout({ children }: { children: React.ReactNode }) 
 						Śledź naszą stronę oraz media społecznościowe, aby być na bieżąco z najnowszymi informacjami, relacjami z
 						wydarzeń klubowych oraz ciekawostkami ze świata unihokeja.
 					</p>
-					<BackButton />
+					<div className="flex items-center justify-end gap-2">
+						<Link href={"/"}>
+							<CustomButton size="small">#Home</CustomButton>
+						</Link>
+						<BackButton />
+					</div>
 				</div>
 				<Stick fill="#FF8906" height={550} width={160} />
 			</div>

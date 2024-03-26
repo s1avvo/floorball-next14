@@ -14,6 +14,7 @@ export const getNewsWithPagination = async (first: number, skip: number) => {
 	const graphqlResponse = await executeGraphql({
 		query: ArticleGetListWithPaginationDocument,
 		variables: { first, skip },
+		next: { tags: ["article"] },
 	});
 
 	return graphqlResponse.allArticles;
@@ -23,7 +24,7 @@ export const getNewsFirst = async (quantity: number) => {
 	const graphqlResponse = await executeGraphql({
 		query: ArticleGetFirstDocument,
 		variables: { quantity },
-		cache: "no-cache",
+		next: { tags: ["article"] },
 	});
 
 	return graphqlResponse.allArticles;
@@ -33,14 +34,17 @@ export const getNewsRecent = async (quantity: number) => {
 	const graphqlResponse = await executeGraphql({
 		query: ArticleGetRecentListDocument,
 		variables: { quantity },
-		cache: "no-cache",
+		next: { tags: ["article"] },
 	});
 
 	return graphqlResponse.allArticles;
 };
 
 export const getNewsCount = async () => {
-	const graphqlResponse = await executeGraphql({ query: ArticleCountDocument, cache: "no-cache" });
+	const graphqlResponse = await executeGraphql({
+		query: ArticleCountDocument,
+		next: { tags: ["article"] },
+	});
 
 	return graphqlResponse._allArticlesMeta.count;
 };
@@ -54,7 +58,6 @@ export const getNewsBySlug = async (slug: string) => {
 		headers: {
 			...(isEnabled ? { "X-Include-Drafts": "true" } : {}),
 		},
-		cache: "no-cache",
 	});
 
 	return graphqlResponse.article;
@@ -63,7 +66,7 @@ export const getNewsBySlug = async (slug: string) => {
 export const getNewsAll = async () => {
 	const graphqlResponse = await executeGraphql({
 		query: ArticleGetListDocument,
-		cache: "no-cache",
+		next: { tags: ["article"] },
 	});
 
 	return graphqlResponse.allArticles;
@@ -72,7 +75,6 @@ export const getNewsAll = async () => {
 export const getNewsSlug = async () => {
 	const graphqlResponse = await executeGraphql({
 		query: ArticleGetSlugListDocument,
-		cache: "no-cache",
 	});
 
 	return graphqlResponse.allArticles;

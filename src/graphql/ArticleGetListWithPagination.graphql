@@ -1,5 +1,5 @@
 query ArticleGetListWithPagination($first: IntType, $skip: IntType) {
-	allArticles(orderBy: createdat_DESC, first: $first, skip: $skip) {
+	allArticles(orderBy: _createdAt_DESC, first: $first, skip: $skip) {
 		...ArticleItem
 	}
 }

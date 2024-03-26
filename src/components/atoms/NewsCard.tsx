@@ -15,7 +15,7 @@ export const NewsCard = ({ news }: { news: ArticleFirstItemFragment }) => {
 	const date = new Date(createdat).toLocaleDateString("en-GB");
 
 	return (
-		<article className="shadow-text/30 relative rounded-lg bg-cardbackground px-4 pb-4 pt-10 shadow-md">
+		<article className="shadow-text/30 relative w-full rounded-lg bg-cardbackground px-4 pb-4 pt-10 shadow-md">
 			<div className="absolute left-0 top-0 h-24 w-full rounded-md bg-gradient-to-b from-paragraph/15 via-paragraph/5 to-paragraph/0" />
 
 			<span className="text-sm text-accent">Dodane: {date}</span>
@@ -51,7 +51,7 @@ export const NewsCard = ({ news }: { news: ArticleFirstItemFragment }) => {
 				</button>
 			</div>
 
-			{link && (
+			{link ? (
 				<div className="absolute right-4 top-4">
 					<Link
 						href={link as Route}
@@ -63,6 +63,8 @@ export const NewsCard = ({ news }: { news: ArticleFirstItemFragment }) => {
 						<Facebook fillColor={"#FF8906"} />
 					</Link>
 				</div>
+			) : (
+				<div className="absolute right-4 top-4 h-7 w-7 rounded-full bg-accent" />
 			)}
 		</article>
 	);

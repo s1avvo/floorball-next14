@@ -1,4 +1,4 @@
-fragment TreningItem on TrainingRecord {
+fragment TrainingItem on TrainingRecord {
 	id
 	group
 	icon {

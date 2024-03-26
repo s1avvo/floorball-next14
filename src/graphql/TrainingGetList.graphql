@@ -1,5 +1,5 @@
-query TreningGetList {
+query TrainingGetList {
 	allTrainings(orderBy: _createdAt_ASC) {
-		...TreningItem
+		...TrainingItem
 	}
 }
