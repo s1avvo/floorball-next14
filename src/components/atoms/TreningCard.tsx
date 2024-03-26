@@ -5,7 +5,7 @@ import { type TreningItemFragment } from "@/gql/graphql";
 
 export const TreningCard = ({ trening }: { trening: TreningItemFragment }) => {
 	return (
-		<div className="relative flex w-[330px] flex-col rounded-lg bg-primary px-4 pb-6 pt-48 sm:px-6">
+		<div className="relative mt-4 flex w-[330px] flex-col rounded-lg bg-primary px-4 pb-6 pt-48 sm:px-6">
 			<div
 				className={clsx(
 					"absolute -top-[10px] flex h-[175px] w-[200px] justify-center rounded-md bg-secondary",

@@ -11,8 +11,8 @@ export default async function ContactMain() {
 
 	return (
 		<div className="relative">
-			<div className="absolute left-0 top-0 h-24 w-full rounded-xl bg-gradient-to-b from-paragraph/15 via-paragraph/5 to-paragraph/0" />
-			<div className="absolute left-0 top-0 h-24 w-full rounded-xl bg-gradient-to-l from-background to-background/0" />
+			<div className="absolute left-0 top-0 h-24 w-full rounded-none bg-gradient-to-b from-paragraph/15 via-paragraph/5 to-paragraph/0 sm:rounded-xl" />
+			<div className="absolute left-0 top-0 h-24 w-full rounded-none bg-gradient-to-l from-background to-background/0 sm:rounded-xl" />
 
 			<section className="flex-row-reverse gap-4 md:flex">
 				<div className="h-64 w-full self-end overflow-hidden rounded-none shadow-lg sm:rounded-xl md:h-[937px] md:w-1/2">

@@ -53,7 +53,7 @@ export default async function Article({ params }: { params: { slug: string } }) 
 
 	return (
 		<section className="space-y-8 md:col-span-2">
-			<div className="relative h-96 w-full overflow-hidden rounded-xl shadow-lg">
+			<div className="relative h-64 w-full overflow-hidden rounded-none shadow-lg sm:rounded-xl md:h-96">
 				<DatoImage
 					data={article.image.responsiveImage!}
 					layout="responsive"
@@ -76,17 +76,17 @@ export default async function Article({ params }: { params: { slug: string } }) 
 				</small>
 			</div>
 
-			<article className="relative px-4 sm:px-0">
+			<article className="relative p-8 sm:p-12">
 				<span className="text-sm text-accent">Dodane: {date}</span>
 				<Link href={`/aktualnosci/${slug}`}>
-					<h1 className="mb-8 mt-8 break-words text-3xl text-secondary sm:text-5xl">{title}</h1>
+					<h1 className="mb-8 mt-2 break-words text-3xl text-secondary sm:text-5xl">{title}</h1>
 				</Link>
-				<div className="prose-xl mb-8 text-base text-cardparagraph">
+				<div className="prose-xl text-base text-cardparagraph">
 					<NewsHtml html={text} />
 				</div>
 
 				{link && (
-					<div className="absolute right-4 top-0">
+					<div className="absolute right-8 top-0">
 						<Link
 							href={link as Route}
 							className="text-blue-950 dark:text-white"

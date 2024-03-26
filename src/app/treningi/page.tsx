@@ -11,10 +11,10 @@ export default async function TreningMain() {
 
 	return (
 		<div className="relative">
-			<div className="absolute left-0 top-0 h-24 w-full rounded-xl bg-gradient-to-b from-paragraph/15 via-paragraph/5 to-paragraph/0" />
-			<div className="absolute left-0 top-0 h-24 w-full rounded-xl bg-gradient-to-l from-background to-background/0" />
+			<div className="absolute left-0 top-0 h-24 w-full rounded-none bg-gradient-to-b from-paragraph/15 via-paragraph/5 to-paragraph/0 sm:rounded-xl" />
+			<div className="absolute left-0 top-0 h-24 w-full rounded-none bg-gradient-to-l from-background to-background/0 sm:rounded-xl" />
 
-			<section className="space-y-12">
+			<section>
 				<div className="flex-row-reverse gap-4 md:flex">
 					<div className="relative h-64 w-full self-end overflow-hidden rounded-none shadow-lg sm:rounded-xl md:h-96 md:w-1/2">
 						<DatoImage
@@ -38,7 +38,7 @@ export default async function TreningMain() {
 						</small>
 					</div>
 
-					<div className="p-8 sm:mt-0 sm:p-12 md:w-1/2">
+					<div className="p-8 sm:p-12 md:w-1/2">
 						<h1 className="mb-8 text-3xl text-secondary drop-shadow-md lg:text-4xl xl:text-5xl">
 							Harmonogram treningów dla najmłodszych
 						</h1>
@@ -49,7 +49,7 @@ export default async function TreningMain() {
 					</div>
 				</div>
 
-				<div className="grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2 lg:grid-cols-3">
+				<div className="mt-8 grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2 lg:grid-cols-3">
 					{treningSessions.map((item) => (
 						<TreningCard key={item.id} trening={item} />
 					))}
