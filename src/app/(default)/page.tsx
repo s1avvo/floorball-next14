@@ -3,6 +3,7 @@ import { HomeHero } from "@ui/HomeHero";
 import { HomeNews } from "@ui/HomeNews";
 import { HomeTrainer } from "@ui/HomeTrainer";
 import { Sponsor } from "@ui/Sponsor";
+import { homeStructuredData } from "@/constants/structuredData ";
 
 import { getPageImagesList } from "@api/getPageImage";
 
@@ -11,11 +12,11 @@ export default async function Home() {
 
 	return (
 		<>
-			{/* <script
+			<script
 				key="structured-data"
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(homeStructuredData) }}
-			/> */}
+			/>
 
 			<div className="relative rounded-none bg-primary sm:rounded-xl">
 				<div className="absolute right-0 top-0 z-0 h-[1100px] w-full overflow-hidden rounded-xl opacity-25 sm:opacity-100">
