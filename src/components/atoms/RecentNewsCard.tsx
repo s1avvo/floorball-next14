@@ -2,12 +2,17 @@ import Link from "next/link";
 import { Ball } from "@ui/Ball";
 import { type ArticleRecentItemFragment } from "@/gql/graphql";
 
-export const RecentNewsCard = ({ news }: { news: ArticleRecentItemFragment }) => {
+export const RecentNewsCard = ({ news, delay }: { news: ArticleRecentItemFragment; delay: string }) => {
 	const { title, createdat, slug } = news;
 	const date = new Date(createdat).toLocaleDateString("en-GB");
 
 	return (
-		<div className="relative flex w-full flex-col justify-between rounded-lg bg-primary p-2">
+		<div
+			className="relative flex w-full flex-col justify-between rounded-lg bg-primary p-2"
+			data-aos="fade-up"
+			data-aos-delay={delay}
+			data-aos-anchor="[data-aos-id-recentnews]"
+		>
 			<div>
 				<span className="text-sm text-accent">Dodane: {date}</span>
 				<Link href={`/aktualnosci/${slug}`}>

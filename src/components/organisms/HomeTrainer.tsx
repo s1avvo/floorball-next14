@@ -9,9 +9,13 @@ export const HomeTrainer = async () => {
 	const trainers = await getTrainersList();
 
 	return (
-		<section className="relative flex-row-reverse sm:flex">
+		<section className="relative mb-8 flex-row-reverse sm:flex">
 			<div className="md:w-1/2 lg:w-1/3">
-				<div className="mb-4 flex h-full flex-col justify-between rounded-lg bg-secondary p-8">
+				<div
+					className="mb-4 flex h-full flex-col justify-between rounded-lg bg-secondary p-8"
+					data-aos-id-trainer
+					data-aos="fade-left"
+				>
 					<article>
 						<h2 className="mb-12 text-4xl text-heading">Nasi trenerzy</h2>
 						<p className="prose mb-4 text-base text-heading">
@@ -25,10 +29,26 @@ export const HomeTrainer = async () => {
 						</p>
 						<div className="mb-4 flex gap-2">
 							<Link href={"/treningi"}>
-								<CustomButton size="small">#Treningi</CustomButton>
+								<CustomButton
+									size="small"
+									data-aos="fade-zoom-in"
+									data-aos-delay="1200"
+									data-aos-offset="0"
+									data-aos-anchor="[data-aos-id-trainer]"
+								>
+									#Treningi
+								</CustomButton>
 							</Link>
 							<Link href={"/kontakt"}>
-								<CustomButton size="small">#Kontakt</CustomButton>
+								<CustomButton
+									size="small"
+									data-aos="fade-zoom-in"
+									data-aos-delay="1400"
+									data-aos-offset="0"
+									data-aos-anchor="[data-aos-id-trainer]"
+								>
+									#Kontakt
+								</CustomButton>
 							</Link>
 						</div>
 					</article>
@@ -39,7 +59,7 @@ export const HomeTrainer = async () => {
 				</div>
 			</div>
 
-			<div className="w-screen px-2 md:w-1/2 md:px-4 lg:w-2/3 xl:px-8">
+			<div className="w-screen px-2 md:w-1/2 md:px-4 lg:w-2/3 xl:px-8" data-aos="fade" data-aos-delay="600">
 				<TrainerSwiper trainers={trainers} />
 			</div>
 		</section>

@@ -8,14 +8,19 @@ import { NewsHtml } from "@ui/NewsHtml";
 import { LucideIconWithText } from "@ui/LucideIconWithText";
 import { type ArticleFirstItemFragment } from "@/gql/graphql";
 
-export const NewsCard = ({ news }: { news: ArticleFirstItemFragment }) => {
+export const NewsCard = ({ news, delay }: { news: ArticleFirstItemFragment; delay?: string }) => {
 	const [isClamp, setIsClamp] = useState(true);
 
 	const { title, createdat, text, link, slug } = news;
 	const date = new Date(createdat).toLocaleDateString("en-GB");
 
 	return (
-		<article className="shadow-text/30 relative w-full rounded-lg bg-cardbackground px-4 pb-4 pt-10 shadow-md">
+		<article
+			className="shadow-text/30 relative w-full rounded-lg bg-cardbackground px-4 pb-4 pt-10 shadow-md"
+			data-aos="fade-left"
+			data-aos-delay={delay}
+			data-aos-anchor="[data-aos-id-news]"
+		>
 			<div className="absolute left-0 top-0 h-24 w-full rounded-md bg-gradient-to-b from-paragraph/15 via-paragraph/5 to-paragraph/0" />
 
 			<span className="text-sm text-accent">Dodane: {date}</span>

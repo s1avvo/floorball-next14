@@ -47,7 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang="pl">
 			<body className={`${roboto.className} bg-background`}>
 				<Header />
-				<main className="mx-auto mb-8 max-w-md space-y-8 sm:max-w-2xl md:max-w-4xl lg:max-w-7xl">{children}</main>
+				<main className="mx-auto max-w-md sm:max-w-2xl md:max-w-4xl lg:max-w-7xl">{children}</main>
 				<Footer />
 				<Toaster position="bottom-left" expand closeButton />
 			</body>

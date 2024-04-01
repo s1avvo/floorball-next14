@@ -67,7 +67,6 @@ export default async function Article({ params }: { params: { slug: string } }) 
 						layout="responsive"
 						objectFit="cover"
 						objectPosition={"50% 50%"}
-						priority
 						style={{
 							height: "100%",
 						}}
@@ -84,17 +83,26 @@ export default async function Article({ params }: { params: { slug: string } }) 
 					</small>
 				</div>
 
-				<article className="relative p-8 sm:p-12">
-					<span className="text-sm text-accent">Dodane: {date}</span>
+				<article className="relative p-8 sm:p-12" data-aos-id-article>
+					<span className="text-sm text-accent" data-aos="fade-up" data-aos-anchor="[data-aos-id-article]">
+						Dodane: {date}
+					</span>
 					<Link href={`/aktualnosci/${slug}`}>
-						<h1 className="mb-8 mt-2 break-words text-3xl text-secondary sm:text-5xl">{title}</h1>
+						<h1
+							className="mb-8 mt-2 break-words text-3xl text-secondary sm:text-5xl"
+							data-aos="fade-up"
+							data-aos-delay="200"
+							data-aos-anchor="[data-aos-id-article]"
+						>
+							{title}
+						</h1>
 					</Link>
-					<div className="prose-xl text-base text-cardparagraph">
+					<div className="prose-xl text-base text-cardparagraph" data-aos="fade-up">
 						<NewsHtml html={text} />
 					</div>
 
 					{link && (
-						<div className="absolute right-8 top-0">
+						<div className="absolute right-8 top-0" data-aos="fade-up">
 							<Link
 								href={link as Route}
 								className="text-blue-950 dark:text-white"
@@ -111,10 +119,12 @@ export default async function Article({ params }: { params: { slug: string } }) 
 				{recentNews.length > 0 && (
 					<aside className="px-4 sm:px-0">
 						<hr className="mb-8 w-full border-2 border-accent" />
-						<h3 className="mb-8 text-center text-2xl text-secondary">Ostatnie wiadomości</h3>
+						<h3 className="mb-8 text-center text-2xl text-secondary" data-aos-id-recentnews>
+							Ostatnie wiadomości
+						</h3>
 						<div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-							{recentNews.map((item) => (
-								<RecentNewsCard key={item.id} news={item} />
+							{recentNews.map((item, index) => (
+								<RecentNewsCard key={item.id} news={item} delay={`${(index + 1) * 200}`} />
 							))}
 						</div>
 					</aside>

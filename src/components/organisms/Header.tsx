@@ -4,7 +4,7 @@ import { ThemeImage } from "@ui/ThemeImage";
 
 export const Header = () => {
 	return (
-		<header className="mx-auto flex h-[110px] max-w-md items-center justify-between p-4 sm:mb-2 sm:max-w-2xl md:max-w-4xl lg:max-w-7xl">
+		<header className="mx-auto flex h-[100px] max-w-md items-center justify-between p-4 sm:mb-2 sm:max-w-2xl md:max-w-4xl lg:max-w-7xl">
 			{/* Logo */}
 			<Link href="/">
 				<ThemeImage

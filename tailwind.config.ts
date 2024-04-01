@@ -43,9 +43,9 @@ const config: Config = {
 				},
 			],
 			lg: [
-				"1.33rem",
+				"1.15rem",
 				{
-					lineHeight: "1.8rem",
+					lineHeight: "2.08rem",
 					letterSpacing: "0em",
 					fontWeight: "300",
 				},

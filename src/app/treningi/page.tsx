@@ -29,7 +29,6 @@ export default async function TrainingMain() {
 								data={trainingImages[0].headerImage.responsiveImage!}
 								layout="responsive"
 								objectFit="cover"
-								priority
 								style={{
 									height: "100%",
 								}}
@@ -47,10 +46,10 @@ export default async function TrainingMain() {
 						</div>
 
 						<div className="p-8 sm:p-12 md:w-1/2">
-							<h1 className="mb-8 text-3xl text-secondary drop-shadow-md lg:text-4xl xl:text-5xl">
+							<h1 className="mb-8 text-3xl text-secondary drop-shadow-md lg:text-4xl xl:text-5xl" data-aos="fade-up">
 								Harmonogram treningów dla najmłodszych
 							</h1>
-							<p className="prose text-base text-cardparagraph">
+							<p className="prose text-base text-cardparagraph" data-aos="fade-up" data-aos-delay="200">
 								Zapraszamy do udziału w naszych treningach, które odbywają się regularnie w Hali Sportowej w Śremie,
 								przy ul. Staszica 1a. Sprawdź poniższy harmonogram treningów dla różnych grup wiekowych:
 							</p>
@@ -58,14 +57,14 @@ export default async function TrainingMain() {
 					</div>
 
 					<div className="mt-8 grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2 lg:grid-cols-3">
-						{trainingSessions.map((item) => (
-							<TrainingCard key={item.id} training={item} />
+						{trainingSessions.map((item, index) => (
+							<TrainingCard key={item.id} training={item} delay={`${(index + 1) * 200}`} />
 						))}
 					</div>
 				</section>
 
 				{trainingImages[0].gallery.length > 0 && (
-					<aside>
+					<aside className="mb-8" data-aos="fade">
 						<div className="mx-auto mt-12 max-w-lg p-4">
 							<h4 className="mb-8 text-center text-2xl text-secondary">Zdjęcia z treningu</h4>
 							<p className="mb-8 text-center text-base text-cardparagraph">

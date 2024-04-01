@@ -4,7 +4,7 @@ import { SponsorItem } from "@ui/SponsorItem";
 export const Sponsor = async () => {
 	const sponsors = await getSponsorList();
 	return (
-		<div>
+		<div className="mb-8">
 			<h6 className="flex items-center gap-4 whitespace-nowrap px-4 text-lg text-secondary">
 				Sponsorzy:
 				<span className="h-1 w-full bg-secondary" />

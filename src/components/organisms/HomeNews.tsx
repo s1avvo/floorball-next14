@@ -13,7 +13,7 @@ export const HomeNews = async () => {
 
 	return (
 		<section className="relative z-10 grid grid-cols-1 justify-items-end gap-4 overflow-hidden p-2 sm:p-4 md:grid-cols-2 lg:grid-cols-3">
-			<article className="row-span-1 max-w-sm p-6 text-end sm:p-8 md:row-span-2">
+			<article className="row-span-1 max-w-sm p-6 text-end sm:p-8 md:row-span-2" data-aos="fade-right" data-aos-id-news>
 				<h2 className="mb-12 text-4xl text-heading">
 					Co słychać <br />w klubie?
 				</h2>
@@ -25,12 +25,20 @@ export const HomeNews = async () => {
 					Dołącz do naszej społeczności i nie przegap żadnych aktualności, które przygotowujemy specjalnie dla Ciebie!
 				</p>
 				<Link href={"/aktualnosci"}>
-					<CustomButton size="small">#Aktulności</CustomButton>
+					<CustomButton
+						size="small"
+						data-aos="fade-zoom-in"
+						data-aos-delay="1200"
+						data-aos-offset="0"
+						data-aos-anchor="[data-aos-id-news]"
+					>
+						#Aktulności
+					</CustomButton>
 				</Link>
 			</article>
 
-			{news.map((item) => (
-				<NewsCard key={item.id} news={item} />
+			{news.map((item, index) => (
+				<NewsCard key={item.id} news={item} delay={`${(index + 1) * 200}`} />
 			))}
 		</section>
 	);

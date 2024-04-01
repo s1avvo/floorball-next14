@@ -3,9 +3,13 @@ import Image from "next/image";
 import clsx from "clsx";
 import { type TrainingItemFragment } from "@/gql/graphql";
 
-export const TrainingCard = ({ training }: { training: TrainingItemFragment }) => {
+export const TrainingCard = ({ training, delay }: { training: TrainingItemFragment; delay?: string }) => {
 	return (
-		<div className="relative mt-4 flex w-[330px] flex-col rounded-lg bg-primary px-4 pb-6 pt-48 sm:px-6">
+		<div
+			className="relative mt-4 flex w-[330px] flex-col rounded-lg bg-primary px-4 pb-6 pt-48 sm:px-6"
+			data-aos="fade-up"
+			data-aos-delay={delay}
+		>
 			<div
 				className={clsx(
 					"absolute -top-[10px] flex h-[175px] w-[200px] justify-center rounded-md bg-secondary",
