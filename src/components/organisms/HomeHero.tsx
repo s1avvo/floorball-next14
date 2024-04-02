@@ -9,13 +9,13 @@ export const HomeHero = () => {
 				Śremski Klub Unihokeja
 			</h1>
 			<hr className="mb-4 h-1 bg-accent text-accent" data-aos="fade-up" data-aos-delay="200" />
-			<h6 className="prose mb-4  text-lg text-paragraph" data-aos="fade-up" data-aos-delay="300">
+			<h6 className="prose mb-4  text-lg text-paragraph" data-aos="fade-up" data-aos-delay="400">
 				Witaj na oficjalnej stronie Floorball Śrem. Nasza misja to promowanie unihokeja jako aktywności fizycznej dla
 				wszystkich grup wiekowych oraz poziomów umiejętności.
 			</h6>
 
 			<Link href={"/kontakt"} className="relative">
-				<CustomButton size="regular" data-aos="fade-up" data-aos-delay="400" data-aos-anchor="[data-aos-id-hero]">
+				<CustomButton size="regular" data-aos="fade-up" data-aos-delay="600" data-aos-anchor="[data-aos-id-hero]">
 					Dołącz do nas
 				</CustomButton>
 				<PartyPopperIcon

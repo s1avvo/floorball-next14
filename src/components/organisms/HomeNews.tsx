@@ -21,11 +21,11 @@ export const HomeNews = async () => {
 					Śledź naszą stronę oraz media społecznościowe, aby być na bieżąco z najnowszymi informacjami, relacjami z
 					wydarzeń klubowych oraz ciekawostkami ze świata unihokeja.
 				</p>
-				<p className="mb-4 text-base text-paragraph" data-aos="fade-up" data-aos-delay="300">
+				<p className="mb-4 text-base text-paragraph" data-aos="fade-up" data-aos-delay="400">
 					Dołącz do naszej społeczności i nie przegap żadnych aktualności, które przygotowujemy specjalnie dla Ciebie!
 				</p>
 				<Link href={"/aktualnosci"}>
-					<CustomButton size="small" data-aos="fade-zoom-in" data-aos-delay="1000" data-aos-offset="0">
+					<CustomButton size="small" data-aos="fade-zoom-in" data-aos-delay="800" data-aos-offset="0">
 						#Aktulności
 					</CustomButton>
 				</Link>

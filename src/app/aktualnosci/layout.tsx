@@ -15,16 +15,22 @@ export default function NewsLayout({ children }: { children: React.ReactNode }) 
 						Śledź naszą stronę oraz media społecznościowe, aby być na bieżąco z najnowszymi informacjami, relacjami z
 						wydarzeń klubowych oraz ciekawostkami ze świata unihokeja.
 					</p>
-					<p className="mb-4 text-base text-paragraph" data-aos="fade-up" data-aos-delay="300">
+					<p className="mb-4 text-base text-paragraph" data-aos="fade-up" data-aos-delay="400">
 						Dołącz do naszej społeczności i nie przegap żadnych aktualności, które przygotowujemy specjalnie dla Ciebie!
 					</p>
 					<div className="flex items-center justify-end gap-2">
 						<Link href={"/"}>
-							<CustomButton size="small" data-aos="fade-zoom-in" data-aos-delay="1000" data-aos-offset="0">
+							<CustomButton
+								size="small"
+								data-aos="fade-zoom-in"
+								data-aos-delay="800"
+								data-aos-offset="0"
+								data-aos-anchor="[data-aos-id-news]"
+							>
 								#Home
 							</CustomButton>
 						</Link>
-						<div data-aos="fade-zoom-in" data-aos-delay="1200" data-aos-offset="0">
+						<div data-aos="fade-zoom-in" data-aos-delay="1000" data-aos-offset="0">
 							<BackButton />
 						</div>
 					</div>

@@ -33,15 +33,24 @@ export default async function ContactMain() {
 							}}
 						/>
 					</div>
-					<div className="p-8 sm:p-12 md:w-1/2" data-aos-id-contact>
-						<h1 className="mb-8 text-3xl text-secondary drop-shadow-md lg:text-4xl xl:text-5xl" data-aos="fade-up">
+					<div className="p-8 sm:p-12 md:w-1/2">
+						<h1
+							className="mb-8 text-3xl text-secondary drop-shadow-md lg:text-4xl xl:text-5xl"
+							data-aos="fade-up"
+							data-aos-id-contact
+						>
 							Masz pytania? Skontaktuj się <br />z Nami
 						</h1>
-						<p className="prose mb-8 text-base text-cardparagraph" data-aos="fade-up" data-aos-delay="200">
+						<p
+							className="prose mb-8 text-base text-cardparagraph"
+							data-aos="fade-up"
+							data-aos-delay="200"
+							data-aos-anchor="[data-aos-id-contact]"
+						>
 							Chciałbyś się z nami skontaktować w sprawie członkostwa, treningów czy współpracy, jesteśmy do Twojej
 							dyspozycji. Poniżej znajdziesz formularz kontaktowe lub telefon.
 						</p>
-						<div data-aos="fade-up" data-aos-delay="400" data-aos-anchor="[data-aos-id-contact]">
+						<div data-aos="fade">
 							<ContactForm />
 						</div>
 					</div>

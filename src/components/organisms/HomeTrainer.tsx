@@ -21,7 +21,7 @@ export const HomeTrainer = async () => {
 							pasję do rozwoju młodych talentów. Dzięki ich zaangażowaniu i profesjonalizmowi, nasi zawodnicy rozwijają
 							swoje umiejętności unihokejowe oraz uczą się wartości teamworku, determinacji i zasad fair play.
 						</p>
-						<p className="prose mb-4 text-base text-heading" data-aos="fade-up" data-aos-delay="300">
+						<p className="prose mb-4 text-base text-heading" data-aos="fade-up" data-aos-delay="400">
 							Chcesz dowiedzieć się więcej o naszych metodach treningowych? Zawsze możesz porozmawiać z trenerami, aby
 							uzyskać więcej informacji!
 						</p>
@@ -45,7 +45,7 @@ export const HomeTrainer = async () => {
 				</div>
 			</div>
 
-			<div className="w-screen px-2 md:w-1/2 md:px-4 lg:w-2/3 xl:px-8" data-aos="fade" data-aos-delay="600">
+			<div className="w-screen px-2 md:w-1/2 md:px-4 lg:w-2/3 xl:px-8" data-aos="fade">
 				<TrainerSwiper trainers={trainers} />
 			</div>
 		</section>

@@ -57,7 +57,7 @@ export default async function AboutUsMain() {
 								determinacją i zaangażowaniem, inspirowani dorobkiem trenera Kaczmarka, członkowie klubu postanowili
 								kontynuować jego pracę.
 							</p>
-							<p className="prose-sm text-base text-cardparagraph" data-aos="fade-up" data-aos-delay="300">
+							<p className="prose-sm text-base text-cardparagraph" data-aos="fade-up" data-aos-delay="400">
 								To właśnie ta idea stanowiła fundament powstania nowej historii unihokeja w Śremie i początek Floorball
 								Śrem. W tym momencie mam trzy grupy młodych zawodników: przedszkolaki, klasy 1-2 i klasy 3-5.
 							</p>
