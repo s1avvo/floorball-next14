@@ -8,7 +8,15 @@ import { NewsHtml } from "@ui/NewsHtml";
 import { LucideIconWithText } from "@ui/LucideIconWithText";
 import { type ArticleFirstItemFragment } from "@/gql/graphql";
 
-export const NewsCard = ({ news, delay }: { news: ArticleFirstItemFragment; delay?: string }) => {
+export const NewsCard = ({
+	news,
+	delay,
+	anchor,
+}: {
+	news: ArticleFirstItemFragment;
+	delay?: string;
+	anchor?: string;
+}) => {
 	const [isClamp, setIsClamp] = useState(true);
 
 	const { title, createdat, text, link, slug } = news;
@@ -17,9 +25,9 @@ export const NewsCard = ({ news, delay }: { news: ArticleFirstItemFragment; dela
 	return (
 		<article
 			className="shadow-text/30 relative w-full rounded-lg bg-cardbackground px-4 pb-4 pt-10 shadow-md"
-			data-aos="fade-up"
+			data-aos="fade"
 			data-aos-delay={delay}
-			data-aos-anchor="[data-aos-id-news]"
+			data-aos-anchor={anchor}
 		>
 			<div className="absolute left-0 top-0 h-24 w-full rounded-md bg-gradient-to-b from-paragraph/15 via-paragraph/5 to-paragraph/0" />
 

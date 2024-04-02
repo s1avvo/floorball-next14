@@ -20,13 +20,7 @@ export default function NewsLayout({ children }: { children: React.ReactNode }) 
 					</p>
 					<div className="flex items-center justify-end gap-2">
 						<Link href={"/"}>
-							<CustomButton
-								size="small"
-								data-aos="fade-zoom-in"
-								data-aos-delay="1000"
-								data-aos-offset="0"
-								data-aos-anchor="[data-aos-id-news]"
-							>
+							<CustomButton size="small" data-aos="fade-zoom-in" data-aos-delay="1000" data-aos-offset="0">
 								#Home
 							</CustomButton>
 						</Link>

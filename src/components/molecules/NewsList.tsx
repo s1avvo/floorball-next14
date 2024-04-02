@@ -21,7 +21,7 @@ export const NewsList = ({ initialNews, countNews }: { initialNews: ArticleItemF
 	return (
 		<>
 			{news.map((news, index) => (
-				<NewsCard key={news.id} news={news} delay={`${(index + 1) * 200}`} />
+				<NewsCard key={news.id} news={news} delay={`${((index % 4) + 1) * 200}`} anchor="[data-aos-id-news]" />
 			))}
 
 			{isMoreNews && (

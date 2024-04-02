@@ -14,7 +14,7 @@ export const HomeNews = async () => {
 	return (
 		<section className="relative z-10 grid grid-cols-1 justify-items-end gap-4 overflow-hidden p-2 sm:p-4 md:grid-cols-2 lg:grid-cols-3">
 			<article className="row-span-1 max-w-sm p-6 text-end sm:p-8 md:row-span-2">
-				<h2 className="mb-12 text-4xl text-heading" data-aos="fade-up" data-aos-id-news>
+				<h2 className="mb-12 text-4xl text-heading" data-aos="fade-up">
 					Co słychać <br />w klubie?
 				</h2>
 				<p className="mb-4 text-base text-paragraph" data-aos="fade-up" data-aos-delay="200">
@@ -31,7 +31,7 @@ export const HomeNews = async () => {
 				</Link>
 			</article>
 			{news.map((item, index) => (
-				<NewsCard key={item.id} news={item} delay={`${(index + 1) * 200}`} />
+				<NewsCard key={item.id} news={item} delay={`${(index + 1) * 200 + 600}`} />
 			))}
 		</section>
 	);
