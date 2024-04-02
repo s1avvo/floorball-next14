@@ -23,14 +23,14 @@ export default function NewsLayout({ children }: { children: React.ReactNode }) 
 							<CustomButton
 								size="small"
 								data-aos="fade-zoom-in"
-								data-aos-delay="800"
+								data-aos-delay="1000"
 								data-aos-offset="0"
 								data-aos-anchor="[data-aos-id-news]"
 							>
 								#Home
 							</CustomButton>
 						</Link>
-						<div data-aos="fade-zoom-in" data-aos-delay="1000" data-aos-offset="0">
+						<div data-aos="fade-zoom-in" data-aos-delay="1200" data-aos-offset="0">
 							<BackButton />
 						</div>
 					</div>

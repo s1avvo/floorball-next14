@@ -17,7 +17,7 @@ export default async function NewsMain() {
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(newsStructuredData(initialNews)) }}
 			/>
-			<section className="grid grid-cols-1 gap-4 px-2 sm:px-0 md:col-span-2 md:grid-cols-2">
+			<section className="grid grid-cols-1 gap-4 px-2 sm:px-0 md:col-span-2 md:grid-cols-2" data-aos-id-news>
 				<Suspense fallback={<div className="mx-auto">Loading...</div>}>
 					<NewsList initialNews={initialNews} countNews={count} />
 				</Suspense>
