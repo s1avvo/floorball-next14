@@ -11,42 +11,28 @@ export const HomeTrainer = async () => {
 	return (
 		<section className="relative mb-8 flex-row-reverse sm:flex">
 			<div className="md:w-1/2 lg:w-1/3">
-				<div
-					className="mb-4 flex h-full flex-col justify-between rounded-lg bg-secondary p-8"
-					data-aos-id-trainer
-					data-aos="fade-left"
-				>
+				<div className="mb-4 flex h-full flex-col justify-between overflow-hidden rounded-lg bg-secondary p-8">
 					<article>
-						<h2 className="mb-12 text-4xl text-heading">Nasi trenerzy</h2>
-						<p className="prose mb-4 text-base text-heading">
+						<h2 className="mb-12 text-4xl text-heading" data-aos="fade-up">
+							Nasi trenerzy
+						</h2>
+						<p className="prose mb-4 text-base text-heading" data-aos="fade-up" data-aos-delay="200">
 							Mamy grupę doświadczonych trenerów, którzy nie tylko posiadają wiedzę techniczną i taktyczną, ale także
 							pasję do rozwoju młodych talentów. Dzięki ich zaangażowaniu i profesjonalizmowi, nasi zawodnicy rozwijają
 							swoje umiejętności unihokejowe oraz uczą się wartości teamworku, determinacji i zasad fair play.
 						</p>
-						<p className="prose mb-4 text-base text-heading">
+						<p className="prose mb-4 text-base text-heading" data-aos="fade-up" data-aos-delay="300">
 							Chcesz dowiedzieć się więcej o naszych metodach treningowych? Zawsze możesz porozmawiać z trenerami, aby
 							uzyskać więcej informacji!
 						</p>
 						<div className="mb-4 flex gap-2">
 							<Link href={"/treningi"}>
-								<CustomButton
-									size="small"
-									data-aos="fade-zoom-in"
-									data-aos-delay="1200"
-									data-aos-offset="0"
-									data-aos-anchor="[data-aos-id-trainer]"
-								>
+								<CustomButton size="small" data-aos="fade-zoom-in" data-aos-delay="1000" data-aos-offset="0">
 									#Treningi
 								</CustomButton>
 							</Link>
 							<Link href={"/kontakt"}>
-								<CustomButton
-									size="small"
-									data-aos="fade-zoom-in"
-									data-aos-delay="1400"
-									data-aos-offset="0"
-									data-aos-anchor="[data-aos-id-trainer]"
-								>
+								<CustomButton size="small" data-aos="fade-zoom-in" data-aos-delay="1200" data-aos-offset="0">
 									#Kontakt
 								</CustomButton>
 							</Link>

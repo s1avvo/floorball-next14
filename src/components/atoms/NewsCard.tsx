@@ -17,7 +17,7 @@ export const NewsCard = ({ news, delay }: { news: ArticleFirstItemFragment; dela
 	return (
 		<article
 			className="shadow-text/30 relative w-full rounded-lg bg-cardbackground px-4 pb-4 pt-10 shadow-md"
-			data-aos="fade-left"
+			data-aos="fade-up"
 			data-aos-delay={delay}
 			data-aos-anchor="[data-aos-id-news]"
 		>

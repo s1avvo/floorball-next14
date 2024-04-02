@@ -22,7 +22,7 @@ export default async function ContactMain() {
 				<div className="absolute left-0 top-0 h-24 w-full rounded-none bg-gradient-to-b from-paragraph/15 via-paragraph/5 to-paragraph/0 sm:rounded-xl" />
 				<div className="absolute left-0 top-0 h-24 w-full rounded-none bg-gradient-to-l from-background to-background/0 sm:rounded-xl" />
 
-				<section className="flex-row-reverse gap-4 md:flex" data-aos-id-contact>
+				<section className="flex-row-reverse gap-4 md:flex">
 					<div className="h-64 w-full self-end overflow-hidden rounded-none shadow-lg sm:rounded-xl md:h-[937px] md:w-1/2">
 						<DatoImage
 							data={contactImages[0].headerImage.responsiveImage!}
@@ -33,7 +33,7 @@ export default async function ContactMain() {
 							}}
 						/>
 					</div>
-					<div className="p-8 sm:p-12 md:w-1/2">
+					<div className="p-8 sm:p-12 md:w-1/2" data-aos-id-contact>
 						<h1 className="mb-8 text-3xl text-secondary drop-shadow-md lg:text-4xl xl:text-5xl" data-aos="fade-up">
 							Masz pytania? Skontaktuj się <br />z Nami
 						</h1>
