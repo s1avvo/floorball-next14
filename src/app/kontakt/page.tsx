@@ -50,7 +50,7 @@ export default async function ContactMain() {
 							Chciałbyś się z nami skontaktować w sprawie członkostwa, treningów czy współpracy, jesteśmy do Twojej
 							dyspozycji. Poniżej znajdziesz formularz kontaktowe lub telefon.
 						</p>
-						<div data-aos="fade">
+						<div data-aos="fade" data-aos-delay="400" data-aos-anchor="[data-aos-id-contact]">
 							<ContactForm />
 						</div>
 					</div>

@@ -34,11 +34,11 @@ html {
     }
   }
 
-  /* @media (min-height: 1080px) {
+  @media (min-height: 1080px) {
     .min-height-v {
-      min-height: 1000px;
+      min-height: 630px;
     }
-  } */
+  }
 
   
 .swiper-pagination-bullet {

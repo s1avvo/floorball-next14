@@ -51,7 +51,7 @@ const config: Config = {
 				},
 			],
 			xl: [
-				"1.77rem",
+				"1.57rem",
 				{
 					lineHeight: "2.08rem",
 					letterSpacing: "-0.025em",

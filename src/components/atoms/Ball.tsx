@@ -9,7 +9,7 @@ export const Ball = ({ fill, width, height }: { fill: string; width: number; hei
 			y="0px"
 			width={width}
 			height={height}
-			viewBox="0 0 250 250"
+			viewBox="0 -30 250 250"
 			xmlSpace="preserve"
 		>
 			<path

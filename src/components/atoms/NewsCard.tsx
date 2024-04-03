@@ -28,6 +28,7 @@ export const NewsCard = ({
 			data-aos="fade"
 			data-aos-delay={delay}
 			data-aos-anchor={anchor}
+			data-aos-duration="1200"
 		>
 			<div className="absolute left-0 top-0 h-24 w-full rounded-md bg-gradient-to-b from-paragraph/15 via-paragraph/5 to-paragraph/0" />
 
