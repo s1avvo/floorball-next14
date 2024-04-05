@@ -34,9 +34,9 @@ html {
     }
   }
 
-  @media (min-height: 920px) {
+  @media (min-height: 919px) {
     .min-height-v {
-      min-height: 680px;
+      min-height: 40rem;
     }
   }
 
