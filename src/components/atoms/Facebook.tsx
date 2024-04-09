@@ -1,4 +1,4 @@
-export function Facebook({ fillColor }: { fillColor: string }) {
+export function Facebook({ fillColor = "#3B5998" }: { fillColor: string }) {
 	return (
 		<svg
 			version="1.1"

@@ -5,7 +5,12 @@ export default function robots(): MetadataRoute.Robots {
 		rules: {
 			userAgent: "*",
 			allow: "/",
-			disallow: "/api/*",
+			disallow: [
+				`${process.env.NEXT_PUBLIC_URL}/api/draft`,
+				`${process.env.NEXT_PUBLIC_URL}/api/og`,
+				`${process.env.NEXT_PUBLIC_URL}/api/revalidate`,
+				`${process.env.NEXT_PUBLIC_URL}/polityka-prywatnosci`,
+			],
 		},
 		sitemap: `${process.env.NEXT_PUBLIC_URL}/sitemap.xml`,
 	};

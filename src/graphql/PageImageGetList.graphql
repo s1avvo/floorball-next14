@@ -11,11 +11,5 @@ query PageImageGetList($page: String) {
 				...ResponsiveImage
 			}
 		}
-		gallery {
-			id
-			responsiveImage {
-				...ResponsiveImage
-			}
-		}
 	}
 }

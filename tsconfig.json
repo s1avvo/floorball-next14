@@ -1,7 +1,7 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"compilerOptions": {
-		"target": "es2022",
+		"target": "ESNext",
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"allowJs": true,
 		"skipLibCheck": true,
@@ -24,7 +24,6 @@
 		"paths": {
 			"@/*": ["./src/*"],
 			"@ui/*": ["./src/components/atoms/*", "./src/components/molecules/*", "./src/components/organisms/*"],
-			"@api/*": ["./src/app/api/*"],
 		},
 		"types": ["react-dom/canary"]
 	},

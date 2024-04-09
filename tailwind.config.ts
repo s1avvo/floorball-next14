@@ -63,11 +63,11 @@ const config: Config = {
 				{
 					lineHeight: "2.78rem",
 					letterSpacing: "-0.015em",
-					fontWeight: "400",
+					fontWeight: "600",
 				},
 			],
 			"3xl": [
-				"2.81rem",
+				"2.91rem",
 				{
 					lineHeight: "3.64rem",
 					letterSpacing: "-0.015em",

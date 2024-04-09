@@ -1,5 +1,5 @@
 "use server";
-import { executeGraphql } from "@/app/api/graphqlApi";
+import { executeGraphql } from "@/api/graphqlApi";
 import { ArticleGetListWithPaginationDocument } from "@/gql/graphql";
 
 export const getNewsAction = async (first: number, skip: number) => {

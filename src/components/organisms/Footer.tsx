@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { FileDown } from "lucide-react";
-import { SocialIcons } from "@ui/SocialIcons";
 import { navbarList } from "@/constants/navigation";
+import { SocialIcons } from "@ui/SocialIcons";
+import { LucideIconWithText } from "@ui/LucideIconWithText";
 
 export const Footer = () => {
 	return (
@@ -13,10 +14,16 @@ export const Footer = () => {
 					</li>
 				))}
 				<li className="flex items-center justify-center gap-2">
-					<span>
-						<FileDown className="text-accent" />
-					</span>
-					Deklaracja członkowska
+					<Link
+						href={"https://www.datocms-assets.com/120233/1712482339-deklaracja_czlonkowska.pdf"}
+						download
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<LucideIconWithText Icon={FileDown} size={24}>
+							Deklaracja członkowska
+						</LucideIconWithText>
+					</Link>
 				</li>
 			</ul>
 
@@ -24,7 +31,7 @@ export const Footer = () => {
 
 			<div className="flex items-center justify-center gap-4 divide-x text-sm text-heading">
 				<p>&copy; 2024 Floorball Śrem</p>
-				<Link href={"#"}>
+				<Link href={"/polityka-prywatnosci"} target="_blank" rel="noopener noreferrer">
 					<p className="pl-4 ">Polityka prywatności</p>
 				</Link>
 			</div>

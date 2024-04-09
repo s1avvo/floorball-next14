@@ -1,6 +1,6 @@
 import { draftMode } from "next/headers";
 import { redirect } from "next/navigation";
-import { executeGraphql } from "../graphqlApi";
+import { executeGraphql } from "../../../api/graphqlApi";
 import { ArticleGetBySlugDocument } from "@/gql/graphql";
 
 export async function GET(request: Request) {

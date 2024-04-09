@@ -2,10 +2,11 @@ import { Image as DatoImage } from "react-datocms";
 import { HomeHero } from "@ui/HomeHero";
 import { HomeNews } from "@ui/HomeNews";
 import { HomeTrainer } from "@ui/HomeTrainer";
-import { Sponsor } from "@ui/Sponsor";
+import { SponsorList } from "@/components/molecules/SponsorList";
+
 import { homeStructuredData } from "@/constants/structuredData ";
 
-import { getPageImagesList } from "@api/getPageImage";
+import { getPageImagesList } from "@/api/getPageImage";
 
 export default async function Home() {
 	const homeImages = await getPageImagesList("Home");
@@ -18,13 +19,13 @@ export default async function Home() {
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(homeStructuredData) }}
 			/>
 
-			<div className="relative mb-12 rounded-none bg-primary sm:rounded-xl">
-				<div className="absolute right-0 top-0 z-0 h-[1100px] w-full overflow-hidden rounded-xl opacity-10 sm:opacity-100">
+			<div className="relative mb-4 overflow-hidden rounded-none bg-primary sm:mb-12 sm:rounded-xl">
+				<div className="absolute top-0 z-0 aspect-square max-h-[40rem] w-full rounded-none sm:rounded-xl">
 					<DatoImage
 						data={homeImages[0].headerImage.responsiveImage!}
 						layout="responsive"
-						objectFit="contain"
-						objectPosition="top right"
+						objectFit="cover"
+						objectPosition="top center"
 						priority
 						style={{
 							height: "100%",
@@ -36,7 +37,7 @@ export default async function Home() {
 				<HomeNews />
 			</div>
 			<HomeTrainer />
-			<Sponsor />
+			<SponsorList />
 		</>
 	);
 }

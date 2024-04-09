@@ -1,5 +1,5 @@
 query ArticleGetFirst($quantity: IntType) {
 	allArticles(first: $quantity, orderBy: _createdAt_DESC) {
-		...ArticleFirstItem
+		...ArticleItem
 	}
 }

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { CustomButton } from "@ui/CustomButton";
-import { Ball } from "@ui/Ball";
+import { Ball } from "@ui/Icons";
 import { TrainerSwiper } from "@ui/TrainerSwiper";
 
-import { getTrainersList } from "@api/getTrainer";
+import { getTrainersList } from "@/api/getTrainer";
 
 export const HomeTrainer = async () => {
 	const trainers = await getTrainersList();

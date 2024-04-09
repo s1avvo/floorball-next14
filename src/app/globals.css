@@ -40,6 +40,10 @@ html {
     }
   }
 
+.rotatedbg {
+    transform-origin: left;
+    transform: translate(50%, 0%) rotate(-90deg) ;
+}
   
 .swiper-pagination-bullet {
     background-color: #72757E !important;

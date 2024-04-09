@@ -4,7 +4,7 @@ import { type Route } from "next";
 import { type TrainerItemFragment } from "@/gql/graphql";
 import { Facebook } from "@ui/Facebook";
 
-export const TrainerProfile = ({ trainer }: { trainer: TrainerItemFragment }) => {
+export const TrainerCard = ({ trainer }: { trainer: TrainerItemFragment }) => {
 	return (
 		<div className="mx-auto flex items-center justify-center">
 			<div className="relative">

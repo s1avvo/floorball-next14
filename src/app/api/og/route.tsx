@@ -1,6 +1,8 @@
 import { type NextRequest } from "next/server";
 import { ImageResponse } from "next/og";
-import { getNewsBySlug } from "@/app/api/getNews";
+import { getNewsBySlug } from "@/api/getNews";
+
+// export const runtime = "edge";
 
 export async function GET(request: NextRequest) {
 	const slug = request.nextUrl.searchParams.get("slug");
@@ -25,39 +27,36 @@ export async function GET(request: NextRequest) {
 		});
 	}
 
+	// const fontData = await fetch(new URL(`${process.env.NEXT_PUBLIC_URL}/fonts/Roboto-Bold.ttf`, import.meta.url)).then(
+	// 	(res) => res.arrayBuffer(),
+	// );
+
 	return new ImageResponse(
 		(
-			<div
-				style={{
-					height: "100%",
-					width: "100%",
-					display: "flex",
-					flexDirection: "column",
-					alignItems: "center",
-					justifyContent: "center",
-					backgroundImage: `url(${process.env.NEXT_PUBLIC_URL}/assets/og-news.png)`,
-				}}
-			>
-				<div
-					style={{
-						marginLeft: 160,
-						marginRight: 160,
-						display: "flex",
-						fontSize: 64,
-						textAlign: "center",
-						letterSpacing: "-0.05em",
-						color: "white",
-						lineHeight: "88px",
-						whiteSpace: "pre-wrap",
-					}}
-				>
-					{article?.title}
+			<div tw="relative w-[1200px] h-[630px] flex items-center justify-center">
+				<img
+					tw="absolute left-0 top-0"
+					width={1200}
+					height={630}
+					src="https://www.datocms-assets.com/120233/1712594950-og_news.jpg"
+					alt="Floorball Opengraph Image Background"
+				/>
+				<div tw="w-full flex flex-wrap items-center justify-end">
+					<p tw="w-1/2 text-[4rem] font-bold text-white pt-4 pb-4 pl-8 pr-16">{article?.title}</p>
 				</div>
 			</div>
 		),
 		{
 			width: 1200,
 			height: 630,
+			// fonts: [
+			// 	{
+			// 		name: "Roboto",
+			// 		data: fontData,
+			// 		style: "normal",
+			// 		weight: 700,
+			// 	},
+			// ],
 		},
 	);
 }

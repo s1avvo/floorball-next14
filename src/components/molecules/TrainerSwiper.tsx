@@ -1,7 +1,7 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Grid, Pagination } from "swiper/modules";
-import { TrainerProfile } from "@ui/TrainerProfile";
+import { TrainerCard } from "@/components/molecules/TrainerCard";
 import { type TrainerItemFragment } from "@/gql/graphql";
 
 import "swiper/css";
@@ -42,7 +42,7 @@ export const TrainerSwiper = ({ trainers }: { trainers: TrainerItemFragment[] })
 		>
 			{trainers.map((item) => (
 				<SwiperSlide key={item.id}>
-					<TrainerProfile trainer={item} />
+					<TrainerCard trainer={item} />
 				</SwiperSlide>
 			))}
 		</Swiper>

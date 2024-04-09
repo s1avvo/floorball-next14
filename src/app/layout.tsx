@@ -9,7 +9,6 @@ import { Footer } from "@ui/Footer";
 const roboto = Roboto({
 	subsets: ["latin", "latin-ext"],
 	weight: ["100", "300", "500", "900"],
-	variable: "--font-roboto",
 });
 
 export const viewport: Viewport = {
@@ -17,21 +16,25 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://floorballsrem.com"),
-	title: {
-		default: "Unihokej | Floorball Śrem",
-		template: "Unihokej | Floorball Śrem - %s",
-	},
+	metadataBase: new URL(`${process.env.NEXT_PUBLIC_URL}`),
+	title: "Floorball Śrem - Śremski Klub Unihokeja",
 	description:
-		"Śremski Klub Unihokeja powstał w 2020 roku, a założony został przez pasjonatów unihokeja, którzy spotkali się po blisko 20 latach i postanowili, że wznowią treningi.",
+		"Floorball Śrem to dynamicznie rozwijający się klub unihokeja, który promuje aktywny styl życia i rozwój młodych talentów. Dołącz do nas i odkryj pasjonujący świat unihokeja!",
 	alternates: {
 		canonical: "/",
 	},
 	openGraph: {
-		title: "Unihokej | Floorball Śrem",
-		description:
-			"Śremski Klub Unihokeja - klub pasjonatów unihokeja. Zapraszamy dziciaki z 1 oraz 2 klasy Szkoły Podstawowej na treningi Unihokeja",
-		url: "https://floorballsrem.com",
+		title: "Floorball Śrem - Śremski Klub Unihokeja",
+		description: "Floorball Śrem - Śremski Klub Unihokeja. Dołącz do nas i odkryj pasjonujący świat unihokeja!",
+		url: `${process.env.NEXT_PUBLIC_URL}`,
+		images: [
+			{
+				url: "https://www.datocms-assets.com/120233/1712593014-og.webp",
+				width: 1200,
+				height: 630,
+				alt: "Floorball Śrem - Śremski Klub Unihokeja",
+			},
+		],
 		siteName: "floorballsrem.com",
 		locale: "pl",
 		type: "website",

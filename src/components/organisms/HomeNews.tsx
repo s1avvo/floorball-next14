@@ -2,7 +2,7 @@ import Link from "next/link";
 import { NewsCard } from "@ui/NewsCard";
 import { CustomButton } from "@ui/CustomButton";
 
-import { getNewsFirst } from "@api/getNews";
+import { getNewsFirst } from "@/api/getNews";
 
 export const HomeNews = async () => {
 	const news = await getNewsFirst(2);

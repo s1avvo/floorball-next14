@@ -11,8 +11,6 @@ export const homeStructuredData: WithContext<WebPage> = {
 	description:
 		"Witaj na oficjalnej stronie klubu Floorball Śrem. Nasza misja to promowanie unihokeja jako aktywności fizycznej dla wszystkich grup wiekowych oraz poziomów umiejętności.",
 	inLanguage: "pl-PL",
-	datePublished: new Date("2024-03-29").toISOString(),
-	dateModified: new Date("2024-03-29").toISOString(),
 	isPartOf: {
 		"@type": "WebSite",
 		"@id": "https://floorballsrem.com/#website",
@@ -29,8 +27,7 @@ export const homeStructuredData: WithContext<WebPage> = {
 			logo: {
 				"@type": "ImageObject",
 				"@id": "https://floorballsrem.com/#logo",
-				url: "https://floorballsrem.com/assets/logo_og.png",
-				contentUrl: "https://floorballsrem.com/assets/logo_og.png",
+				url: "https://www.datocms-assets.com/120233/1712482158-og-logo.webp",
 				width: "500",
 				height: "500",
 				caption: "Logo Floorball Śrem",
@@ -45,8 +42,7 @@ export const homeStructuredData: WithContext<WebPage> = {
 		logo: {
 			"@type": "ImageObject",
 			"@id": "https://floorballsrem.com/#logo",
-			url: "https://floorballsrem.com/assets/logo_og.png",
-			contentUrl: "https://floorballsrem.com/assets/logo_og.png",
+			url: "https://www.datocms-assets.com/120233/1712482158-og-logo.webp",
 			width: "500",
 			height: "500",
 			caption: "Logo Floorball Śrem",
@@ -116,8 +112,6 @@ export const contactStructuredData: WithContext<WebPage> = {
 	description:
 		"Zapraszamy do kontaktu z naszym klubem sportowym w Śremie! Na stronie udostępniamy wszelkie niezbędne dane oraz formularz kontaktowy.",
 	inLanguage: "pl-PL",
-	datePublished: new Date("2024-03-29").toISOString(),
-	dateModified: new Date("2024-03-29").toISOString(),
 	isPartOf: {
 		"@type": "WebSite",
 		"@id": "https://floorballsrem.com/#website",
@@ -134,8 +128,7 @@ export const contactStructuredData: WithContext<WebPage> = {
 			logo: {
 				"@type": "ImageObject",
 				"@id": "https://floorballsrem.com/#logo",
-				url: "https://floorballsrem.com/assets/logo_og.png",
-				contentUrl: "https://floorballsrem.com/assets/logo_og.png",
+				url: "https://www.datocms-assets.com/120233/1712482158-og-logo.webp",
 				width: "500",
 				height: "500",
 				caption: "Logo Floorball Śrem",
@@ -183,8 +176,6 @@ export const aboutUsStructuredData: WithContext<WebPage> = {
 	description:
 		"Klub powstał w 2020 roku, a założony został przez pasjonatów unihokeja, którzy spotkali się po blisko 20 latach i postanowili, że wznowią treningi unikokeja w Śremie.",
 	inLanguage: "pl-PL",
-	datePublished: new Date("2024-03-29").toISOString(),
-	dateModified: new Date("2024-03-29").toISOString(),
 	isPartOf: {
 		"@type": "WebSite",
 		"@id": "https://floorballsrem.com/#website",
@@ -201,8 +192,7 @@ export const aboutUsStructuredData: WithContext<WebPage> = {
 			logo: {
 				"@type": "ImageObject",
 				"@id": "https://floorballsrem.com/#logo",
-				url: "https://floorballsrem.com/assets/logo_og.png",
-				contentUrl: "https://floorballsrem.com/assets/logo_og.png",
+				url: "https://www.datocms-assets.com/120233/1712482158-og-logo.webp",
 				width: "500",
 				height: "500",
 				caption: "Logo Floorball Śrem",
@@ -250,8 +240,6 @@ export const trainingStructuredData: WithContext<WebPage> = {
 	description:
 		"Zapraszamy na treningi unihokeja w Śremie, które odbywają się na hali sportowej Śremski Sport, przy ul. Staszica 1a.",
 	inLanguage: "pl-PL",
-	datePublished: new Date("2024-03-29").toISOString(),
-	dateModified: new Date("2024-03-29").toISOString(),
 	isPartOf: {
 		"@type": "WebSite",
 		"@id": "https://floorballsrem.com/#website",
@@ -268,8 +256,7 @@ export const trainingStructuredData: WithContext<WebPage> = {
 			logo: {
 				"@type": "ImageObject",
 				"@id": "https://floorballsrem.com/#logo",
-				url: "https://floorballsrem.com/assets/logo_og.png",
-				contentUrl: "https://floorballsrem.com/assets/logo_og.png",
+				url: "https://www.datocms-assets.com/120233/1712482158-og-logo.webp",
 				width: "500",
 				height: "500",
 				caption: "Logo Floorball Śrem",
@@ -319,8 +306,6 @@ export const newsStructuredData = (article: ArticleItemFragment[]): WithContext<
 		description:
 			"Bądź na bieżąco z najnowszymi informacjami, relacjami z wydarzeń klubowych oraz ciekawostkami ze świata unihokeja.",
 		inLanguage: "pl-PL",
-		datePublished: new Date("2024-03-29").toISOString(),
-		dateModified: new Date().toISOString(),
 		isPartOf: {
 			"@type": "WebSite",
 			"@id": "https://floorballsrem.com/#website",
@@ -337,8 +322,7 @@ export const newsStructuredData = (article: ArticleItemFragment[]): WithContext<
 				logo: {
 					"@type": "ImageObject",
 					"@id": "https://floorballsrem.com/#logo",
-					url: "https://floorballsrem.com/assets/logo_og.png",
-					contentUrl: "https://floorballsrem.com/assets/logo_og.png",
+					url: "https://www.datocms-assets.com/120233/1712482158-og-logo.webp",
 					width: "500",
 					height: "500",
 					caption: "Logo Floorball Śrem",
@@ -431,8 +415,7 @@ export const articleStructuredData = (article: ArticleItemFragment): WithContext
 					logo: {
 						"@type": "ImageObject",
 						"@id": "https://floorballsrem.com/#logo",
-						url: "https://floorballsrem.com/assets/logo_og.png",
-						contentUrl: "https://floorballsrem.com/assets/logo_og.png",
+						url: "https://www.datocms-assets.com/120233/1712482158-og-logo.webp",
 						width: "500",
 						height: "500",
 						caption: "Logo Floorball Śrem",

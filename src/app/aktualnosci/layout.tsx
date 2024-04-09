@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Stick } from "@ui/Stick";
-import { BackButton } from "@ui/BackButton";
+import { Stick } from "@ui/Icons";
+import { NewsBackButton } from "@ui/NewsBackButton";
 import { CustomButton } from "@ui/CustomButton";
 
 export default function NewsLayout({ children }: { children: React.ReactNode }) {
@@ -26,7 +26,7 @@ export default function NewsLayout({ children }: { children: React.ReactNode }) 
 							</CustomButton>
 						</Link>
 						<div data-aos="fade-zoom-in" data-aos-delay="1400" data-aos-offset="0">
-							<BackButton />
+							<NewsBackButton>#Powrót</NewsBackButton>
 						</div>
 					</div>
 				</div>

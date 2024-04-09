@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { Ball } from "@ui/Ball";
+import { Ball } from "@ui/Icons";
 import { type ArticleRecentItemFragment } from "@/gql/graphql";
 
-export const RecentNewsCard = ({ news, delay }: { news: ArticleRecentItemFragment; delay: string }) => {
+export const RecentNewsItem = ({ news, delay }: { news: ArticleRecentItemFragment; delay: string }) => {
 	const { title, createdat, slug } = news;
 	const date = new Date(createdat).toLocaleDateString("en-GB");
 

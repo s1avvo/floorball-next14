@@ -6,7 +6,7 @@ import { ContactFormInput } from "@ui/ContactFormInput";
 import { ContactFormPhoneInput } from "@ui/ContactFormPhoneInput";
 import { ContactFormButton } from "@ui/ContactFormButton";
 
-import { sendMessageAction } from "@/app/kontakt/actions";
+import { sendMessageAction } from "@/actions";
 
 export const ContactForm = () => {
 	const ref = useRef<HTMLFormElement>(null);
@@ -78,7 +78,7 @@ export const ContactForm = () => {
 					gridColumn={"col-span-2"}
 				/>
 				<div className="col-span-2 grid">
-					<label htmlFor="message-id" className="text-cardparagraph text-base">
+					<label htmlFor="message-id" className="text-base text-cardparagraph">
 						Wiadomość
 					</label>
 					<textarea

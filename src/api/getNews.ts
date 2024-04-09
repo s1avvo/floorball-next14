@@ -1,5 +1,5 @@
 import { draftMode } from "next/headers";
-import { executeGraphql } from "./graphqlApi";
+import { executeGraphql } from "@/api/graphqlApi";
 import {
 	ArticleCountDocument,
 	ArticleGetBySlugDocument,

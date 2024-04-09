@@ -1,7 +1,7 @@
-import { getSponsorList } from "@/app/api/getSponsor";
+import { getSponsorList } from "@/api/getSponsor";
 import { SponsorItem } from "@ui/SponsorItem";
 
-export const Sponsor = async () => {
+export const SponsorList = async () => {
 	const sponsors = await getSponsorList();
 	return (
 		<div className="mb-8">
