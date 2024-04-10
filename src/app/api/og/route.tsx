@@ -1,13 +1,10 @@
 import { type NextRequest } from "next/server";
 import { ImageResponse } from "next/og";
-import { getNewsBySlug } from "@/api/getNews";
 
-// export const runtime = "edge";
+export const runtime = "edge";
 
 export async function GET(request: NextRequest) {
 	const slug = request.nextUrl.searchParams.get("slug");
-
-	console.log(slug);
 
 	if (!slug) {
 		return new ImageResponse(<>Floorball Śrem</>, {
@@ -16,20 +13,39 @@ export async function GET(request: NextRequest) {
 		});
 	}
 
-	const article = await getNewsBySlug(slug);
+	const res = await fetch("https://graphql.datocms.com/", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: process.env.NEXT_DATOCMS_API_TOKEN as string,
+		},
+		body: JSON.stringify({
+			query: `
+				query GetBySlug($slug: String) {
+					article(filter: { slug: { eq: $slug } }) {
+					title
+				  }
+				}
+			  `,
+			variables: {
+				slug: slug,
+			},
+		}),
+	});
 
-	console.log(article);
+	const { data } = (await res.json()) as { data: { article: { id: string; title: string } } };
+	const { title } = data.article;
 
-	if (!article) {
+	if (!title) {
 		return new ImageResponse(<>Floorball Śrem</>, {
 			width: 1200,
 			height: 630,
 		});
 	}
 
-	// const fontData = await fetch(new URL(`${process.env.NEXT_PUBLIC_URL}/fonts/Roboto-Bold.ttf`, import.meta.url)).then(
-	// 	(res) => res.arrayBuffer(),
-	// );
+	const fontData = await fetch(new URL(`${process.env.NEXT_PUBLIC_URL}/fonts/Roboto-Bold.ttf`, import.meta.url)).then(
+		(res) => res.arrayBuffer(),
+	);
 
 	return new ImageResponse(
 		(
@@ -42,21 +58,21 @@ export async function GET(request: NextRequest) {
 					alt="Floorball Opengraph Image Background"
 				/>
 				<div tw="w-full flex flex-wrap items-center justify-end">
-					<p tw="w-1/2 text-[4rem] font-bold text-white pt-4 pb-4 pl-8 pr-16">{article?.title}</p>
+					<p tw="w-1/2 text-[4rem] font-bold text-white pt-4 pb-4 pl-8 pr-16">{title}</p>
 				</div>
 			</div>
 		),
 		{
 			width: 1200,
 			height: 630,
-			// fonts: [
-			// 	{
-			// 		name: "Roboto",
-			// 		data: fontData,
-			// 		style: "normal",
-			// 		weight: 700,
-			// 	},
-			// ],
+			fonts: [
+				{
+					name: "Roboto",
+					data: fontData,
+					style: "normal",
+					weight: 700,
+				},
+			],
 		},
 	);
 }
