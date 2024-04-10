@@ -1,4 +1,4 @@
-export function Facebook({ fillColor = "#3B5998" }: { fillColor: string }) {
+export function Facebook() {
 	return (
 		<svg
 			version="1.1"
@@ -10,7 +10,7 @@ export function Facebook({ fillColor = "#3B5998" }: { fillColor: string }) {
 			viewBox="0 0 48 48"
 		>
 			<path
-				fill={fillColor}
+				fill="#3B5998"
 				d="M48,24C48,10.7,37.3,0,24,0C10.7,0,0,10.7,0,24c0,12,8.8,21.9,20.3,23.7V30.9h-6.1V24h6.1v-5.3
 	c0-6,3.6-9.3,9.1-9.3c2.6,0,5.4,0.5,5.4,0.5v5.9h-3c-3,0-3.9,1.9-3.9,3.7V24h6.7l-1.1,6.9h-5.6v16.8C39.2,45.9,48,36,48,24"
 			/>

@@ -10,7 +10,7 @@ export const Contact = async () => {
 				<ContactSection
 					title={
 						<h1
-							className="mb-8 text-3xl text-secondary drop-shadow-md lg:text-4xl xl:text-5xl"
+							className="mb-8 text-3xl text-secondary drop-shadow-md lg:text-4xl"
 							data-aos="fade-up"
 							data-aos-id-contact
 						>

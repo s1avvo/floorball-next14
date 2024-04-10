@@ -8,7 +8,7 @@ export const Training = async () => {
 		<section className="flex-row-reverse gap-4 md:flex">
 			<TrainingSection
 				title={
-					<h1 className="mb-8 text-3xl text-secondary drop-shadow-md lg:text-4xl xl:text-5xl" data-aos="fade-up">
+					<h1 className="mb-8 text-3xl text-secondary drop-shadow-md lg:text-4xl" data-aos="fade-up">
 						Harmonogram treningów dla najmłodszych
 					</h1>
 				}

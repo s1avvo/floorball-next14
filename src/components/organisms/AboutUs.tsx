@@ -6,10 +6,10 @@ export const AboutUs = async () => {
 
 	return (
 		<>
-			<div className=" gap-4 lg:flex">
+			<div className=" gap-4 md:flex">
 				<AboutUsSection
 					title={
-						<h1 className="mb-12 text-4xl text-secondary drop-shadow-md sm:text-5xl" data-aos="fade-up">
+						<h1 className="mb-12 text-4xl text-secondary drop-shadow-md lg:text-5xl" data-aos="fade-up">
 							Historia unihokeja <br />w Śremie
 						</h1>
 					}
@@ -19,10 +19,10 @@ export const AboutUs = async () => {
 					image={aboutUsImages[0].headerImage.responsiveImage!}
 				/>
 			</div>
-			<div className="flex-row-reverse gap-4 lg:flex">
+			<div className="flex-row-reverse gap-4 md:flex">
 				<AboutUsSection
 					title={
-						<h2 className="mb-12 text-3xl text-secondary drop-shadow-md sm:text-4xl" data-aos="fade-up">
+						<h2 className="mb-12 text-3xl text-secondary drop-shadow-md lg:text-4xl" data-aos="fade-up">
 							Narodziny idei unihokeja dla najmłodszych
 						</h2>
 					}

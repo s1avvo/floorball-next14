@@ -13,7 +13,7 @@ export const AboutUsSection = async ({
 }) => {
 	return (
 		<>
-			<article className="p-8 sm:p-12 lg:w-1/2">
+			<article className="p-8 sm:p-12 md:w-1/2">
 				{title}
 				{paragraphs.map((p, index) => (
 					<p
@@ -27,7 +27,7 @@ export const AboutUsSection = async ({
 				))}
 			</article>
 
-			<div className="h-64 w-full self-end overflow-hidden rounded-xl shadow-lg sm:h-96 lg:w-1/2">
+			<div className="h-64 w-full self-end overflow-hidden rounded-xl shadow-lg sm:h-96 md:w-1/2">
 				{image && (
 					<DatoImage
 						data={image}

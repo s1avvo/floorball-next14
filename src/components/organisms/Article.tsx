@@ -63,7 +63,7 @@ export const Article = async ({ article }: { article: ArticleItemFragment }) => 
 							rel="noopener noreferrer"
 							aria-label="Facebook - Floorball Śrem"
 						>
-							<Facebook fillColor={"#FF8906"} />
+							<Facebook />
 						</Link>
 					</div>
 				)}

@@ -17,7 +17,7 @@ export const TrainerCard = ({ trainer }: { trainer: TrainerItemFragment }) => {
 							rel="noopener noreferrer"
 							aria-label="Facebook - Floorball Śrem"
 						>
-							<Facebook fillColor={"#FF8906"} />
+							<Facebook />
 						</Link>
 					</div>
 					<div className="relative h-[293px] w-[335px] overflow-hidden">

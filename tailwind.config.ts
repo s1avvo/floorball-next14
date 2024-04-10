@@ -75,7 +75,7 @@ const config: Config = {
 				},
 			],
 			"4xl": [
-				"3.72rem",
+				"3.92rem",
 				{
 					lineHeight: "4.65rem",
 					letterSpacing: "0em",

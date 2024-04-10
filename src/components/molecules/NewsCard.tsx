@@ -40,7 +40,7 @@ export const NewsCard = ({ news, delay, anchor }: { news: ArticleItemFragment; d
 						rel="noopener noreferrer"
 						aria-label="Facebook - Floorball Śrem"
 					>
-						<Facebook fillColor={"#FF8906"} />
+						<Facebook />
 					</Link>
 				</div>
 			)}
