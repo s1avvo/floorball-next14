@@ -16,7 +16,7 @@ export const AboutUs = async () => {
 					paragraphs={[
 						"Klub powstał w 2020 roku z inicjatywy pasjonatów unihokeja, których drogi po blisko dwóch dekadach znowu się skrzyżowały. Ta grupa entuzjastów postanowiła wznowić treningi, niosąc ze sobą ducha sportowej pasji i determinacji. Do roku 1999 sekcje unihokeja w Śremie prowadził zasłużony trener Eugeniusz Kaczmarek, którego wpływ na sportowy rozwój unihokej w regionu był niezaprzeczalny. To właśnie pod jego skrzydłami kształtowali się obecni założyciele klubu.",
 					]}
-					image={aboutUsImages[0].headerImage.responsiveImage!}
+					image={aboutUsImages[0].headerImage.responsiveImage}
 				/>
 			</div>
 			<div className="flex-row-reverse gap-4 md:flex">

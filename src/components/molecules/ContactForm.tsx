@@ -1,15 +1,21 @@
 "use client";
-import { useRef } from "react";
+import React, { useRef, useState, type ChangeEvent } from "react";
 import Link from "next/link";
 import { toast } from "sonner";
 import { ContactFormInput } from "@ui/ContactFormInput";
-import { ContactFormPhoneInput } from "@ui/ContactFormPhoneInput";
 import { ContactFormButton } from "@ui/ContactFormButton";
+import { phoneNumberAutoFormat } from "@/utils";
 
 import { sendMessageAction } from "@/actions";
 
 export const ContactForm = () => {
 	const ref = useRef<HTMLFormElement>(null);
+	const [phoneInputValue, setPhoneInputValue] = useState<string>("");
+
+	const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+		const targetValue = phoneNumberAutoFormat(e.target.value);
+		setPhoneInputValue(targetValue);
+	};
 
 	const handleSendMessageForm = async (formData: FormData) => {
 		const result = await sendMessageAction(formData);
@@ -23,10 +29,8 @@ export const ContactForm = () => {
 				className: "class",
 			});
 
-			if (ref.current) {
-				ref.current.reset();
-				ref.current["phone"].value = "";
-			}
+			ref.current?.reset();
+			setPhoneInputValue("");
 
 			return;
 		}
@@ -49,6 +53,8 @@ export const ContactForm = () => {
 					type={"text"}
 					name={"name"}
 					gridColumn={"col-span-2 sm:col-span-1"}
+					autoComplete="given-name"
+					required
 				/>
 				<ContactFormInput
 					label="Nazwisko"
@@ -56,6 +62,8 @@ export const ContactForm = () => {
 					type={"text"}
 					name={"surname"}
 					gridColumn={"col-span-2 sm:col-span-1"}
+					autoComplete="family-name"
+					required
 				/>
 				<ContactFormInput
 					label="Email"
@@ -63,12 +71,19 @@ export const ContactForm = () => {
 					type={"email"}
 					name={"email"}
 					gridColumn={"col-span-2 sm:col-span-1"}
+					autoComplete="email"
+					required
 				/>
-				<ContactFormPhoneInput
+				<ContactFormInput
 					label="Telefon (Opcjonalnie)"
-					placeholder={"Wpisz numer telefon bez prefixu.."}
+					placeholder={"Wpisz telefon bez prefiksu.."}
+					type={"tel"}
 					name={"phone"}
 					gridColumn={"col-span-2 sm:col-span-1"}
+					maxLength={11}
+					value={phoneInputValue}
+					onChange={onChange}
+					autoComplete="off"
 				/>
 				<ContactFormInput
 					label="Temat"
@@ -76,6 +91,7 @@ export const ContactForm = () => {
 					type={"text"}
 					name={"subject"}
 					gridColumn={"col-span-2"}
+					required
 				/>
 				<div className="col-span-2 grid">
 					<label htmlFor="message-id" className="text-base text-cardparagraph">
@@ -85,7 +101,7 @@ export const ContactForm = () => {
 						className="rounded-md border border-paragraph bg-[#f7f7f7]  p-2 font-light text-secondary focus:border-accent focus:outline-none dark:bg-[#191332]"
 						name="message"
 						id="message-id"
-						placeholder="Napisz wiadomość"
+						placeholder="Napisz wiadomość.."
 						rows={8}
 						required
 					/>

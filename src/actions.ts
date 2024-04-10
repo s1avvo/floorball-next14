@@ -43,6 +43,8 @@ export async function sendMessageAction(formData: FormData) {
 	const resend = new Resend(process.env.RESEND_API_KEY);
 	const result = contactFormDataSchema.safeParse(Object.fromEntries(formData));
 
+	console.log(result);
+
 	if (result.success) {
 		const { name, surname, email, phone, subject, message } = result.data;
 		const fullName = `${name} ${surname}`;
