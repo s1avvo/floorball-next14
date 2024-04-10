@@ -3,56 +3,55 @@
 @tailwind utilities;
 
 html {
-    scroll-behavior: smooth;
-    font-size: 16px;
+	scroll-behavior: smooth;
+	font-size: 16px;
 }
 
-
 @layer base {
-    :root {
-      --color-background: 255 255 254;
-      --color-primary: 30 24 57;
-      --color-secondary: 114 117 126;
-      --color-accent: 255 137 6;
-      --color-heading: 255 255 254;
-      --color-paragraph: 166 168 188;		    
-      --color-card-paragraph: 0 1 1;	
-      --color-card-background: 255 255 254;	
-    }
-  }
+	:root {
+		--color-background: 255 255 254;
+		--color-primary: 30 24 57;
+		--color-secondary: 114 117 126;
+		--color-accent: 255 137 6;
+		--color-heading: 255 255 254;
+		--color-paragraph: 166 168 188;
+		--color-card-paragraph: 0 1 1;
+		--color-card-background: 255 255 254;
+	}
+}
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --color-background: 30 24 57;
-      --color-primary: 166 168 188;
-      --color-secondary: 226 222 226;
-      --color-accent: 255 137 6;
-      --color-heading: 30 24 57;
-      --color-paragraph: 255 255 254;				
-      --color-card-paragraph: 255 255 254;
-      --color-card-background: 30 24 57;	  
-    }
-  }
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-background: 30 24 57;
+		--color-primary: 166 168 188;
+		--color-secondary: 226 222 226;
+		--color-accent: 255 137 6;
+		--color-heading: 30 24 57;
+		--color-paragraph: 255 255 254;
+		--color-card-paragraph: 255 255 254;
+		--color-card-background: 30 24 57;
+	}
+}
 
-  @media (min-height: 919px) {
+/* @media (min-height: 919px) {
     .min-height-v {
       min-height: 40rem;
     }
-  }
+  } */
 
 .rotatedbg {
-    transform-origin: left;
-    transform: translate(50%, 0%) rotate(-90deg) ;
+	transform-origin: left;
+	transform: translate(50%, 0%) rotate(-90deg);
 }
-  
+
 .swiper-pagination-bullet {
-    background-color: #72757E !important;
-    opacity: 1 !important;
-    width: 12px !important;
-    height: 12px !important;
-    margin-bottom: -10px !important;
+	background-color: #72757e !important;
+	opacity: 1 !important;
+	width: 12px !important;
+	height: 12px !important;
+	margin-bottom: -10px !important;
 }
 
 .swiper-pagination-bullet-active {
-    background-color: #FF8906 !important;
+	background-color: #ff8906 !important;
 }

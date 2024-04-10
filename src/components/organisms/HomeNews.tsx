@@ -17,7 +17,7 @@ export const HomeNews = async () => {
 			className="relative grid grid-cols-1 justify-items-end gap-4 overflow-hidden px-2 py-2 sm:px-4 sm:py-12 md:grid-cols-2 lg:grid-cols-3"
 		>
 			<article className="row-span-1 max-w-sm px-6 py-2 text-end sm:px-8 sm:py-8 md:row-span-2">
-				<h2 className="mb-8 text-4xl text-heading" data-aos="fade-up">
+				<h2 className="mb-8 text-3xl text-heading drop-shadow-lg xs:text-4xl" data-aos="fade-up">
 					Co słychać <br />w klubie?
 				</h2>
 				<hr className="mb-4 ml-auto h-1 max-w-20 bg-accent text-accent" data-aos="fade-up" data-aos-delay="200" />

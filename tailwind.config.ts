@@ -67,7 +67,7 @@ const config: Config = {
 				},
 			],
 			"3xl": [
-				"2.91rem",
+				"2.94rem",
 				{
 					lineHeight: "3.64rem",
 					letterSpacing: "-0.015em",
@@ -75,10 +75,10 @@ const config: Config = {
 				},
 			],
 			"4xl": [
-				"3.92rem",
+				"3.72rem",
 				{
 					lineHeight: "4.65rem",
-					letterSpacing: "-0.015em",
+					letterSpacing: "0em",
 					fontWeight: "600",
 				},
 			],

@@ -27,7 +27,7 @@ export const AboutUsSection = async ({
 				))}
 			</article>
 
-			<div className="mt-8 h-64 w-full self-end overflow-hidden rounded-none shadow-lg sm:h-96 sm:rounded-xl lg:w-1/2">
+			<div className="h-64 w-full self-end overflow-hidden rounded-xl shadow-lg sm:h-96 lg:w-1/2">
 				{image && (
 					<DatoImage
 						data={image}

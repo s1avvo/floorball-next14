@@ -14,7 +14,7 @@ export const ContactSection = async ({
 }) => {
 	return (
 		<>
-			<div className="h-64 w-full self-end overflow-hidden rounded-none shadow-lg sm:rounded-xl md:h-[937px] md:w-1/2">
+			<div className="h-64 w-full self-end overflow-hidden rounded-xl shadow-lg md:h-[937px] md:w-1/2">
 				{image && (
 					<DatoImage
 						data={image}
@@ -35,6 +35,7 @@ export const ContactSection = async ({
 						className="prose-sm mb-8 text-base text-cardparagraph"
 						data-aos="fade-up"
 						data-aos-delay={200 * (index + 1)}
+						data-aos-anchor="[data-aos-id-contact]"
 					>
 						{p}
 					</p>

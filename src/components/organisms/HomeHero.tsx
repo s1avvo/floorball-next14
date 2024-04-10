@@ -6,9 +6,9 @@ import { Ball } from "@ui/Icons";
 export const HomeHero = () => {
 	return (
 		<section className="relative">
-			<div className="min-height-v flex min-h-[calc(100vh-100px)] max-w-[620px] flex-col justify-end overflow-hidden p-8 sm:p-12">
+			<div className="flex h-[calc(100svh-100px)] min-h-[32rem] flex-col justify-end overflow-hidden p-8 sm:justify-center lg:max-h-[40rem] lg:p-12">
 				<h1
-					className="mb-4 text-3xl text-heading drop-shadow-lg sm:mb-8 sm:text-5xl"
+					className="mb-4 max-w-[620px] text-3xl text-heading drop-shadow-lg xs:text-4xl sm:mb-8 lg:text-5xl"
 					data-aos-id-hero
 					data-aos="fade-up"
 				>
@@ -19,7 +19,7 @@ export const HomeHero = () => {
 				</h1>
 				<hr className="mb-4 h-1 max-w-20 bg-accent text-accent" data-aos="fade-up" data-aos-delay="200" />
 				<p
-					className="prose mb-8 max-w-sm text-base text-paragraph sm:text-lg lg:max-w-full"
+					className="prose mb-8 max-w-sm text-base text-paragraph lg:max-w-lg lg:text-lg"
 					data-aos="fade-up"
 					data-aos-delay="400"
 				>

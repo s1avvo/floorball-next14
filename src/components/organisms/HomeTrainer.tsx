@@ -13,7 +13,7 @@ export const HomeTrainer = async () => {
 			<div className="md:w-1/2 lg:w-1/3">
 				<div className="mb-4 flex h-full flex-col justify-between overflow-hidden rounded-lg bg-secondary p-8">
 					<article>
-						<h2 className="mb-8 text-4xl text-heading" data-aos="fade-up">
+						<h2 className="mb-8 text-3xl text-heading drop-shadow-lg xs:text-4xl" data-aos="fade-up">
 							Nasi trenerzy
 						</h2>
 						<hr className="mb-4 h-1 max-w-20 bg-accent text-accent" data-aos="fade-up" data-aos-delay="200" />
