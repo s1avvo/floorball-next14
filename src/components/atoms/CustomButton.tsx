@@ -10,7 +10,7 @@ export const CustomButton = ({ children, size = "regular", ...rest }: ButtonProp
 	return (
 		<button
 			className={clsx(
-				"rounded-full bg-accent text-heading dark:text-paragraph",
+				"rounded-full bg-accent text-heading",
 				`${size === "regular" && "px-16 py-2 text-lg"}`,
 				`${size === "small" && "px-3 text-base"}`,
 				`${size === "circle" && "text-base"}`,

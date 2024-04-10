@@ -12,7 +12,6 @@ export const TrainerCard = ({ trainer }: { trainer: TrainerItemFragment }) => {
 					<div className="absolute right-0 top-0 z-10">
 						<Link
 							href={trainer.facebook as Route}
-							className="text-blue-950 dark:text-white"
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label="Facebook - Floorball Śrem"

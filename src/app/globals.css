@@ -22,14 +22,14 @@ html {
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-background: 30 24 57;
-		--color-primary: 166 168 188;
-		--color-secondary: 226 222 226;
+		--color-background: 21 16 39;
+		--color-primary: 30 24 57;
+		--color-secondary: 226 227 229;
 		--color-accent: 255 137 6;
-		--color-heading: 30 24 57;
-		--color-paragraph: 255 255 254;
+		--color-heading: 255 255 254;
+		--color-paragraph: 166 168 188;
 		--color-card-paragraph: 255 255 254;
-		--color-card-background: 30 24 57;
+		--color-card-background: 18 14 34;
 	}
 }
 

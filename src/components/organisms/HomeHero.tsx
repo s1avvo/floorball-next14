@@ -32,7 +32,7 @@ export const HomeHero = () => {
 							Dołącz do nas
 						</CustomButton>
 						<PartyPopperIcon
-							className="absolute bottom-4 right-2 text-heading dark:text-paragraph"
+							className="absolute bottom-4 right-2 text-heading"
 							size={45}
 							strokeWidth={1}
 							data-aos="fade-zoom-in"

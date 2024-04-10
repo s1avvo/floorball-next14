@@ -56,13 +56,7 @@ export const Article = async ({ article }: { article: ArticleItemFragment }) => 
 
 				{link && (
 					<div className="absolute right-8 top-0" data-aos="fade-up">
-						<Link
-							href={link as Route}
-							className="text-blue-950 dark:text-white"
-							target="_blank"
-							rel="noopener noreferrer"
-							aria-label="Facebook - Floorball Śrem"
-						>
+						<Link href={link as Route} target="_blank" rel="noopener noreferrer" aria-label="Facebook - Floorball Śrem">
 							<Facebook />
 						</Link>
 					</div>

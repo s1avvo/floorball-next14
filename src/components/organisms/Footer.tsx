@@ -7,7 +7,7 @@ import { LucideIconWithText } from "@ui/LucideIconWithText";
 export const Footer = () => {
 	return (
 		<footer className="space-y-6 bg-primary py-4 text-center">
-			<ul className="items-center justify-center gap-12 whitespace-nowrap text-base text-paragraph sm:flex">
+			<ul className="items-center justify-center gap-12 whitespace-nowrap text-base text-secondary sm:flex">
 				{navbarList.map(({ href, title }, index) => (
 					<li key={index}>
 						<Link href={href}>{title}</Link>

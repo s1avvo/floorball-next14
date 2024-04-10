@@ -29,21 +29,11 @@ export const NewsItem = ({ news }: { news: ArticleItemFragment }) => {
 			<div className="flex justify-end">
 				<button className="text-base text-accent" onClick={() => setIsClamp(!isClamp)}>
 					{isClamp ? (
-						<LucideIconWithText
-							Icon={ChevronDown}
-							style={"rounded-full bg-accent text-heading dark:text-paragraph"}
-							size={24}
-							isReversed
-						>
+						<LucideIconWithText Icon={ChevronDown} style={"rounded-full bg-accent text-heading"} size={24} isReversed>
 							rozwiń
 						</LucideIconWithText>
 					) : (
-						<LucideIconWithText
-							Icon={ChevronUp}
-							style={"rounded-full bg-accent text-heading dark:text-paragraph"}
-							size={24}
-							isReversed
-						>
+						<LucideIconWithText Icon={ChevronUp} style={"rounded-full bg-accent text-heading"} size={24} isReversed>
 							zwiń
 						</LucideIconWithText>
 					)}
