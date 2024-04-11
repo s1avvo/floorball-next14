@@ -1,0 +1,9 @@
+fragment SponsorItem on SponsorRecord {
+	id
+	link
+	logo {
+		responsiveImage {
+			...ResponsiveImage
+		}
+	}
+}

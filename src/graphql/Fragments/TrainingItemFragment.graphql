@@ -1,0 +1,15 @@
+fragment TrainingItem on TrainingRecord {
+	id
+	group
+	icon {
+		id
+		url
+		alt
+	}
+	iconSide
+	session {
+		id
+		dayOfWeek
+		time
+	}
+}

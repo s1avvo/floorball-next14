@@ -1,0 +1,4 @@
+fragment SkillItem on SkillRecord {
+	id
+	name
+}

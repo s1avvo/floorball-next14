@@ -1,0 +1,14 @@
+fragment TrainerItem on TrainerRecord {
+	id
+	name
+	phoneNumber
+	profileImage {
+		responsiveImage {
+			...ResponsiveImage
+		}
+	}
+	skill {
+		...SkillItem
+	}
+	facebook
+}

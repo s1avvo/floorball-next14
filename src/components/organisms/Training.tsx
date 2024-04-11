@@ -1,50 +1,22 @@
-import { Suspense } from "react";
-import { trening } from "@/constants/trening";
-import { TreningCard } from "@/components/atoms/TreningCard";
-import { Ball } from "@/components/atoms/Ball";
-import { TreningGallerySwiper } from "@/components/atoms/TreningGallerySwiper";
-import { Loading } from "@/components/atoms/Loading";
+import { TrainingSection } from "@ui/TrainingSection";
+import { getPageImagesList } from "@/api/getPageImage";
 
-export const Training = () => {
+export const Training = async () => {
+	const trainingImages = await getPageImagesList("Treningi");
+
 	return (
-		<section
-			className="relative mt-8 flex h-full min-h-screen w-full flex-col justify-center gap-4 px-2 md:mt-0 xl:px-48"
-			id="trening"
-		>
-			<div className="justify-between gap-4 sm:flex xl:gap-6">
-				<TreningCard
-					imageHeight="h-48"
-					className="basis-1/2 space-y-4 md:basis-1/3"
-					trening={trening[0]}
-				/>
-				<TreningCard
-					imageHeight="h-48"
-					className="basis-1/2 space-y-4 md:basis-1/3"
-					trening={trening[1]}
-				/>
-
-				<div className="mb-6 hidden w-full basis-1/3 items-end justify-between px-2 md:flex">
-					<div>
-						<h2 className="text-7xl font-extrabold">Hala</h2> <h3 className="text-5xl">Sportowa</h3>
-						<p className="mt-4 text-lg">Śremie, ul. Staszica 1a</p>
-					</div>
-					<Ball fill={"#ffcc00"} width={35} height={35} />
-				</div>
-			</div>
-			<div className="w-ful mb-6 flex flex-col justify-between px-2 md:hidden">
-				<div className="flex items-end justify-between">
-					<h2 className="inline-block text-6xl">
-						<span className="font-extrabold">Hala</span> Sportowa
-					</h2>
-					<Ball fill={"#ffcc00"} width={35} height={35} />
-				</div>
-				<p className="text-lg">Śremie, ul. Staszica 1a</p>
-			</div>
-			<div className="h-56">
-				<Suspense fallback={<Loading />}>
-					<TreningGallerySwiper />
-				</Suspense>
-			</div>
+		<section className="flex-row-reverse gap-4 md:flex">
+			<TrainingSection
+				title={
+					<h1 className="mb-8 text-3xl text-secondary drop-shadow-md lg:text-4xl" data-aos="fade-up">
+						Harmonogram treningów dla najmłodszych
+					</h1>
+				}
+				paragraphs={[
+					"Zapraszamy do udziału w naszych treningach, które odbywają się regularnie w Hali Sportowej w Śremie, przy ul. Staszica 1a. Sprawdź poniższy harmonogram treningów dla różnych grup wiekowych:",
+				]}
+				image={trainingImages[0].headerImage.responsiveImage}
+			/>
 		</section>
 	);
 };

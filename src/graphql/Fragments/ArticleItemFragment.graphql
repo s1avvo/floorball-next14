@@ -1,4 +1,10 @@
 fragment ArticleItem on ArticleRecord {
+	id
+	image {
+		responsiveImage {
+			...ResponsiveImage
+		}
+	}
 	slug
 	title
 	text(markdown: true)

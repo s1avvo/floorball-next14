@@ -1,0 +1,10 @@
+query GalleryGetList {
+	allGalleries {
+		gallery {
+			id
+			responsiveImage {
+				...ResponsiveImage
+			}
+		}
+	}
+}

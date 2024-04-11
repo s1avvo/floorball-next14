@@ -1,23 +1,26 @@
 import React from "react";
 
-type ContactInputProps = {
-	label: string;
+interface ContactInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	type: React.HTMLInputTypeAttribute;
+	label: string;
 	name: string;
+	placeholder: string;
 	gridColumn?: string;
-};
-export const ContactFormInput = ({ label, type, name, gridColumn }: ContactInputProps) => {
+}
+
+export const ContactFormInput = ({ type, name, label, placeholder, gridColumn, ...rest }: ContactInputProps) => {
 	return (
 		<div className={gridColumn}>
-			<label htmlFor={`${name}-id`} className="prose-sm ms-2 block">
+			<label htmlFor={`${name}-id`} className="text-base text-cardparagraph">
 				{label}
 			</label>
 			<input
-				className="h-9 w-full rounded-md border border-blue-950 bg-white p-2 text-blue-900 focus:border-cyan-500 focus:outline-none"
+				className="h-10 w-full rounded-md border border-paragraph bg-[#f7f7f7] p-2 font-light text-secondary focus:border-accent focus:outline-none dark:bg-[#191332]"
 				type={type}
 				name={name}
+				placeholder={placeholder}
 				id={`${name}-id`}
-				required
+				{...rest}
 			/>
 		</div>
 	);
