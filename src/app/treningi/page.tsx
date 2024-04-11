@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { Training } from "@ui/Training";
 import { TrainingList } from "@ui/TrainingList";
 import { TrainingGallery } from "@ui/TrainingGallery";
-import { trainingStructuredData } from "@/constants/structuredData ";
+import { trainingJsonLd } from "@/constants/jsonLd";
 
 export function generateMetadata(): Metadata {
 	return {
@@ -22,7 +22,7 @@ export default async function TrainingPage() {
 			<script
 				key="structured-data"
 				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(trainingStructuredData) }}
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(trainingJsonLd) }}
 			/>
 
 			<div className="relative">

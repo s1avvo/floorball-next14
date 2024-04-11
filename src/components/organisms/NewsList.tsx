@@ -3,7 +3,7 @@ import { useState } from "react";
 import { type ArticleItemFragment } from "@/gql/graphql";
 import { NewsCard } from "@ui/NewsCard";
 import { CustomButton } from "@ui/CustomButton";
-import { getNewsAction } from "@/app/aktualnosci/action";
+import { getNewsAction } from "@/actions";
 
 const NUMBER_OF_NEWS_TO_FETCH = 4;
 

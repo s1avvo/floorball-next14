@@ -11,7 +11,12 @@ export const FloorballEmailTemplate = ({ name, email, phone, subject, message }:
 		<section className="my-10 flex w-3/4 max-w-xl flex-col items-center justify-center rounded-md bg-cardbackground px-6 py-8 shadow-sm drop-shadow-sm">
 			<header className="self-start">
 				<a href="https://floorballsrem.com/" target="_blank" rel="noopener noreferrer">
-					<img src={"https://www.datocms-assets.com/120233/1712482158-og-logo.webp"} alt="Floorball Śrem Logo" />
+					<img
+						src={"https://www.datocms-assets.com/120233/1711313142-floorball_srem_logo_light.webp"}
+						width={262}
+						height={50}
+						alt="Floorball Śrem Logo"
+					/>
 				</a>
 			</header>
 
@@ -24,7 +29,11 @@ export const FloorballEmailTemplate = ({ name, email, phone, subject, message }:
 				<p className="mt-8 text-base text-paragraph">
 					{name}
 					<br />
-					tel: {phone} <br />
+					{phone && (
+						<>
+							tel: {phone} <br />
+						</>
+					)}
 					email: {email}
 					<br />
 				</p>

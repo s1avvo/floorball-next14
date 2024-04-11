@@ -2,10 +2,9 @@ import { Image as DatoImage } from "react-datocms";
 import { HomeHero } from "@ui/HomeHero";
 import { HomeNews } from "@ui/HomeNews";
 import { HomeTrainer } from "@ui/HomeTrainer";
-import { SponsorList } from "@/components/molecules/SponsorList";
+import { SponsorList } from "@ui/SponsorList";
 
-import { homeStructuredData } from "@/constants/structuredData ";
-
+import { homeJsonLd } from "@/constants/jsonLd";
 import { getPageImagesList } from "@/api/getPageImage";
 
 export default async function Home() {
@@ -16,7 +15,7 @@ export default async function Home() {
 			<script
 				key="structured-data"
 				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(homeStructuredData) }}
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
 			/>
 
 			<div className="relative mb-4 overflow-hidden rounded-none bg-primary sm:mb-12 sm:rounded-xl">

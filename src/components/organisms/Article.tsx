@@ -42,7 +42,7 @@ export const Article = async ({ article }: { article: ArticleItemFragment }) => 
 				</span>
 				<Link href={`/aktualnosci/${slug}`}>
 					<h1
-						className="mb-8 mt-2 break-words text-3xl text-secondary sm:text-5xl"
+						className="mb-8 mt-2 break-words text-3xl text-secondary sm:text-4xl"
 						data-aos="fade-up"
 						data-aos-delay="200"
 						data-aos-anchor="[data-aos-id-article]"

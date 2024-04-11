@@ -45,7 +45,7 @@ export const HomeHero = () => {
 				<span className="h-[25px] w-full" />
 			</div>
 			<div data-aos="fade-down" data-aos-delay="800" data-aos-anchor="[data-aos-id-hero]">
-				<Link href={"#recent-news"}>
+				<Link href={"#recent-news"} aria-label="Przjdz do sekcji ostatnie aktualności">
 					<ChevronDownIcon
 						size={65}
 						className="absolute bottom-0 m-auto w-full text-heading transition delay-150 duration-500 ease-in-out hover:-translate-y-4"

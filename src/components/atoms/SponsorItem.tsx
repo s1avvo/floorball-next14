@@ -6,7 +6,7 @@ import { type SponsorItemFragment } from "@/gql/graphql";
 export const SponsorItem = ({ sponsorImage }: { sponsorImage: SponsorItemFragment }) => {
 	const { logo, link } = sponsorImage;
 	return (
-		<Link href={link as Route}>
+		<Link href={link as Route} aria-label="Strony sponsorów klubu" rel="noopener noreferrer" target="_blank">
 			<DatoImage data={logo.responsiveImage!} />
 		</Link>
 	);

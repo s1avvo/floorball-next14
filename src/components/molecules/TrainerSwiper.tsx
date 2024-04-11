@@ -1,7 +1,7 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Grid, Pagination } from "swiper/modules";
-import { TrainerCard } from "@/components/molecules/TrainerCard";
+import { TrainerCard } from "@ui/TrainerCard";
 import { type TrainerItemFragment } from "@/gql/graphql";
 
 import "swiper/css";

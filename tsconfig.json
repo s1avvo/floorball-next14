@@ -23,7 +23,7 @@
 		],
 		"paths": {
 			"@/*": ["./src/*"],
-			"@ui/*": ["./src/components/atoms/*", "./src/components/molecules/*", "./src/components/organisms/*"],
+			"@ui/*": ["./src/components/atoms/*", "./src/components/molecules/*", "./src/components/organisms/*"]
 		},
 		"types": ["react-dom/canary"]
 	},

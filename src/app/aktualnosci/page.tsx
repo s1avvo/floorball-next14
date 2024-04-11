@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { type Metadata } from "next";
 import { NewsList } from "@ui/NewsList";
-import { newsStructuredData } from "@/constants/structuredData ";
+import { newsJsonLd } from "@/constants/jsonLd";
 
 import { getNewsWithPagination, getNewsCount } from "@/api/getNews";
 
@@ -27,7 +27,7 @@ export default async function NewsMain() {
 			<script
 				key="structured-data"
 				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(newsStructuredData(initialNews)) }}
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(newsJsonLd(initialNews)) }}
 			/>
 
 			<section className="grid grid-cols-1 gap-4 px-2 sm:px-0 md:col-span-2 md:grid-cols-2" data-aos-id-news>

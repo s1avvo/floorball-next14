@@ -30,7 +30,7 @@ export const TrainingCard = ({ training, delay }: { training: TrainingItemFragme
 				{training.session.map((session) => (
 					<div key={session.id}>
 						<span className="text-base text-accent">{session.dayOfWeek}</span>
-						<h6 className="text-lg text-heading">{session.time}</h6>
+						<p className="text-lg text-heading">{session.time}</p>
 					</div>
 				))}
 			</div>

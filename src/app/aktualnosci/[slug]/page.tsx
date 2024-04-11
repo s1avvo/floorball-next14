@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { type Metadata } from "next";
 import { Article } from "@ui/Article";
 import { RecentNewsList } from "@ui/RecentNewsList";
-import { articleStructuredData } from "@/constants/structuredData ";
+import { articleJsonLd } from "@/constants/jsonLd";
 
 import { getNewsBySlug, getNewsSlug } from "@/api/getNews";
 
@@ -57,7 +57,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
 			<script
 				key="structured-data"
 				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(articleStructuredData(article)) }}
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd(article)) }}
 			/>
 			<section className="space-y-8 md:col-span-2">
 				<Article article={article} />

@@ -6,7 +6,7 @@ import { NewsItem } from "@ui/NewsItem";
 import { Facebook } from "@ui/Facebook";
 
 export const NewsCard = ({ news, delay, anchor }: { news: ArticleItemFragment; delay?: string; anchor?: string }) => {
-	const { image, link } = news;
+	const { image, link, slug } = news;
 
 	return (
 		<div
@@ -17,16 +17,18 @@ export const NewsCard = ({ news, delay, anchor }: { news: ArticleItemFragment; d
 			data-aos-duration="1200"
 		>
 			<div className="absolute left-0 top-0 aspect-square h-48 w-full overflow-hidden rounded-md">
-				<DatoImage
-					data={image.responsiveImage!}
-					layout="responsive"
-					objectFit="cover"
-					objectPosition="center"
-					priority
-					style={{
-						height: "100%",
-					}}
-				/>
+				<Link href={`/aktualnosci/${slug}`}>
+					<DatoImage
+						data={image.responsiveImage!}
+						layout="responsive"
+						objectFit="cover"
+						objectPosition="center"
+						priority
+						style={{
+							height: "100%",
+						}}
+					/>
+				</Link>
 			</div>
 
 			<NewsItem news={news} />

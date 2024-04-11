@@ -2,6 +2,8 @@
 import { Resend } from "resend";
 import { z } from "zod";
 import { FloorballEmailTemplate } from "@ui/EmailTemplate";
+import { executeGraphql } from "@/api/graphqlApi";
+import { ArticleGetListWithPaginationDocument } from "@/gql/graphql";
 
 const contactFormDataSchema = z.object({
 	name: z.string().trim().min(2, { message: "Imię musimi być dłuższe niź 2 znak." }),
@@ -70,3 +72,12 @@ export async function sendMessageAction(formData: FormData) {
 	}
 	return { success: false, error: result.error.errors[0]?.message };
 }
+
+export const getNewsAction = async (first: number, skip: number) => {
+	const graphqlResponse = await executeGraphql({
+		query: ArticleGetListWithPaginationDocument,
+		variables: { first, skip },
+	});
+
+	return graphqlResponse.allArticles;
+};

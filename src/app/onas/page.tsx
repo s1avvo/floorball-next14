@@ -2,7 +2,7 @@ import { type Metadata } from "next";
 import { MessageSquareQuote } from "lucide-react";
 import { LucideIconWithText } from "@ui/LucideIconWithText";
 import { AboutUs } from "@ui/AboutUs";
-import { aboutUsStructuredData } from "@/constants/structuredData ";
+import { aboutUsJsonLd } from "@/constants/jsonLd";
 
 export function generateMetadata(): Metadata {
 	return {
@@ -21,7 +21,7 @@ export default function AboutUsMain() {
 			<script
 				key="structured-data"
 				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutUsStructuredData) }}
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutUsJsonLd) }}
 			/>
 
 			<div className="relative">

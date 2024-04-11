@@ -1,7 +1,7 @@
 import { type WebPage, type WithContext, type CollectionPage, type Article } from "schema-dts";
 import { type ArticleItemFragment } from "@/gql/graphql";
 
-export const homeStructuredData: WithContext<WebPage> = {
+export const homeJsonLd: WithContext<WebPage> = {
 	"@context": "https://schema.org",
 	"@type": "WebPage",
 	"@id": "https://floorballsrem.com/",
@@ -103,7 +103,7 @@ export const homeStructuredData: WithContext<WebPage> = {
 	},
 };
 
-export const contactStructuredData: WithContext<WebPage> = {
+export const contactJsonLd: WithContext<WebPage> = {
 	"@context": "https://schema.org",
 	"@type": "WebPage",
 	"@id": "https://floorballsrem.com/kontakt",
@@ -167,7 +167,7 @@ export const contactStructuredData: WithContext<WebPage> = {
 	},
 };
 
-export const aboutUsStructuredData: WithContext<WebPage> = {
+export const aboutUsJsonLd: WithContext<WebPage> = {
 	"@context": "https://schema.org",
 	"@type": "WebPage",
 	"@id": "https://floorballsrem.com/onas",
@@ -231,7 +231,7 @@ export const aboutUsStructuredData: WithContext<WebPage> = {
 	},
 };
 
-export const trainingStructuredData: WithContext<WebPage> = {
+export const trainingJsonLd: WithContext<WebPage> = {
 	"@context": "https://schema.org",
 	"@type": "WebPage",
 	"@id": "https://floorballsrem.com/treningi",
@@ -295,7 +295,7 @@ export const trainingStructuredData: WithContext<WebPage> = {
 	},
 };
 
-export const newsStructuredData = (article: ArticleItemFragment[]): WithContext<CollectionPage> => {
+export const newsJsonLd = (article: ArticleItemFragment[]): WithContext<CollectionPage> => {
 	return {
 		"@context": "https://schema.org",
 		"@type": "CollectionPage",
@@ -377,27 +377,26 @@ export const newsStructuredData = (article: ArticleItemFragment[]): WithContext<
 	};
 };
 
-export const articleStructuredData = (article: ArticleItemFragment): WithContext<Article> => {
+export const articleJsonLd = (article: ArticleItemFragment): WithContext<Article> => {
 	return {
 		"@context": "https://schema.org",
 		"@type": "Article",
 		"@id": `https://floorballsrem.com/${article.slug}`,
 		headline: `${article.title}`,
-		datePublished: new Date("2024-03-29").toISOString(),
-		dateModified: new Date("2024-03-29").toISOString(),
+		datePublished: new Date(`${article.createdat}`).toISOString(),
 		wordCount: `${article.text.split(" ").length}`,
-		thumbnailUrl: `${article.image.responsiveImage?.src}`,
+		image: `${article.image.responsiveImage?.src}`,
+		description: `${article.text.slice(0, 160).replace(/(<([^>]+)>)/gi, "")}...`,
 		articleSection: "Aktualności",
 		inLanguage: "pl-PL",
 		isPartOf: {
 			"@type": "WebPage",
-			"@id": `https://floorballsrem.com/aktualnosci/${article.slug}`,
-			url: `https://floorballsrem.com/aktualnosci/${article.slug}`,
-			name: `${article.title}`,
-			thumbnailUrl: `${article.image.responsiveImage?.src}`,
-			datePublished: new Date(article.createdat).toISOString(),
-			dateModified: new Date("2024-03-29").toISOString(),
-			description: `${article.text.slice(0, 160).replace(/(<([^>]+)>)/gi, "")}...`,
+			"@id": "https://floorballsrem.com/aktualnosci",
+			url: "https://floorballsrem.com/aktualnosci",
+			name: "Floorball Śrem - Śremski Klub Unihokeja | Aktualności",
+			headline: "Aktualności",
+			description:
+				"Bądź na bieżąco z najnowszymi informacjami, relacjami z wydarzeń klubowych oraz ciekawostkami ze świata unihokeja.",
 			inLanguage: "pl-PL",
 			isPartOf: {
 				"@type": "WebSite",
@@ -450,6 +449,7 @@ export const articleStructuredData = (article: ArticleItemFragment): WithContext
 			"@type": "Person",
 			"@id": "https://floorballsrem.com/#author",
 			name: "Arkadiusz Nadolny",
+			url: "https://www.facebook.com/arkadiusz.nadolny.77",
 		},
 	};
 };

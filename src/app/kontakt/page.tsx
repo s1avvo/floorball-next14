@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { type Metadata } from "next";
 import { Contact } from "@ui/Contact";
 import { ContactList } from "@ui/ContactList";
-import { contactStructuredData } from "@/constants/structuredData ";
+import { contactJsonLd } from "@/constants/jsonLd";
 
 export function generateMetadata(): Metadata {
 	return {
@@ -21,7 +21,7 @@ export default async function ContactMain() {
 			<script
 				key="structured-data"
 				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(contactStructuredData) }}
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(contactJsonLd) }}
 			/>
 
 			<div className="relative">

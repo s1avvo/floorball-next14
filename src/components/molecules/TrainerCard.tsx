@@ -32,7 +32,7 @@ export const TrainerCard = ({ trainer }: { trainer: TrainerItemFragment }) => {
 					</div>
 				</div>
 
-				<h6 className="text-xl text-cardparagraph">{trainer.name}</h6>
+				<h5 className="text-xl text-cardparagraph">{trainer.name}</h5>
 				<ul className="text-sm text-accent">
 					{trainer.skill.map((item) => (
 						<li key={item.id}>#{item.name}</li>

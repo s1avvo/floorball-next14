@@ -4,7 +4,7 @@ import { clsx } from "clsx";
 import { MoreVertical, X } from "lucide-react";
 import { ActiveLink } from "@ui/ActiveLink";
 
-import { navbarList } from "@/constants/navigation";
+import { navigationList } from "@/constants/navigation";
 
 export const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +13,7 @@ export const Navbar = () => {
 		<nav>
 			{/*xl screen navbar*/}
 			<ul className="hidden items-center justify-between gap-3 whitespace-nowrap lg:flex">
-				{navbarList.map(({ href, title, exact }, index) => (
+				{navigationList.map(({ href, title, exact }, index) => (
 					<li key={index} className="text-lg font-light">
 						<ActiveLink href={href} exact={exact}>
 							{title}
@@ -41,7 +41,7 @@ export const Navbar = () => {
 				)}
 			>
 				<ul className="my-5 w-full flex-col lg:hidden">
-					{navbarList.map(({ href, title, exact }, index) => (
+					{navigationList.map(({ href, title, exact }, index) => (
 						<li key={index} className="px-8 py-4 text-lg" onClick={() => setIsOpen(!isOpen)}>
 							<ActiveLink href={href} exact={exact}>
 								{title}
