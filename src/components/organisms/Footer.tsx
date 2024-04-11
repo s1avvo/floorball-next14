@@ -14,12 +14,7 @@ export const Footer = () => {
 					</li>
 				))}
 				<li className="flex items-center justify-center gap-2">
-					<Link
-						href={"https://www.datocms-assets.com/120233/1712482339-deklaracja_czlonkowska.pdf"}
-						download
-						target="_blank"
-						rel="noopener noreferrer"
-					>
+					<Link href={`${process.env.DEKLARACJA_URL}`} download target="_blank" rel="noopener noreferrer">
 						<LucideIconWithText Icon={FileDown} size={24}>
 							Deklaracja członkowska
 						</LucideIconWithText>

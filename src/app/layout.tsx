@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 		url: `${process.env.NEXT_PUBLIC_URL}`,
 		images: [
 			{
-				url: "https://www.datocms-assets.com/120233/1712593014-og.webp",
+				url: `${process.env.OPEN_GRAPH_IMAGE}`,
 				width: 1200,
 				height: 630,
 				alt: "Floorball Śrem - Śremski Klub Unihokeja",

@@ -27,7 +27,7 @@ export const homeJsonLd: WithContext<WebPage> = {
 			logo: {
 				"@type": "ImageObject",
 				"@id": "https://floorballsrem.com/#logo",
-				url: "https://www.datocms-assets.com/120233/1712482158-og-logo.webp",
+				url: `${process.env.LOGO_BIG_URL}`,
 				width: "500",
 				height: "500",
 				caption: "Logo Floorball Śrem",
@@ -42,7 +42,7 @@ export const homeJsonLd: WithContext<WebPage> = {
 		logo: {
 			"@type": "ImageObject",
 			"@id": "https://floorballsrem.com/#logo",
-			url: "https://www.datocms-assets.com/120233/1712482158-og-logo.webp",
+			url: `${process.env.LOGO_BIG_URL}`,
 			width: "500",
 			height: "500",
 			caption: "Logo Floorball Śrem",
@@ -128,7 +128,7 @@ export const contactJsonLd: WithContext<WebPage> = {
 			logo: {
 				"@type": "ImageObject",
 				"@id": "https://floorballsrem.com/#logo",
-				url: "https://www.datocms-assets.com/120233/1712482158-og-logo.webp",
+				url: `${process.env.LOGO_BIG_URL}`,
 				width: "500",
 				height: "500",
 				caption: "Logo Floorball Śrem",
@@ -192,7 +192,7 @@ export const aboutUsJsonLd: WithContext<WebPage> = {
 			logo: {
 				"@type": "ImageObject",
 				"@id": "https://floorballsrem.com/#logo",
-				url: "https://www.datocms-assets.com/120233/1712482158-og-logo.webp",
+				url: `${process.env.LOGO_BIG_URL}`,
 				width: "500",
 				height: "500",
 				caption: "Logo Floorball Śrem",
@@ -256,7 +256,7 @@ export const trainingJsonLd: WithContext<WebPage> = {
 			logo: {
 				"@type": "ImageObject",
 				"@id": "https://floorballsrem.com/#logo",
-				url: "https://www.datocms-assets.com/120233/1712482158-og-logo.webp",
+				url: `${process.env.LOGO_BIG_URL}`,
 				width: "500",
 				height: "500",
 				caption: "Logo Floorball Śrem",
@@ -322,7 +322,7 @@ export const newsJsonLd = (article: ArticleItemFragment[]): WithContext<Collecti
 				logo: {
 					"@type": "ImageObject",
 					"@id": "https://floorballsrem.com/#logo",
-					url: "https://www.datocms-assets.com/120233/1712482158-og-logo.webp",
+					url: `${process.env.LOGO_BIG_URL}`,
 					width: "500",
 					height: "500",
 					caption: "Logo Floorball Śrem",
@@ -414,7 +414,7 @@ export const articleJsonLd = (article: ArticleItemFragment): WithContext<Article
 					logo: {
 						"@type": "ImageObject",
 						"@id": "https://floorballsrem.com/#logo",
-						url: "https://www.datocms-assets.com/120233/1712482158-og-logo.webp",
+						url: `${process.env.LOGO_BIG_URL}`,
 						width: "500",
 						height: "500",
 						caption: "Logo Floorball Śrem",

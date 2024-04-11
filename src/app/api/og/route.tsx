@@ -54,7 +54,7 @@ export async function GET(request: NextRequest) {
 					tw="absolute left-0 top-0"
 					width={1200}
 					height={630}
-					src="https://www.datocms-assets.com/120233/1712594950-og_news.jpg"
+					src={process.env.OPEN_GRAPH_IMAGE_NEWS}
 					alt="Floorball Opengraph Image Background"
 				/>
 				<div tw="w-full flex flex-wrap items-center justify-end">

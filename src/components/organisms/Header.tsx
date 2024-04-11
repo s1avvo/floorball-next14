@@ -8,8 +8,8 @@ export const Header = () => {
 			{/* Logo */}
 			<Link href="/" aria-label="Logo klubu Floorball Śrem">
 				<ThemeImage
-					srcLight={"https://www.datocms-assets.com/120233/1711313142-floorball_srem_logo_light.webp"}
-					srcDark={"https://www.datocms-assets.com/120233/1711313217-floorball_srem_logo_dark.webp"}
+					srcLight={`${process.env.LOGO_LIGHT_URL}`}
+					srcDark={`${process.env.LOGO_DARK_URL}`}
 					alt="Floorball Śrem logo"
 					width={272}
 					height={52}
