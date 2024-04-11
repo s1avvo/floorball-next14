@@ -1,0 +1,10 @@
+fragment ResponsiveImage on ResponsiveImage {
+	sizes
+	src
+	width
+	height
+	alt
+	title
+	base64
+	aspectRatio
+}

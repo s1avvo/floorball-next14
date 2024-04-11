@@ -1,41 +1,38 @@
-import Link from "next/link";
-import { AboutUsBackground } from "@/components/atoms/AboutUsBackground";
-import { AboutUsPartners } from "@/components/atoms/AboutUsPartners";
-import { Button } from "@/components/atoms/Button";
+import { AboutUsSection } from "@ui/AboutUsSection";
+import { getPageImagesList } from "@/api/getPageImage";
 
-export const AboutUs = () => {
+export const AboutUs = async () => {
+	const aboutUsImages = await getPageImagesList("O nas");
+
 	return (
-		<section className="relative flex h-full min-h-screen w-full flex-col" id="about-us">
-			{/* background image */}
-			<AboutUsBackground />
-
-			{/* text */}
-			<article>
-				<div className="justify-between gap-4 px-4 sm:flex xl:px-48">
-					<div className="h-screen w-full basis-1/2 pt-24 md:basis-2/3">
-						<div className="ms-36 basis-full text-3xl sm:text-4xl md:ms-48 md:text-5xl xl:ms-44 xl:text-8xl">
-							FLOORBALL
-						</div>
-						<div className="basis-full text-[7rem]/[120px] font-extrabold text-amber-400 sm:text-9xl md:text-10xl xl:text-12xl">
-							ŚREM
-						</div>
-						<div className="relative flex max-w-[500px] flex-col xl:space-y-6">
-							<div className="mt-4 hidden border-y-2 border-blue-900 px-6 py-4 text-start italic dark:border-white xl:flex">
-								<p>
-									<q className="prose-sm">
-										Cena sukcesu to ciężka praca, poświęcenie i determinacja, by niezależnie od
-										tego, czy w danej chwili wygrywamy czy przegrywamy dawać z siebie wszystko.
-									</q>
-								</p>
-							</div>
-							<Link href={"#contact_form"}>
-								<Button label="DOŁĄCZ DO NAS" />
-							</Link>
-							<AboutUsPartners />
-						</div>
-					</div>
-				</div>
-			</article>
-		</section>
+		<>
+			<div className=" gap-4 md:flex">
+				<AboutUsSection
+					title={
+						<h1 className="mb-12 text-4xl text-secondary drop-shadow-md lg:text-5xl" data-aos="fade-up">
+							Historia unihokeja <br />w Śremie
+						</h1>
+					}
+					paragraphs={[
+						"Klub powstał w 2020 roku z inicjatywy pasjonatów unihokeja, których drogi po blisko dwóch dekadach znowu się skrzyżowały. Ta grupa entuzjastów postanowiła wznowić treningi, niosąc ze sobą ducha sportowej pasji i determinacji. Do roku 1999 sekcje unihokeja w Śremie prowadził zasłużony trener Eugeniusz Kaczmarek, którego wpływ na sportowy rozwój unihokej w regionu był niezaprzeczalny. To właśnie pod jego skrzydłami kształtowali się obecni założyciele klubu.",
+					]}
+					image={aboutUsImages[0].headerImage.responsiveImage}
+				/>
+			</div>
+			<div className="flex-row-reverse gap-4 md:flex">
+				<AboutUsSection
+					title={
+						<h2 className="mb-12 text-3xl text-secondary drop-shadow-md lg:text-4xl" data-aos="fade-up">
+							Narodziny idei unihokeja dla najmłodszych
+						</h2>
+					}
+					paragraphs={[
+						"Dwa lata po reaktywacji klubu, narodziła się idea nauczania unihokeja wśród najmłodszych zawodników. Z determinacją i zaangażowaniem, inspirowani dorobkiem trenera Kaczmarka, członkowie klubu postanowili kontynuować jego pracę.",
+						"To właśnie ta idea stanowiła fundament powstania nowej historii unihokeja w Śremie i początek Floorball Śrem. W tym momencie mam trzy grupy młodych zawodników: przedszkolaki, klasy 1-2 i klasy 3-5.",
+					]}
+					image={aboutUsImages[0].headerImageAlternative?.responsiveImage}
+				/>
+			</div>
+		</>
 	);
 };
