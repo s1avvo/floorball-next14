@@ -9,7 +9,7 @@ const INITIAL_NUMBER_OF_NEWS = 4;
 
 export function generateMetadata(): Metadata {
 	return {
-		title: "Floorball Śrem - aktualności...",
+		title: "Floorball Śrem | Aktualności: Najnowsze informacje, wydarzenia klubowe i więcej.",
 		description:
 			"Śledź naszą stronę internetwą, aby być na bieżąco z najnowszymi informacjami, relacjami z wydarzeń klubowych oraz ciekawostkami ze świata unihokeja.",
 		alternates: {

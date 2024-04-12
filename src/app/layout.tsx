@@ -17,7 +17,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
 	metadataBase: new URL(`${process.env.NEXT_PUBLIC_URL}`),
-	title: "Floorball Śrem - Śremski Klub Unihokeja",
+	title:
+		"Floorball Śrem | Śremski Klub Unihokeja: najnowsze informacje, harmonogram treningów, galeria zdjęć i więcej.",
 	description:
 		"Floorball Śrem to dynamicznie rozwijający się klub unihokeja, który promuje aktywny styl życia i rozwój młodych talentów. Dołącz do nas i odkryj pasjonujący świat unihokeja!",
 	alternates: {

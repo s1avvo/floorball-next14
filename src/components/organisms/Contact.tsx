@@ -14,7 +14,7 @@ export const Contact = async () => {
 							data-aos="fade-up"
 							data-aos-id-contact
 						>
-							Masz pytania? Skontaktuj się <br />z Nami
+							Masz pytania? Skontaktuj się <br className="hidden lg:inline-block" />z Nami
 						</h1>
 					}
 					paragraphs={[
