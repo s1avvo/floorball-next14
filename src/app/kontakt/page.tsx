@@ -6,7 +6,7 @@ import { contactJsonLd } from "@/constants/jsonLd";
 
 export function generateMetadata(): Metadata {
 	return {
-		title: "Floorball Śrem - Skontaktuj się z nami!",
+		title: "Floorball Śrem | Kontakt: Skontaktuj się z nami!",
 		description:
 			"Chciałbyś się z nami skontaktować w sprawie członkostwa, treningów czy współpracy - jesteśmy do Twojej dyspozycji. Telefon: 530 845 474",
 		alternates: {

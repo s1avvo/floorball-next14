@@ -17,16 +17,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 	if (!article) {
 		return {
-			title: "Floorball Śrem - aktualności...",
+			title: "Floorball Śrem | Aktualności: najnowsze informacje, wydarzenia klubowe i więcej.",
 			description:
 				"Śledź naszą stronę internetwą, aby być na bieżąco z najnowszymi informacjami, relacjami z wydarzeń klubowych oraz ciekawostkami ze świata unihokeja.",
 		};
 	}
 
 	return {
-		title: `Floorball Śrem - ${article?.title}`,
-		description:
-			"Śledź naszą stronę internetwą, aby być na bieżąco z najnowszymi informacjami, relacjami z wydarzeń klubowych oraz ciekawostkami ze świata unihokeja.",
+		title: `Floorball Śrem | Aktualności: ${article?.title}`,
+		description: `${article.text.slice(0, 160).replace(/(<([^>]+)>)/gi, "")}...`,
 		alternates: {
 			canonical: `/aktualnosci/${article.slug}`,
 		},
@@ -36,7 +35,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 			url: `${process.env.NEXT_PUBLIC_URL}/aktualnosci/${article.slug}`,
 			images: {
 				url: `${process.env.NEXT_PUBLIC_URL}/api/og?slug=${article.slug}`,
-				alt: `Floorball Śrem - ${article.title}`,
+				alt: `Floorball Śrem | Aktualności: ${article.title}`,
 			},
 			siteName: "floorballsrem.com",
 			locale: "pl",

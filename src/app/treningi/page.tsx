@@ -7,9 +7,9 @@ import { trainingJsonLd } from "@/constants/jsonLd";
 
 export function generateMetadata(): Metadata {
 	return {
-		title: "Floorball Śrem - Treningi..",
+		title: "Floorball Śrem | Treningi: harmonogram oraz galeria zdjęć z treningu.",
 		description:
-			"Zapraszamy do udziału w naszych treningach, które odbywają się regularnie w Hali Sportowej w Śremie, przy ul. Staszica 1a. Sprawdź harmonogram treningów dla różnych grup wiekowych.",
+			"Zobacz harmonogram treningów dla różnych grup wiekowych. Weź udział w naszych zjęciach, które odbywają się regularnie w Hali Sportowej w Śremie, przy ul. Staszica 1a.",
 		alternates: {
 			canonical: "/treningi",
 		},

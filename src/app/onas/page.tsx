@@ -6,7 +6,7 @@ import { aboutUsJsonLd } from "@/constants/jsonLd";
 
 export function generateMetadata(): Metadata {
 	return {
-		title: "Floorball Śrem - O nas...",
+		title: "Floorball Śrem | O nas: poznaj historię i cele naszego klubu unihokeja.",
 		description:
 			"Dowiedz się więcej o naszym klubie, jego historii i inspiracjach, które doprowadziły do reaktywacji Śremskiego Klubu Unihokeja. Zapraszamy do współpracy!",
 		alternates: {

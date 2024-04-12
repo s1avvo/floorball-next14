@@ -6,15 +6,15 @@ export const homeJsonLd: WithContext<WebPage> = {
 	"@type": "WebPage",
 	"@id": "https://floorballsrem.com/",
 	url: "https://floorballsrem.com/",
-	name: "Floorball Śrem - Śremski Klub Unihokeja",
-	thumbnailUrl: "https://floorballsrem.com/assets/floorballsrem-unihokej.jpg",
+	name: "Floorball Śrem | Śremski Klub Unihokeja: najnowsze informacje, harmonogram treningów, galeria zdjęć i więcej.",
+	thumbnailUrl: `${process.env.LOGO_BIG_URL}`,
 	description:
 		"Witaj na oficjalnej stronie klubu Floorball Śrem. Nasza misja to promowanie unihokeja jako aktywności fizycznej dla wszystkich grup wiekowych oraz poziomów umiejętności.",
 	inLanguage: "pl-PL",
 	isPartOf: {
 		"@type": "WebSite",
 		"@id": "https://floorballsrem.com/#website",
-		name: "Floorball Śrem - Śremski Klub Unihokeja",
+		name: "Floorball Śrem | Śremski Klub Unihokeja: najnowsze informacje, harmonogram treningów, galeria zdjęć i więcej.",
 		description:
 			"Jesteśmy klubem unihokeja, który promuje aktywny tryb życia i buduje społeczność poprzez wspólne treningi. Dołącz do nas!.",
 		url: "https://floorballsrem.com/",
@@ -38,7 +38,11 @@ export const homeJsonLd: WithContext<WebPage> = {
 		"@type": "Organization",
 		"@id": "https://floorballsrem.com/#organization",
 		name: "Floorball Śrem - Śremski Klub Unihokeja",
+		description:
+			"Floorball Śrem to dynamicznie rozwijający się klub unihokeja. Dołącz do nas i odkryj pasjonujący świat unihokeja!",
 		url: "https://floorballsrem.com/",
+		email: `${process.env.EMAIL_TO}`,
+		telephone: "530 845 474",
 		logo: {
 			"@type": "ImageObject",
 			"@id": "https://floorballsrem.com/#logo",
@@ -54,10 +58,9 @@ export const homeJsonLd: WithContext<WebPage> = {
 		],
 		address: {
 			"@type": "PostalAddress",
-			addressRegion: "Śrem",
-			addressLocality: "Zbrudzewo",
+			addressLocality: "Śrem (Śremski Sport - hala sportowa)",
 			postalCode: "63-100",
-			streetAddress: "ul. Granatowa 10",
+			streetAddress: "ul. Staszica 1a",
 			addressCountry: {
 				"@type": "Country",
 				name: "PL",
@@ -67,7 +70,7 @@ export const homeJsonLd: WithContext<WebPage> = {
 			{
 				"@type": "ContactPoint",
 				telephone: "530 845 474",
-				email: "pfklima@biuro.plarkadiusz.nadolny@gmail.com",
+				email: "arkadiusz.nadolny@gmail.com",
 				areaServed: "Polska",
 				availableLanguage: "Polski",
 			},
@@ -108,14 +111,14 @@ export const contactJsonLd: WithContext<WebPage> = {
 	"@type": "WebPage",
 	"@id": "https://floorballsrem.com/kontakt",
 	url: "https://floorballsrem.com/kontakt",
-	name: "Floorball Śrem - Śremski Klub Unihokeja | Dołącz do nas!",
+	name: "Floorball Śrem | Kontakt: Skontaktuj się z nami!",
 	description:
-		"Zapraszamy do kontaktu z naszym klubem sportowym w Śremie! Na stronie udostępniamy wszelkie niezbędne dane oraz formularz kontaktowy.",
+		"Chciałbyś się z nami skontaktować w sprawie członkostwa, treningów czy współpracy - jesteśmy do Twojej dyspozycji. Telefon: 530 845 474",
 	inLanguage: "pl-PL",
 	isPartOf: {
 		"@type": "WebSite",
 		"@id": "https://floorballsrem.com/#website",
-		name: "Floorball Śrem - Śremski Klub Unihokeja",
+		name: "Floorball Śrem | Śremski Klub Unihokeja: najnowsze informacje, harmonogram treningów, galeria zdjęć i więcej.",
 		description:
 			"Jesteśmy klubem unihokeja, który promuje aktywny tryb życia i buduje społeczność poprzez wspólne treningi. Dołącz do nas!.",
 		url: "https://floorballsrem.com/",
@@ -172,14 +175,14 @@ export const aboutUsJsonLd: WithContext<WebPage> = {
 	"@type": "WebPage",
 	"@id": "https://floorballsrem.com/onas",
 	url: "https://floorballsrem.com/ons",
-	name: "Floorball Śrem - Śremski Klub Unihokeja | O nas",
+	name: "Floorball Śrem | O nas: poznaj historię i cele naszego klubu unihokeja.",
 	description:
-		"Klub powstał w 2020 roku, a założony został przez pasjonatów unihokeja, którzy spotkali się po blisko 20 latach i postanowili, że wznowią treningi unikokeja w Śremie.",
+		"Dowiedz się więcej o naszym klubie, jego historii i inspiracjach, które doprowadziły do reaktywacji Śremskiego Klubu Unihokeja. Zapraszamy do współpracy!",
 	inLanguage: "pl-PL",
 	isPartOf: {
 		"@type": "WebSite",
 		"@id": "https://floorballsrem.com/#website",
-		name: "Floorball Śrem - Śremski Klub Unihokeja",
+		name: "Floorball Śrem | Śremski Klub Unihokeja: najnowsze informacje, harmonogram treningów, galeria zdjęć i więcej.",
 		description:
 			"Jesteśmy klubem unihokeja, który promuje aktywny tryb życia i buduje społeczność poprzez wspólne treningi. Dołącz do nas!.",
 		url: "https://floorballsrem.com/",
@@ -236,14 +239,14 @@ export const trainingJsonLd: WithContext<WebPage> = {
 	"@type": "WebPage",
 	"@id": "https://floorballsrem.com/treningi",
 	url: "https://floorballsrem.com/treningi",
-	name: "Floorball Śrem - Śremski Klub Unihokeja | Treningi",
+	name: "Floorball Śrem | Treningi: harmonogram oraz galeria zdjęć z treningu.",
 	description:
-		"Zapraszamy na treningi unihokeja w Śremie, które odbywają się na hali sportowej Śremski Sport, przy ul. Staszica 1a.",
+		"Zobacz harmonogram treningów dla różnych grup wiekowych. Weź udział w naszych zjęciach, które odbywają się regularnie w Hali Sportowej w Śremie, przy ul. Staszica 1a.",
 	inLanguage: "pl-PL",
 	isPartOf: {
 		"@type": "WebSite",
 		"@id": "https://floorballsrem.com/#website",
-		name: "Floorball Śrem - Śremski Klub Unihokeja",
+		name: "Floorball Śrem | Śremski Klub Unihokeja: najnowsze informacje, harmonogram treningów, galeria zdjęć i więcej.",
 		description:
 			"Jesteśmy klubem unihokeja, który promuje aktywny tryb życia i buduje społeczność poprzez wspólne treningi. Dołącz do nas!.",
 		url: "https://floorballsrem.com/",
@@ -301,15 +304,15 @@ export const newsJsonLd = (article: ArticleItemFragment[]): WithContext<Collecti
 		"@type": "CollectionPage",
 		"@id": "https://floorballsrem.com/aktualnosci",
 		url: "https://floorballsrem.com/aktualnosci",
-		name: "Floorball Śrem - Śremski Klub Unihokeja | Aktualności",
-		headline: "Aktualności",
+		name: "Floorball Śrem | Aktualności: najnowsze informacje, wydarzenia klubowe i więcej.",
+		headline: "Floorball Śrem | Aktualności",
 		description:
 			"Bądź na bieżąco z najnowszymi informacjami, relacjami z wydarzeń klubowych oraz ciekawostkami ze świata unihokeja.",
 		inLanguage: "pl-PL",
 		isPartOf: {
 			"@type": "WebSite",
 			"@id": "https://floorballsrem.com/#website",
-			name: "Floorball Śrem - Śremski Klub Unihokeja",
+			name: "Floorball Śrem | Śremski Klub Unihokeja: najnowsze informacje, harmonogram treningów, galeria zdjęć i więcej.",
 			description:
 				"Jesteśmy klubem unihokeja, który promuje aktywny tryb życia i buduje społeczność poprzez wspólne treningi. Dołącz do nas!.",
 			url: "https://floorballsrem.com/",
@@ -393,18 +396,18 @@ export const articleJsonLd = (article: ArticleItemFragment): WithContext<Article
 			"@type": "WebPage",
 			"@id": "https://floorballsrem.com/aktualnosci",
 			url: "https://floorballsrem.com/aktualnosci",
-			name: "Floorball Śrem - Śremski Klub Unihokeja | Aktualności",
-			headline: "Aktualności",
+			name: "Floorball Śrem | Aktualności: najnowsze informacje, wydarzenia klubowe i więcej.",
+			headline: "Floorball Śrem | Aktualności",
 			description:
 				"Bądź na bieżąco z najnowszymi informacjami, relacjami z wydarzeń klubowych oraz ciekawostkami ze świata unihokeja.",
 			inLanguage: "pl-PL",
 			isPartOf: {
 				"@type": "WebSite",
 				"@id": "https://floorballsrem.com/#website",
-				url: "https://floorballsrem.com/",
-				name: "Floorball Śrem - Śremski Klub Unihokeja",
+				name: "Floorball Śrem | Śremski Klub Unihokeja: najnowsze informacje, harmonogram treningów, galeria zdjęć i więcej.",
 				description:
 					"Jesteśmy klubem unihokeja, który promuje aktywny tryb życia i buduje społeczność poprzez wspólne treningi. Dołącz do nas!.",
+				url: "https://floorballsrem.com/",
 				inLanguage: "pl-PL",
 				publisher: {
 					"@type": "Organization",
