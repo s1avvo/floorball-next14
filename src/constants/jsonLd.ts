@@ -241,7 +241,7 @@ export const trainingJsonLd: WithContext<WebPage> = {
 	url: "https://floorballsrem.com/treningi",
 	name: "Floorball Śrem | Treningi: harmonogram oraz galeria zdjęć z treningu.",
 	description:
-		"Zobacz harmonogram treningów dla różnych grup wiekowych. Weź udział w naszych zjęciach, które odbywają się regularnie w Hali Sportowej w Śremie, przy ul. Staszica 1a.",
+		"Zobacz harmonogram treningów dla różnych grup wiekowych i weź udział w naszych zjęciach, które odbywają się regularnie w Hali Sportowej w Śremie, przy ul. Staszica 1a.",
 	inLanguage: "pl-PL",
 	isPartOf: {
 		"@type": "WebSite",
