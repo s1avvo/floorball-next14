@@ -10,7 +10,7 @@ export const Header = () => {
 				<ThemeImage
 					srcLight={`${process.env.LOGO_LIGHT_URL}`}
 					srcDark={`${process.env.LOGO_DARK_URL}`}
-					alt="Floorball Śrem logo"
+					alt="Floorball Śrem | Śremski Klub Unihokeja"
 					width={272}
 					height={52}
 					quality={100}
