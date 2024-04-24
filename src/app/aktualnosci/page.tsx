@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { type Metadata } from "next";
 import { NewsList } from "@ui/NewsList";
+import { Loading } from "@ui/Loading";
 import { newsJsonLd } from "@/constants/jsonLd";
 
 import { getNewsWithPagination, getNewsCount } from "@/api/getNews";
@@ -30,8 +31,11 @@ export default async function NewsMain() {
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(newsJsonLd(initialNews)) }}
 			/>
 
-			<section className="grid grid-cols-1 gap-4 px-2 sm:px-0 md:col-span-2 md:grid-cols-2" data-aos-id-news>
-				<Suspense fallback={<div className="mx-auto">Loading...</div>}>
+			<section
+				className="grid grid-cols-1 items-start gap-4 px-2 sm:px-0 md:col-span-2 md:grid-cols-2"
+				data-aos-id-news
+			>
+				<Suspense fallback={<Loading />}>
 					<NewsList initialNews={initialNews} countNews={count} />
 				</Suspense>
 			</section>

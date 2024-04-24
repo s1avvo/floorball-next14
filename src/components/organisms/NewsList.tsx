@@ -2,7 +2,9 @@
 import { useState } from "react";
 import { type ArticleItemFragment } from "@/gql/graphql";
 import { NewsCard } from "@ui/NewsCard";
+import { NewsItem } from "@ui/NewsItem";
 import { CustomButton } from "@ui/CustomButton";
+
 import { getNewsAction } from "@/actions";
 
 const NUMBER_OF_NEWS_TO_FETCH = 4;
@@ -20,8 +22,16 @@ export const NewsList = ({ initialNews, countNews }: { initialNews: ArticleItemF
 
 	return (
 		<>
-			{news.map((news, index) => (
-				<NewsCard key={news.id} news={news} delay={`${((index % 4) + 1) * 200}`} anchor="[data-aos-id-news]" />
+			{news.map((item, index) => (
+				<NewsCard
+					key={item.id}
+					slug={item.slug}
+					image={item.image.responsiveImage!}
+					delay={`${((index % 4) + 1) * 200}`}
+					anchor="[data-aos-id-news]"
+				>
+					<NewsItem news={item} />
+				</NewsCard>
 			))}
 
 			{isMoreNews && (

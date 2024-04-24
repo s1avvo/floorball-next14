@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { Training } from "@ui/Training";
 import { TrainingList } from "@ui/TrainingList";
 import { TrainingGallery } from "@ui/TrainingGallery";
+import { Loading } from "@ui/Loading";
 import { trainingJsonLd } from "@/constants/jsonLd";
 
 export function generateMetadata(): Metadata {
@@ -31,11 +32,11 @@ export default async function TrainingPage() {
 
 				<Training />
 
-				<Suspense fallback={<div className="mx-auto">Loading...</div>}>
+				<Suspense fallback={<Loading />}>
 					<TrainingList />
 				</Suspense>
 
-				<Suspense fallback={<div className="mx-auto">Loading...</div>}>
+				<Suspense fallback={<Loading />}>
 					<TrainingGallery />
 				</Suspense>
 			</div>

@@ -27,5 +27,5 @@ export async function GET(request: Request) {
 
 	draftMode().enable();
 
-	redirect(`/article/${article.slug}`);
+	redirect(`/aktualnosci/${article.slug}`);
 }
