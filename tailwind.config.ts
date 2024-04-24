@@ -59,15 +59,15 @@ const config: Config = {
 				},
 			],
 			"2xl": [
-				"2.33rem",
+				"2.09rem",
 				{
-					lineHeight: "2.78rem",
+					lineHeight: "2.88rem",
 					letterSpacing: "-0.015em",
 					fontWeight: "600",
 				},
 			],
 			"3xl": [
-				"2.92rem",
+				"2.81rem",
 				{
 					lineHeight: "3.64rem",
 					letterSpacing: "-0.015em",
@@ -99,6 +99,7 @@ const config: Config = {
 				},
 			],
 		},
+
 		extend: {
 			screens: {
 				xs: "390px",

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { type Metadata } from "next";
 import { Article } from "@ui/Article";
 import { RecentNewsList } from "@ui/RecentNewsList";
+import { Loading } from "@ui/Loading";
 import { articleJsonLd } from "@/constants/jsonLd";
 
 import { getNewsBySlug, getNewsSlug } from "@/api/getNews";
@@ -61,7 +62,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
 			<section className="space-y-8 md:col-span-2">
 				<Article article={article} />
 
-				<Suspense fallback={<div className="mx-auto">Loading...</div>}>
+				<Suspense fallback={<Loading />}>
 					<RecentNewsList />
 				</Suspense>
 			</section>

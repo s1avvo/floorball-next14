@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { NewsCard } from "@ui/NewsCard";
 import { CustomButton } from "@ui/CustomButton";
+import { NewsCard } from "@ui/NewsCard";
+import { NewsClipItem } from "@ui/NewsClipItem";
 
 import { getNewsFirst } from "@/api/getNews";
 
 export const HomeNews = async () => {
-	const news = await getNewsFirst(2);
+	const news = await getNewsFirst(4);
 
 	if (!news || news.length === 0) {
 		return;
@@ -14,9 +15,9 @@ export const HomeNews = async () => {
 	return (
 		<section
 			id="recent-news"
-			className="relative grid grid-cols-1 justify-items-end gap-4 overflow-hidden px-2 py-2 sm:px-4 sm:py-12 md:grid-cols-2 lg:grid-cols-3"
+			className="relative grid grid-cols-1 items-start justify-items-end gap-4 overflow-hidden px-2 py-2 sm:px-4 sm:py-12 md:grid-cols-2 lg:grid-cols-3"
 		>
-			<article className="row-span-1 max-w-sm px-6 py-2 text-end sm:px-8 sm:py-8 md:row-span-2">
+			<article className="row-span-2 max-w-sm px-6 py-2 text-end sm:px-8 sm:py-8 md:row-span-4">
 				<h2 className="mb-8 text-3xl text-heading drop-shadow-lg xs:text-4xl" data-aos="fade-up">
 					Co słychać <br />w klubie?
 				</h2>
@@ -35,7 +36,9 @@ export const HomeNews = async () => {
 				</Link>
 			</article>
 			{news.map((item, index) => (
-				<NewsCard key={item.id} news={item} delay={`${(index + 1) * 200}`} />
+				<NewsCard key={item.id} slug={item.slug} image={item.image.responsiveImage!} delay={`${(index + 1) * 200}`}>
+					<NewsClipItem news={item} />
+				</NewsCard>
 			))}
 		</section>
 	);

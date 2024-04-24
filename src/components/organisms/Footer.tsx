@@ -15,7 +15,7 @@ export const Footer = () => {
 				))}
 				<li className="flex items-center justify-center gap-2">
 					<Link href={`${process.env.DEKLARACJA_URL}`} download target="_blank" rel="noopener noreferrer">
-						<LucideIconWithText Icon={FileDown} size={24}>
+						<LucideIconWithText Icon={FileDown} size={24} style="text-accent">
 							Deklaracja członkowska
 						</LucideIconWithText>
 					</Link>

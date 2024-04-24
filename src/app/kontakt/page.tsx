@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { type Metadata } from "next";
 import { Contact } from "@ui/Contact";
 import { ContactList } from "@ui/ContactList";
+import { Loading } from "@ui/Loading";
 import { contactJsonLd } from "@/constants/jsonLd";
 
 export function generateMetadata(): Metadata {
@@ -39,7 +40,7 @@ export default async function ContactMain() {
 						</p>
 					</div>
 
-					<Suspense fallback={<div className="mx-auto">Loading...</div>}>
+					<Suspense fallback={<Loading />}>
 						<ContactList />
 					</Suspense>
 				</aside>
