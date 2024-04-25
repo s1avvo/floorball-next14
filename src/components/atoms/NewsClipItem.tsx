@@ -29,7 +29,7 @@ export const NewsClipItem = ({ news }: { news: ArticleItemFragment }) => {
 					<NewsHtml html={text} />
 				</div>
 			</>
-			<div className="ms-auto w-fit rounded-full bg-accent ps-4 text-base text-heading ">
+			<div className="ms-auto w-fit rounded-full bg-accent ps-4 text-base text-heading hover:bg-accent/90">
 				<Link
 					href={`/aktualnosci/${slug}`}
 					onMouseEnter={() => setIsHovered(true)}
