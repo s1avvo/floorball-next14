@@ -32,7 +32,7 @@ export const NewsCard = ({
 						objectFit="cover"
 						objectPosition="center"
 						priority
-						className="h-full transition-transform duration-300 ease-in-out hover:scale-105"
+						style={{ height: "100%" }}
 					/>
 				</Link>
 			</div>
