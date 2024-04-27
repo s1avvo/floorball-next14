@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Floorball Śrem
 
-## Getting Started
+Welcome to the Floorball Śrem project repository - the official website for the floorball club. Here, you'll find everything you need to know about the club.
 
-First, run the development server:
+- [Floorballsrem.com](https://floorballsrem.com/) - Check out our website.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## General information
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- The Floorball Śrem project is a comprehensive website built using the modern framework Next.js 14, which enables fast and efficient development of responsive web applications.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- The website is hosted on the [Vercel](https://vercel.com/) platform, ensuring reliability and fast content loading.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Data on the website is managed and provided through the [DatoCMS](https://www.datocms.com/) API, allowing for easy and flexible content management.
 
-## Learn More
+- The use of GraphQL allows for efficient processing of data from the API.
 
-To learn more about Next.js, take a look at the following resources:
+- As part of the project, the email functionality has been implemented using the following libraries:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  - [Zod](https://zod.dev) - form validation,
+  - [Sooner](https://sonner.emilkowal.ski/) - feedback information toast,
+  - [Resend](https://resend.com/) - email delivery service.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Created webhooks for:
 
-## Deploy on Vercel
+  - generating OpenGraph images,
+  - draft mode for previewing posts before publishing,
+  - revalidation of data after its updated in the CMS.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Element animations are implemented using the [AOS](https://michalsnik.github.io/aos/) library - Animate on Scroll, adding dynamics and interactivity for users.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- SEO optimization ensures better visibility in search engine results and attracts more potential visitors.
+
+- The data structure on the website is marked up according to the JSON-LD standard, improving understanding of the content by search engines and enhancing the website's visibility in search results.
+
+## Technologies Used
+
+<div>
+  <img width="50" src="https://github.com/marwin1991/profile-technology-icons/assets/136815194/5f8c622c-c217-4649-b0a9-7e0ee24bd704" alt="Next.js" title="Next.js"/>
+	<img width="50" src="https://user-images.githubusercontent.com/25181517/192107856-aa92c8b1-b615-47c3-9141-ed0d29a90239.png" alt="GraphQL" title="GraphQL"/>
+  <img width="50" src="https://user-images.githubusercontent.com/25181517/183890598-19a0ac2d-e88a-4005-a8df-1ee36782fde1.png" alt="TypeScript" title="TypeScript"/>
+	<img width="50" src="https://user-images.githubusercontent.com/25181517/202896760-337261ed-ee92-4979-84c4-d4b829c7355d.png" alt="Tailwind CSS" title="Tailwind CSS"/>
+</div>
+
+## Contact
+
+If you have questions or suggestions, please contact us at: s.nadolny@hotmail.com
