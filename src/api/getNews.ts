@@ -58,6 +58,7 @@ export const getNewsBySlug = async (slug: string) => {
 		headers: {
 			...(isEnabled ? { "X-Include-Drafts": "true" } : {}),
 		},
+		next: { tags: ["article"] },
 	});
 
 	return graphqlResponse.article;

@@ -6,7 +6,7 @@ import { Documents } from "@ui/Documents";
 export const Footer = () => {
 	return (
 		<footer className="space-y-6 bg-primary py-8 text-center">
-			<ul className="items-center justify-center gap-12 whitespace-nowrap text-base text-secondary sm:flex">
+			<ul className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 whitespace-nowrap text-base text-secondary">
 				{navigationList.map(({ href, title }, index) => (
 					<li key={index}>
 						<Link href={href}>{title}</Link>
