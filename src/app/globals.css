@@ -1,35 +1,95 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-html {
-	scroll-behavior: smooth;
-	font-size: 16px;
+@theme {
+  --color-*: initial;
+  --color-background: var(--color-background);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-heading: var(--color-heading);
+  --color-paragraph: var(--color-paragraph);
+  --color-cardparagraph: var(--color-card-paragraph);
+  --color-cardbackground: var(--color-card-background);
+
+  --leading-*: initial;
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.8;
+  --leading-relaxed: 1.925;
+  --leading-loose: 2;
+
+  --text-*: initial;
+  --text-sm: 0.75rem;
+  --text-sm--line-height: 1.25rem;
+  --text-sm--letter-spacing: 0.015em;
+  --text-sm--font-weight: 300;
+  --text-base: 1rem;
+  --text-base--line-height: 1.8rem;
+  --text-base--letter-spacing: 0.01em;
+  --text-base--font-weight: 300;
+  --text-lg: 1.15rem;
+  --text-lg--line-height: 2.08rem;
+  --text-lg--letter-spacing: 0em;
+  --text-lg--font-weight: 300;
+  --text-xl: 1.57rem;
+  --text-xl--line-height: 2.08rem;
+  --text-xl--letter-spacing: -0.025em;
+  --text-xl--font-weight: 400;
+  --text-2xl: 2.09rem;
+  --text-2xl--line-height: 2.88rem;
+  --text-2xl--letter-spacing: -0.015em;
+  --text-2xl--font-weight: 600;
+  --text-3xl: 2.81rem;
+  --text-3xl--line-height: 3.64rem;
+  --text-3xl--letter-spacing: -0.015em;
+  --text-3xl--font-weight: 600;
+  --text-4xl: 3.92rem;
+  --text-4xl--line-height: 4.65rem;
+  --text-4xl--letter-spacing: 0em;
+  --text-4xl--font-weight: 600;
+  --text-5xl: 5.15rem;
+  --text-5xl--line-height: 6rem;
+  --text-5xl--letter-spacing: 0em;
+  --text-5xl--font-weight: 600;
+  --text-6xl: 6rem;
+  --text-6xl--line-height: 6.28rem;
+  --text-6xl--letter-spacing: 0.025em;
+  --text-6xl--font-weight: 600;
+
+  --breakpoint-xs: 390px;
+}
+
+@layer utilities {
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
 }
 
 @layer base {
 	:root {
-		--color-background: 255 255 254;
-		--color-primary: 30 24 57;
-		--color-secondary: 114 117 126;
-		--color-accent: 255 137 6;
-		--color-heading: 255 255 254;
-		--color-paragraph: 166 168 188;
-		--color-card-paragraph: 0 1 1;
-		--color-card-background: 255 255 254;
+		--color-background: rgb(255 255 254);
+		--color-primary: rgb(30 24 57);
+		--color-secondary: rgb(114 117 126);
+		--color-accent: rgb(255 137 6);
+		--color-heading: rgb(255 255 254);
+		--color-paragraph: rgb(166 168 188);
+		--color-card-paragraph: rgb(0 1 1);
+		--color-card-background: rgb(255 255 254);
 	}
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-background: 21 16 39;
-		--color-primary: 30 24 57;
-		--color-secondary: 226 227 229;
-		--color-accent: 255 137 6;
-		--color-heading: 255 255 254;
-		--color-paragraph: 166 168 188;
-		--color-card-paragraph: 255 255 254;
-		--color-card-background: 18 14 34;
+		--color-background: rgb(21 16 39);
+		--color-primary: rgb(30 24 57);
+		--color-secondary: rgb(226 227 229);
+		--color-accent: rgb(255 137 6);
+		--color-heading: rgb(255 255 254);
+		--color-paragraph: rgb(166 168 188);
+		--color-card-paragraph: rgb(255 255 254);
+		--color-card-background: rgb(18 14 34);
 	}
 }
 
