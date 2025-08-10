@@ -1,0 +1,6 @@
+fragment ArticleRecentItem on ArticleRecord {
+	id
+	slug
+	title
+	createdat
+}

@@ -1,0 +1,15 @@
+query PageImageGetList($page: String) {
+	allPageImages(filter: { page: { eq: $page } }) {
+		page
+		headerImage {
+			responsiveImage {
+				...ResponsiveImage
+			}
+		}
+		headerImageAlternative {
+			responsiveImage {
+				...ResponsiveImage
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+query DocumentGetList {
+	allDocuments(orderBy: _createdAt_ASC) {
+		id
+		title
+		document {
+			url
+		}
+	}
+}
