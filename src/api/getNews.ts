@@ -50,7 +50,7 @@ export const getNewsCount = async () => {
 };
 
 export const getNewsBySlug = async (slug: string) => {
-	const { isEnabled } = draftMode();
+	const { isEnabled } = await draftMode();
 
 	const graphqlResponse = await executeGraphql({
 		query: ArticleGetBySlugDocument,

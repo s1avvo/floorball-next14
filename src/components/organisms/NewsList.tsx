@@ -5,7 +5,7 @@ import { NewsCard } from "@ui/NewsCard";
 import { NewsItem } from "@ui/NewsItem";
 import { CustomButton } from "@ui/CustomButton";
 
-import { getNewsAction } from "@/actions";
+import { getNewsAction } from "@/actions/actions";
 
 const NUMBER_OF_NEWS_TO_FETCH = 4;
 
