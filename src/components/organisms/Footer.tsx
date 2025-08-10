@@ -21,9 +21,9 @@ export const Footer = () => {
 			<SocialIcons />
 
 			<div className="flex items-center justify-center gap-4 divide-x-2 text-sm text-heading">
-				<p>&copy; 2024 Floorball Śrem</p>
+				<p className="pr-4">&copy; 2024 Floorball Śrem</p>
 				<Link href={"/polityka-prywatnosci"} target="_blank" rel="noopener noreferrer">
-					<p className="pl-4 ">Polityka prywatności</p>
+					<p>Polityka prywatności</p>
 				</Link>
 			</div>
 		</footer>

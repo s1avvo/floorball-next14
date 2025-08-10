@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="pl">
+		<html lang="pl" className="h-full antialiased">
 			<body className={`${roboto.className} bg-background`}>
 				<Header />
 				<main className="mx-auto max-w-md sm:max-w-2xl md:max-w-4xl lg:max-w-7xl">{children}</main>

@@ -1,7 +1,9 @@
 @import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-*: initial;
   --color-background: var(--color-background);
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
@@ -11,7 +13,6 @@
   --color-cardparagraph: var(--color-card-paragraph);
   --color-cardbackground: var(--color-card-background);
 
-  --leading-*: initial;
   --leading-none: 1;
   --leading-tight: 1.25;
   --leading-snug: 1.375;
@@ -19,7 +20,6 @@
   --leading-relaxed: 1.925;
   --leading-loose: 2;
 
-  --text-*: initial;
   --text-sm: 0.75rem;
   --text-sm--line-height: 1.25rem;
   --text-sm--letter-spacing: 0.015em;
@@ -67,6 +67,24 @@
   }
 }
 
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentColor);
+	}
+}
+
 @layer base {
 	:root {
 		--color-background: rgb(255 255 254);
@@ -78,10 +96,8 @@
 		--color-card-paragraph: rgb(0 1 1);
 		--color-card-background: rgb(255 255 254);
 	}
-}
 
-@media (prefers-color-scheme: dark) {
-	:root {
+  .dark {
 		--color-background: rgb(21 16 39);
 		--color-primary: rgb(30 24 57);
 		--color-secondary: rgb(226 227 229);

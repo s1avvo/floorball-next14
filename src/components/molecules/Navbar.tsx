@@ -34,10 +34,7 @@ export const Navbar = () => {
 			<div
 				className={clsx(
 					"absolute left-0 top-0 z-50 flex h-screen w-5/6 items-start justify-start bg-primary shadow-lg duration-500 ease-in lg:hidden",
-					`${
-						!isOpen &&
-						"absolute -left-full top-0 z-50 flex h-screen w-full items-start justify-start bg-primary shadow-lg duration-500 ease-out lg:hidden"
-					}`,
+					`${!isOpen && "-translate-x-full"}`,
 				)}
 			>
 				<ul className="my-5 w-full flex-col lg:hidden">

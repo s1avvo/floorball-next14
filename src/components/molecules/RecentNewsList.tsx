@@ -13,11 +13,9 @@ export const RecentNewsList = async () => {
 			</h3>
 			<div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
 				{recentNews.map((item, index) => (
-					<>
-						<Link href={`/aktualnosci/${item.slug}`}>
-							<RecentNewsItem key={item.id} news={item} delay={`${(index + 1) * 200}`} />
-						</Link>
-					</>
+					<Link href={`/aktualnosci/${item.slug}`} key={item.id}>
+						<RecentNewsItem news={item} delay={`${(index + 1) * 200}`} />
+					</Link>
 				))}
 			</div>
 		</aside>
