@@ -19,11 +19,9 @@ const nextConfig = {
 			},
 		],
 	},
-
-	experimental: {
-		mdxRs: true,
-	},
 };
 
-const withMDX = createMDX();
+const withMDX = createMDX({
+  extension: /\.mdx?$/,
+});
 export default withMDX(nextConfig);
