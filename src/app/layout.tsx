@@ -12,7 +12,7 @@ const roboto = Roboto({
 });
 
 export const viewport: Viewport = {
-	colorScheme: "dark light",
+	colorScheme: "light",
 };
 
 export const metadata: Metadata = {
