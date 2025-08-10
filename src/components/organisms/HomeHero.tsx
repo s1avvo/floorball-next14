@@ -6,7 +6,7 @@ import { Ball } from "@ui/Icons";
 export const HomeHero = () => {
 	return (
 		<section className="relative">
-			<div className="flex h-[calc(100svh-100px)] min-h-[32rem] flex-col justify-end overflow-hidden p-8 sm:justify-center lg:max-h-[40rem] lg:p-12">
+			<div className="flex h-[calc(100svh-100px)] min-h-128 flex-col justify-end overflow-hidden p-8 sm:justify-center lg:max-h-160 lg:p-12">
 				<h1
 					className="mb-4 max-w-[620px] text-3xl text-heading drop-shadow-lg xs:text-4xl sm:mb-8 lg:text-5xl"
 					data-aos-id-hero

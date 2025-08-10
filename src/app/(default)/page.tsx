@@ -19,7 +19,7 @@ export default async function Home() {
 			/>
 
 			<div className="relative mb-4 overflow-hidden rounded-none bg-primary sm:mb-12 sm:rounded-xl">
-				<div className="absolute top-0 z-0 aspect-square max-h-[40rem] w-full rounded-none sm:rounded-xl">
+				<div className="absolute top-0 z-0 aspect-square max-h-160 w-full rounded-none sm:rounded-xl">
 					<DatoImage
 						data={homeImages[0].headerImage.responsiveImage!}
 						layout="responsive"

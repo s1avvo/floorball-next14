@@ -98,7 +98,7 @@ export const ContactForm = () => {
 						Wiadomość
 					</label>
 					<textarea
-						className="rounded-md border border-paragraph bg-[#f7f7f7]  p-2 font-light text-secondary focus:border-accent focus:outline-none dark:bg-[#191332]"
+						className="rounded-md border border-paragraph bg-[#f7f7f7]  p-2 font-light text-secondary focus:border-accent focus:outline-hidden dark:bg-[#191332]"
 						name="message"
 						id="message-id"
 						placeholder="Napisz wiadomość.."

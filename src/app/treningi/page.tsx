@@ -27,8 +27,8 @@ export default async function TrainingPage() {
 			/>
 
 			<div className="relative">
-				<div className="absolute left-0 top-0 h-24 w-full rounded-none bg-gradient-to-b from-paragraph/15 via-paragraph/5 to-paragraph/0 sm:rounded-xl" />
-				<div className="absolute left-0 top-0 h-24 w-full rounded-none bg-gradient-to-l from-background to-background/0 sm:rounded-xl" />
+				<div className="absolute left-0 top-0 h-24 w-full rounded-none bg-linear-to-b from-paragraph/15 via-paragraph/5 to-paragraph/0 sm:rounded-xl" />
+				<div className="absolute left-0 top-0 h-24 w-full rounded-none bg-linear-to-l from-background to-background/0 sm:rounded-xl" />
 
 				<Training />
 
