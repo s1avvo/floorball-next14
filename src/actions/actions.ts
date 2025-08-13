@@ -45,8 +45,6 @@ export async function sendMessageAction(formData: FormData) {
 	const resend = new Resend(process.env.RESEND_API_KEY);
 	const result = contactFormDataSchema.safeParse(Object.fromEntries(formData));
 
-	console.log(result);
-
 	if (result.success) {
 		const { name, surname, email, phone, subject, message } = result.data;
 		const fullName = `${name} ${surname}`;
@@ -58,7 +56,7 @@ export async function sendMessageAction(formData: FormData) {
 				subject: `Wiadomość od: ${fullName} <${email}>`,
 				text: `Imię i nazwisko: ${fullName}\nEmail: ${email}\nTelefon: ${phone}\nTemat: ${subject}\nWiadomość: ${message}`,
 				react: FloorballEmailTemplate({ name: fullName, phone, email, subject, message }),
-				reply_to: `${email}`,
+				replyTo: `${email}`,
 			});
 
 			if (!data) {
@@ -70,7 +68,7 @@ export async function sendMessageAction(formData: FormData) {
 			return { success: false, error };
 		}
 	}
-	return { success: false, error: result.error.errors[0]?.message };
+	return { success: false, error: result.error.issues[0]?.message };
 }
 
 export const getNewsAction = async (first: number, skip: number) => {

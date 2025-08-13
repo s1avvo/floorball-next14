@@ -25,13 +25,13 @@ export default function AboutUsMain() {
 			/>
 
 			<div className="relative">
-				<div className="absolute left-0 top-0 h-24 w-full rounded-none bg-gradient-to-b from-paragraph/15 via-paragraph/5 to-paragraph/0 sm:rounded-xl" />
-				<div className="absolute left-0 top-0 h-24 w-full rounded-none bg-gradient-to-l from-background to-background/0 sm:rounded-xl" />
+				<div className="absolute left-0 top-0 h-24 w-full rounded-none bg-linear-to-b from-paragraph/15 via-paragraph/5 to-paragraph/0 sm:rounded-xl" />
+				<div className="absolute left-0 top-0 h-24 w-full rounded-none bg-linear-to-l from-background to-background/0 sm:rounded-xl" />
 
 				<AboutUs />
 
 				<aside className="mt-8 p-4 text-center sm:p-12" data-aos="fade">
-					<LucideIconWithText Icon={MessageSquareQuote} size={72}>
+					<LucideIconWithText Icon={MessageSquareQuote} size={72} style="text-accent">
 						<div className="max-w-xl text-sm italic text-accent sm:text-lg">
 							Cena sukcesu to ciężka praca, poświęcenie i determinacja, by niezależnie od tego, czy w danej chwili
 							wygrywamy czy przegrywamy dawać z siebie wszystko.

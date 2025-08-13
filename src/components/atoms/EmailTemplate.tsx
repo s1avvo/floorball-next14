@@ -8,7 +8,7 @@ type FloorballEmailTemplateProps = {
 
 export const FloorballEmailTemplate = ({ name, email, phone, subject, message }: FloorballEmailTemplateProps) => {
 	return (
-		<section className="my-10 flex w-3/4 max-w-xl flex-col items-center justify-center rounded-md bg-cardbackground px-6 py-8 shadow-sm drop-shadow-sm">
+		<section className="my-10 flex w-3/4 max-w-xl flex-col items-center justify-center rounded-md bg-cardbackground px-6 py-8 shadow-xs drop-shadow-xs">
 			<header className="self-start">
 				<a href="https://floorballsrem.com/" target="_blank" rel="noopener noreferrer">
 					<img src={`${process.env.LOGO_LIGHT_URL}`} width={262} height={50} alt="Floorball Śrem Logo" />

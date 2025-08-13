@@ -13,10 +13,11 @@ export const generateStaticParams = async () => {
 	return news.map((article: { slug: string }) => ({ slug: article.slug }));
 };
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-	const article = await getNewsBySlug(params.slug);
+export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const params = await props.params;
+    const article = await getNewsBySlug(params.slug);
 
-	if (!article) {
+    if (!article) {
 		return {
 			title: "Floorball Śrem | Aktualności: najnowsze informacje, wydarzenia klubowe i więcej.",
 			description:
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 		};
 	}
 
-	return {
+    return {
 		title: `Floorball Śrem | Aktualności: ${article?.title}`,
 		description: `${article.text.slice(0, 160).replace(/(<([^>]+)>)/gi, "")}...`,
 		alternates: {
@@ -45,14 +46,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 	};
 }
 
-export default async function ArticlePage({ params }: { params: { slug: string } }) {
-	const article = await getNewsBySlug(params.slug);
+export default async function ArticlePage(props: { params: Promise<{ slug: string }> }) {
+    const params = await props.params;
+    const article = await getNewsBySlug(params.slug);
 
-	if (!article) {
+    if (!article) {
 		return notFound();
 	}
 
-	return (
+    return (
 		<>
 			<script
 				key="structured-data"

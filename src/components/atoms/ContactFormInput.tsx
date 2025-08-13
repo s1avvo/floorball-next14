@@ -15,7 +15,7 @@ export const ContactFormInput = ({ type, name, label, placeholder, gridColumn, .
 				{label}
 			</label>
 			<input
-				className="h-10 w-full rounded-md border border-paragraph bg-[#f7f7f7] p-2 font-light text-secondary focus:border-accent focus:outline-none dark:bg-[#191332]"
+				className="h-10 w-full rounded-md border border-paragraph bg-[#f7f7f7] p-2 font-light text-secondary focus:border-accent focus:outline-hidden dark:bg-[#191332]"
 				type={type}
 				name={name}
 				placeholder={placeholder}

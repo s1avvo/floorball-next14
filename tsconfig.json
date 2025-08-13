@@ -25,8 +25,7 @@
 			"@/*": ["./src/*"],
 			"@ui/*": ["./src/components/atoms/*", "./src/components/molecules/*", "./src/components/organisms/*"]
 		},
-		"types": ["react-dom/canary"]
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".graphqlrc.ts"],
-	"exclude": ["node_modules"]
+	"exclude": ["node_modules", ".next"]
 }

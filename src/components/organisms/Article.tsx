@@ -23,7 +23,7 @@ export const Article = async ({ article }: { article: ArticleItemFragment }) => 
 				/>
 
 				{image.responsiveImage?.title === "News default" && (
-					<small className="absolute bottom-2 right-2 bg-cardbackground/10 px-2 text-sm text-cardparagraph backdrop-blur-sm">
+					<small className="absolute bottom-2 right-2 bg-cardbackground/10 px-2 text-sm text-cardparagraph backdrop-blur-xs">
 						Photo by{" "}
 						<a href="https://unsplash.com/@familyschaffner?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
 							Astrid Schaffner
